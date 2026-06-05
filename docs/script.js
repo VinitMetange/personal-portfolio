@@ -155,25 +155,27 @@
       formSubmit.disabled = true;
       formSubmit.textContent = 'Sending…';
 
-      /*
-       * REPLACE: Wire up a real backend here.
-       * Example with Formspree:
-       *   const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-       *     method: 'POST',
-       *     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-       *     body: JSON.stringify({ name, email, message })
-       *   });
-       *   if (!res.ok) throw new Error('Network error');
-       *
-       * Example with Netlify Forms: add data-netlify="true" to the <form> tag.
-       *
-       * For now, we simulate a 1-second delay and show the success state.
-       */
-      await delay(1000);
+      // REPLACE YOUR_FORM_ID below with the ID from formspree.io/forms
+      const FORMSPREE_ID = 'YOUR_FORM_ID';
 
-      // Show success state
-      formFields.style.display = 'none';
-      formSuccess.classList.add('show');
+      try {
+        const type    = document.getElementById('contactType').value;
+        const res     = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body:    JSON.stringify({ name, email, type, message }),
+        });
+
+        if (!res.ok) throw new Error('Network error');
+
+        // Show success state
+        formFields.style.display = 'none';
+        formSuccess.classList.add('show');
+      } catch (err) {
+        formSubmit.disabled = false;
+        formSubmit.textContent = 'Send Message';
+        showFormError('Something went wrong. Please email me directly at vinit.metange30@gmail.com');
+      }
     });
   }
 
