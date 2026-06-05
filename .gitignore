@@ -1,0 +1,14 @@
+# Source documents (not needed in the repo)
+*.docx
+*.pdf
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Claude memory
+.claude/
