@@ -3,665 +3,770 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Vinit Metange — AI Product Leader and Agentic AI Builder. 18+ years across enterprise product leadership, telecom platforms, and production AI systems." />
-  <meta name="keywords" content="AI Product Manager, Agentic AI, RAG, Fractional AI PM, AI Consultant, Telecom OSS BSS, Product Strategy" />
+  <meta name="description" content="Vinit Metange — AI Product Leader, Agentic AI Builder, Telecom Platform Expert. 18+ years across enterprise product leadership and production AI systems." />
   <meta property="og:title" content="Vinit Metange — AI Product Leader & Agentic AI Builder" />
-  <meta property="og:description" content="Building practical AI products for real business outcomes. 18+ years across enterprise platforms, cloud-native systems, and AI-enabled products." />
+  <meta property="og:description" content="Building practical AI products for real business outcomes." />
   <meta property="og:type" content="website" />
-
   <title>Vinit Metange — AI Product Leader &amp; Agentic AI Builder</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
 
-<!-- ============================================================
-     HEADER
-     ============================================================ -->
+<!-- HEADER -->
 <header class="site-header" id="siteHeader">
   <div class="container">
-    <!-- REPLACE: Update logo text if you prefer a different wordmark -->
-    <a href="#top" class="logo">Vinit Metange</a>
-
-    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
-      <a href="#about"      class="nav-link">About</a>
-      <a href="#services"   class="nav-link">Services</a>
-      <a href="#work"       class="nav-link">Work</a>
-      <a href="#experience" class="nav-link">Experience</a>
-      <a href="#contact"    class="nav-link">Contact</a>
+    <a href="#" class="logo" data-tab="home">Vinit Metange</a>
+    <nav class="tab-nav" id="tabNav" aria-label="Main navigation">
+      <a class="tab-link active" data-tab="home"       href="#">Home</a>
+      <a class="tab-link"        data-tab="services"   href="#">Services</a>
+      <a class="tab-link"        data-tab="work"       href="#">Work</a>
+      <a class="tab-link"        data-tab="experience" href="#">Experience</a>
+      <a class="tab-link"        data-tab="content"    href="#">Content</a>
+      <a class="tab-link"        data-tab="contact"    href="#">Contact</a>
     </nav>
-
     <div class="header-right">
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <!-- Sun icon (shown in dark mode) -->
-        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-        </svg>
-        <!-- Moon icon (shown in light mode) -->
-        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
-        </svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
       </button>
-
-      <!-- REPLACE: Set href to your Calendly or booking URL -->
-      <a href="#contact" class="btn btn-primary btn-sm">Book a Call</a>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <a href="#" class="btn btn-primary btn-sm" data-tab="contact">Book a Call</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
-<main id="top">
+<main class="main-content">
 
-<!-- ============================================================
-     HERO
-     ============================================================ -->
-<section class="hero" id="hero" aria-labelledby="heroHeadline">
-  <div class="container">
-    <div class="hero-label">
-      <span class="hero-label-dot" aria-hidden="true"></span>
-      AI Product Leader &middot; Bengaluru, India
-    </div>
+<!-- ══════════════════════════════════════════════
+     HOME TAB
+══════════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-home">
 
-    <h1 class="hero-headline display" id="heroHeadline">
-      Building practical AI products<br>
-      <em>for real business outcomes.</em>
-    </h1>
-
-    <p class="hero-sub">
-      18 years across enterprise product leadership, telecom platforms, cloud-native systems, and AI-enabled products. Building multi-agent workflows, knowledge assistants, and AI observability tools that work in production — for startups and enterprises alike.
-    </p>
-
-    <div class="hero-ctas">
-      <!-- REPLACE: Set href to your Calendly URL, e.g., https://calendly.com/vinit-metange -->
-      <a href="#contact" class="btn btn-primary">Book a Strategy Call</a>
-      <a href="#work" class="btn btn-secondary">View Case Studies</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     CREDIBILITY STRIP
-     ============================================================ -->
-<div class="credibility-strip" aria-label="Enterprise experience">
-  <div class="container">
-    <span class="cred-label">Enterprise experience across</span>
-    <div class="cred-companies">
-      <span class="cred-company">Netcracker</span>
-      <span class="cred-sep" aria-hidden="true">·</span>
-      <span class="cred-company">Nokia</span>
-      <span class="cred-sep" aria-hidden="true">·</span>
-      <span class="cred-company">IBM</span>
-      <span class="cred-sep" aria-hidden="true">·</span>
-      <span class="cred-company">Wipro</span>
-    </div>
-    <div class="cred-stats">
-      <span class="cred-stat">18+ years</span>
-      <span class="cred-sep" aria-hidden="true">·</span>
-      <span class="cred-stat">3 production AI products</span>
-      <span class="cred-sep" aria-hidden="true">·</span>
-      <span class="cred-stat">100M+ subscriber scale</span>
-    </div>
-  </div>
-</div>
-
-<!-- ============================================================
-     ABOUT
-     ============================================================ -->
-<section id="about" aria-labelledby="aboutHeading">
-  <div class="container">
-    <div class="about-grid reveal">
-
-      <div class="about-content">
-        <div class="section-eyebrow">About</div>
-        <h2 id="aboutHeading">Enterprise depth.<br><em>Startup-speed execution.</em></h2>
-
-        <p>AI product leadership isn't just strategy or just code — it's knowing what to build, why it matters, and how to ship it in the real world. Vinit brings 18 years of platform thinking from Nokia's subscriber data systems, Netcracker's cloud billing platform, and IBM's enterprise security products — combined with hands-on AI product building as an independent builder.</p>
-
-        <p>The result is a rare combination: product strategy with technical fluency, enterprise depth with founder-style execution speed, and domain expertise across telecom, fintech, cloud SaaS, and multi-agent AI systems.</p>
-
-        <ul class="about-points" aria-label="Key differentiators">
-          <li class="about-point">Product strategy grounded in commercial clarity and delivery reality</li>
-          <li class="about-point">Technical fluency without losing the product perspective</li>
-          <li class="about-point">Enterprise-grade architecture thinking with startup execution speed</li>
-          <li class="about-point">AI products shipped independently to production</li>
-          <li class="about-point">Domain edge in Telecom OSS/BSS, 5G, fintech, and cloud SaaS</li>
-        </ul>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-badge">
+          <span class="hero-badge-dot" aria-hidden="true"></span>
+          AI Product Leader &middot; Bengaluru, India
+        </div>
+        <h1 class="hero-headline display">
+          Building practical AI products<br>
+          <em class="gradient-text">for real business outcomes.</em>
+        </h1>
+        <p class="hero-sub">18 years across enterprise product leadership, telecom platforms, cloud-native systems, and AI-enabled products. Building multi-agent workflows, knowledge assistants, and AI observability tools that work in production — for startups and enterprises alike.</p>
+        <div class="hero-ctas">
+          <a href="#" class="btn btn-primary" data-tab="contact">Book a Strategy Call</a>
+          <a href="#" class="btn btn-secondary" data-tab="work">View Work</a>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <aside class="about-aside">
-        <div class="about-card">
+  <div class="credibility-strip">
+    <div class="container">
+      <span class="cred-label">Enterprise experience across</span>
+      <div class="cred-companies">
+        <span class="cred-company">Netcracker</span><span class="cred-sep" aria-hidden="true">·</span>
+        <span class="cred-company">Nokia</span><span class="cred-sep" aria-hidden="true">·</span>
+        <span class="cred-company">IBM</span><span class="cred-sep" aria-hidden="true">·</span>
+        <span class="cred-company">Wipro</span>
+      </div>
+      <div class="cred-stats">
+        <span class="cred-stat">18+ years</span><span class="cred-sep" aria-hidden="true">·</span>
+        <span class="cred-stat">3 production AI products</span><span class="cred-sep" aria-hidden="true">·</span>
+        <span class="cred-stat">100M+ subscriber scale</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid reveal">
+        <div class="about-content">
+          <div class="section-eyebrow">About</div>
+          <h2>Enterprise depth.<br><em>Startup-speed execution.</em></h2>
+          <p>AI product leadership isn't just strategy or just code — it's knowing what to build, why it matters, and how to ship it in the real world. Vinit brings 18 years of platform thinking from Nokia's subscriber data systems, Netcracker's cloud billing platform, and IBM's enterprise security products — combined with hands-on AI product building as an independent builder.</p>
+          <p>The result is a rare combination: product strategy with technical fluency, enterprise depth with founder-style execution speed, and domain expertise across telecom, fintech, cloud SaaS, and multi-agent AI systems.</p>
+          <ul class="about-points" aria-label="Key differentiators">
+            <li class="about-point">Product strategy grounded in commercial clarity and delivery reality</li>
+            <li class="about-point">Technical fluency without losing the product perspective</li>
+            <li class="about-point">Enterprise-grade architecture thinking with startup execution speed</li>
+            <li class="about-point">AI products shipped independently to production</li>
+            <li class="about-point">Domain edge in Telecom OSS/BSS, 5G, fintech, and cloud SaaS</li>
+          </ul>
+        </div>
+        <aside class="about-card">
           <div class="about-card-label">By the numbers</div>
           <div class="about-metrics-grid">
-            <div>
-              <div class="about-metric-value">18+</div>
-              <div class="about-metric-label">Years of product leadership</div>
-            </div>
-            <div>
-              <div class="about-metric-value">3</div>
-              <div class="about-metric-label">Production AI products built</div>
-            </div>
-            <div>
-              <div class="about-metric-value">100M+</div>
-              <div class="about-metric-label">Subscriber platform scale</div>
-            </div>
-            <div>
-              <div class="about-metric-value">4</div>
-              <div class="about-metric-label">Consecutive on-time quarters</div>
-            </div>
+            <div><div class="about-metric-value">18+</div><div class="about-metric-label">Years of product leadership</div></div>
+            <div><div class="about-metric-value">3</div><div class="about-metric-label">Production AI products built</div></div>
+            <div><div class="about-metric-value">100M+</div><div class="about-metric-label">Subscriber platform scale</div></div>
+            <div><div class="about-metric-value">4</div><div class="about-metric-label">Consecutive on-time quarters</div></div>
           </div>
-
-          <div class="about-awards" aria-label="Awards">
-            <div class="about-award">
-              <span class="about-award-year">2025</span>
-              Above &amp; Beyond Award, Netcracker
-            </div>
-            <div class="about-award">
-              <span class="about-award-year">2024</span>
-              Stellar Success Award, Netcracker
-            </div>
-            <div class="about-award">
-              <span class="about-award-year">2022</span>
-              Nokia Leadership Award
-            </div>
-            <div class="about-award">
-              <span class="about-award-year">2021</span>
-              Nokia Empowered Award
-            </div>
+          <div class="about-awards">
+            <div class="about-award"><span class="about-award-year">2025</span>Above &amp; Beyond Award, Netcracker</div>
+            <div class="about-award"><span class="about-award-year">2024</span>Stellar Success Award, Netcracker</div>
+            <div class="about-award"><span class="about-award-year">2022</span>Nokia Leadership Award</div>
+            <div class="about-award"><span class="about-award-year">2021</span>Nokia Empowered Award</div>
           </div>
-        </div>
-      </aside>
+        </aside>
+      </div>
+    </div>
+  </section>
 
+  <div class="metrics-section">
+    <div class="container">
+      <div class="metrics-grid reveal">
+        <div class="metric-item"><div class="metric-value">18+</div><div class="metric-label">Years of product &amp; platform leadership</div></div>
+        <div class="metric-item"><div class="metric-value">40%</div><div class="metric-label">Revenue growth contribution at Nokia &amp; Netcracker</div></div>
+        <div class="metric-item"><div class="metric-value">50%</div><div class="metric-label">Team productivity improvement via AI assistant</div></div>
+        <div class="metric-item"><div class="metric-value">30%+</div><div class="metric-label">Support cost reduction through AI automation</div></div>
+        <div class="metric-item"><div class="metric-value">100M+</div><div class="metric-label">Subscriber-scale platform exposure</div></div>
+      </div>
     </div>
   </div>
-</section>
 
-<div class="divider"></div>
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-inner reveal">
+        <div class="section-eyebrow">Newsletter</div>
+        <h2>AI Product Intelligence<br><em>in your inbox.</em></h2>
+        <p>Practical frameworks, architecture patterns, and hard-won lessons from building production AI systems — for product leaders and builders who want signal, not noise.</p>
+        <!-- REPLACE: change YOUR_PUBLICATION to your Substack subdomain -->
+        <form class="newsletter-form" id="newsletterForm" action="https://imvinit.substack.com/api/v1/free" method="post" target="_blank" novalidate>
+          <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address" />
+          <button type="submit" class="btn btn-primary">Subscribe Free</button>
+        </form>
+        <p class="newsletter-note">No spam. Unsubscribe anytime. <a href="https://imvinit.substack.com" target="_blank" rel="noopener noreferrer" style="color:var(--accent-text)">Read on Substack →</a></p>
+      </div>
+    </div>
+  </section>
 
-<!-- ============================================================
-     SERVICES
-     ============================================================ -->
-<section id="services" aria-labelledby="servicesHeading">
+</div><!-- /tab-home -->
+
+<!-- ══════════════════════════════════════════════
+     SERVICES TAB
+══════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-services">
   <div class="container">
-    <div class="section-header reveal">
+    <div class="tab-panel-header">
       <div class="section-eyebrow">Services</div>
-      <h2 id="servicesHeading">Two practice areas,<br><em>one coherent offering.</em></h2>
-      <p>AI &amp; Product Consulting for strategy-to-build engagements. The CineVerse Studio for AI-powered video and content creation.</p>
+      <h2>Two practices.<br><em>One coherent offering.</em></h2>
+      <p>AI &amp; Product Consulting across strategy, build, and domain. Plus The CineVerse Studio for AI-powered content and video.</p>
     </div>
 
-    <div class="services-groups">
+    <div class="subtab-bar" role="tablist" aria-label="Service categories">
+      <button class="subtab active" role="tab" data-target="subtab-pm"      aria-selected="true">AI Product Management</button>
+      <button class="subtab"        role="tab" data-target="subtab-ai"      aria-selected="false">Agentic AI Development</button>
+      <button class="subtab"        role="tab" data-target="subtab-telecom" aria-selected="false">Telecom / OSS BSS</button>
+      <button class="subtab"        role="tab" data-target="subtab-content" aria-selected="false">Content Creation</button>
+      <button class="subtab"        role="tab" data-target="subtab-consult" aria-selected="false">Consulting &amp; Workshops</button>
+    </div>
 
-      <!-- GROUP 1: AI & Product Consulting -->
-      <div class="reveal">
-        <div class="service-group-header">
-          <h3 class="service-group-title">AI &amp; Product Consulting</h3>
-          <span class="service-group-subtitle">Strategy · Build · Optimization · Domain</span>
-          <div class="service-group-line" aria-hidden="true"></div>
-        </div>
-
-        <div class="services-grid" role="list">
-
-          <article class="service-card" role="listitem">
-            <div class="service-card-category">Strategy</div>
-            <h3>Fractional AI Product Manager</h3>
-            <p>Embedded PM support without a full-time hire. Roadmap clarity, backlog ownership, discovery rhythm, and delivery alignment for AI product teams.</p>
-            <ul class="service-deliverables" aria-label="Deliverables">
-              <li class="service-deliverable">Product roadmap &amp; OKR alignment</li>
-              <li class="service-deliverable">Sprint planning &amp; backlog management</li>
-              <li class="service-deliverable">PRDs &amp; feature specifications</li>
-              <li class="service-deliverable">Stakeholder alignment</li>
-            </ul>
-          </article>
-
-          <article class="service-card" role="listitem">
-            <div class="service-card-category">Strategy</div>
-            <h3>AI Product Strategy &amp; Roadmapping</h3>
-            <p>Define your AI product direction with commercial clarity. From opportunity framing to a prioritized roadmap and sequenced build plan.</p>
-            <ul class="service-deliverables" aria-label="Deliverables">
-              <li class="service-deliverable">Product strategy document</li>
-              <li class="service-deliverable">Opportunity map &amp; prioritization</li>
-              <li class="service-deliverable">Feature roadmap</li>
-              <li class="service-deliverable">Build sequencing &amp; GTM framing</li>
-            </ul>
-          </article>
-
-          <article class="service-card" role="listitem">
-            <div class="service-card-category">Strategy</div>
-            <h3>AI MVP &amp; SaaS Product Design</h3>
-            <p>From first concept to testable product. Architecture direction, feature scope, UX flow, and build advisory so you ship the right thing first.</p>
-            <ul class="service-deliverables" aria-label="Deliverables">
-              <li class="service-deliverable">MVP scope &amp; feature definition</li>
-              <li class="service-deliverable">UX flows &amp; product requirements</li>
-              <li class="service-deliverable">Architecture blueprint</li>
-              <li class="service-deliverable">Go-to-market readiness review</li>
-            </ul>
-          </article>
-
-          <article class="service-card" role="listitem">
-            <div class="service-card-category">Build</div>
-            <h3>Agentic AI Solution Design</h3>
-            <p>Design multi-agent systems with tool use, memory, evaluation pipelines, and orchestration. Architecture first, then implementation guidance.</p>
-            <ul class="service-deliverables" aria-label="Deliverables">
-              <li class="service-deliverable">Agent architecture blueprint</li>
-              <li class="service-deliverable">Orchestration &amp; tool design</li>
-              <li class="service-deliverable">Evaluation framework</li>
-              <li class="service-deliverable">Implementation playbook</li>
-            </ul>
-          </article>
-
-          <article class="service-card" role="listitem">
-            <div class="service-card-category">Build</div>
-            <h3>RAG &amp; Knowledge Assistants</h3>
-            <p>Build accurate, secure knowledge systems on enterprise documentation. Retrieval design, chunking strategy, ranking, and quality evaluation.</p>
-            <ul class="service-deliverables" aria-label="Deliverables">
-              <li class="service-deliverable">RAG architecture &amp; retrieval design</li>
-              <li class="service-deliverable">Chunking &amp; embedding strategy</li>
-              <li class="service-deliverable">Evaluation pipeline</li>
-              <li class="service-deliverable">Deployed knowledge assistant</li>
-            </ul>
-          </article>
-
-          <article class="service-card" role="listitem">
-            <div class="service-card-category">Build</div>
-            <h3>AI Workflow Automation</h3>
-            <p>Automate high-value business workflows using AI agents and composable tools. Research, generation, approval flows, and platform integration.</p>
-            <ul class="service-deliverables" aria-label="Deliverables">
-              <li class="service-deliverable">Workflow map &amp; automation design</li>
-              <li class="service-deliverable">n8n / LangGraph pipeline</li>
-              <li class="service-deliverable">Integration &amp; trigger setup</li>
-              <li class="service-deliverable">Monitoring &amp; error handling</li>
-            </ul>
-          </article>
-
-          <article class="service-card" role="listitem">
-            <div class="service-card-category">Optimization</div>
-            <h3>AI Observability &amp; Eval Design</h3>
-            <p>Instrument your AI product for token usage, latency, cost, quality, and safety signals. Prevent model drift and control spend before it compounds.</p>
-            <ul class="service-deliverables" aria-label="Deliverables">
-              <li class="service-deliverable">Observability architecture</li>
-              <li class="service-deliverable">SDK setup &amp; cost dashboards</li>
-              <li class="service-deliverable">Eval pipeline &amp; quality metrics</li>
-              <li class="service-deliverable">Safety &amp; guardrail design</li>
-            </ul>
-          </article>
-
-          <article class="service-card" role="listitem">
-            <div class="service-card-category">Domain</div>
-            <h3>Enterprise AI Enablement &amp; Workshops</h3>
-            <p>Structured sessions to align your team on AI strategy, use case prioritization, and implementation readiness. Built for enterprise innovation teams.</p>
-            <ul class="service-deliverables" aria-label="Deliverables">
-              <li class="service-deliverable">Workshop facilitation</li>
-              <li class="service-deliverable">AI use case prioritization matrix</li>
-              <li class="service-deliverable">Implementation roadmap</li>
-              <li class="service-deliverable">Team alignment &amp; readiness plan</li>
-            </ul>
-          </article>
-
-          <article class="service-card" role="listitem">
-            <div class="service-card-category">Domain</div>
-            <h3>Telecom OSS/BSS &amp; Cloud Platform</h3>
-            <p>Deep strategy and platform expertise in BSS billing, subscriber data, 5G core, and cloud-native transformation. Direct Nokia and Netcracker context.</p>
-            <ul class="service-deliverables" aria-label="Deliverables">
-              <li class="service-deliverable">Platform strategy document</li>
-              <li class="service-deliverable">AI use case identification</li>
-              <li class="service-deliverable">Cloud migration playbook</li>
-              <li class="service-deliverable">Architecture guidance</li>
-            </ul>
-          </article>
-
-        </div>
+    <!-- PM -->
+    <div class="subtab-panel active" id="subtab-pm" role="tabpanel">
+      <div class="service-cards reveal">
+        <article class="service-card" data-cat="pm">
+          <div class="service-card-cat">Ongoing</div>
+          <h3>Fractional AI Product Manager</h3>
+          <p>Embedded PM support without a full-time hire. Roadmap clarity, backlog ownership, discovery rhythm, and delivery alignment for AI product teams.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">Product roadmap &amp; OKR alignment</li>
+            <li class="service-deliverable">Sprint planning &amp; backlog management</li>
+            <li class="service-deliverable">PRDs &amp; feature specifications</li>
+            <li class="service-deliverable">Stakeholder alignment</li>
+          </ul>
+        </article>
+        <article class="service-card" data-cat="pm">
+          <div class="service-card-cat">Strategy</div>
+          <h3>AI Product Strategy &amp; Roadmapping</h3>
+          <p>Define your AI product direction with commercial clarity. From opportunity framing to a prioritized roadmap and sequenced build plan.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">Product strategy document</li>
+            <li class="service-deliverable">Opportunity map &amp; prioritization</li>
+            <li class="service-deliverable">Feature roadmap</li>
+            <li class="service-deliverable">Build sequencing &amp; GTM framing</li>
+          </ul>
+        </article>
+        <article class="service-card" data-cat="pm">
+          <div class="service-card-cat">Design</div>
+          <h3>AI MVP &amp; SaaS Product Design</h3>
+          <p>From first concept to testable product. Architecture direction, feature scope, UX flow, and build advisory so you ship the right thing first.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">MVP scope &amp; feature definition</li>
+            <li class="service-deliverable">UX flows &amp; product requirements</li>
+            <li class="service-deliverable">Architecture blueprint</li>
+            <li class="service-deliverable">Go-to-market readiness review</li>
+          </ul>
+        </article>
+        <article class="service-card" data-cat="pm">
+          <div class="service-card-cat">Documentation</div>
+          <h3>PRD &amp; Feature Specification Writing</h3>
+          <p>Clear, engineering-ready product requirements documents built from 18 years of cross-functional delivery experience across Nokia, Netcracker, and IBM.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">Problem &amp; solution framing</li>
+            <li class="service-deliverable">Acceptance criteria &amp; edge cases</li>
+            <li class="service-deliverable">API &amp; data contract specs</li>
+            <li class="service-deliverable">Success metrics definition</li>
+          </ul>
+        </article>
+        <article class="service-card" data-cat="pm">
+          <div class="service-card-cat">Webinar</div>
+          <h3>AI Product Management Webinars</h3>
+          <p>Live and recorded webinars for PMs and product leaders entering or advancing in AI. From foundational concepts to advanced agentic product strategy — practical, opinionated, and grounded in real delivery.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">Live cohort webinars (group or public)</li>
+            <li class="service-deliverable">Private team training sessions</li>
+            <li class="service-deliverable">Q&amp;A and case study workshops</li>
+            <li class="service-deliverable">Recorded session + reference pack</li>
+          </ul>
+        </article>
+        <article class="service-card" data-cat="pm">
+          <div class="service-card-cat">Delivery</div>
+          <h3>OKR Alignment &amp; Delivery Governance</h3>
+          <p>Establish delivery discipline across AI product teams. SAFe or custom Agile framework implementation with PI planning, sprint cadence, and cross-squad coordination.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">OKR framework &amp; KPI definition</li>
+            <li class="service-deliverable">SAFe or Agile setup</li>
+            <li class="service-deliverable">PI planning facilitation</li>
+            <li class="service-deliverable">Reporting &amp; dependency management</li>
+          </ul>
+        </article>
       </div>
+    </div>
 
-      <!-- GROUP 2: The CineVerse Studio -->
-      <div class="reveal">
-        <div class="service-group-header">
-          <h3 class="service-group-title">The CineVerse Studio</h3>
-          <span class="service-group-subtitle">AI-Powered Video &amp; Creative Content</span>
-          <div class="service-group-line" aria-hidden="true"></div>
-        </div>
-        <p style="font-size:0.9375rem; color:var(--text-2); max-width:560px; margin-bottom:28px;">AI-native content studio for brands, founders, and enterprise teams. From scripted video to fully automated content pipelines — produced at a fraction of traditional cost and time.</p>
-
-        <div class="cineverse-grid" role="list">
-
-          <article class="cineverse-card" role="listitem">
-            <div class="cineverse-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M15 10l4.553-2.276A1 1 0 0121 8.723v6.554a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
-            </div>
-            <h3>AI Video Production</h3>
-            <p>Script to screen with AI. Brand content, product demos, explainers, and thought-leadership videos using AI voice, avatar, and visual generation.</p>
-            <ul class="service-deliverables" aria-label="Deliverables">
-              <li class="service-deliverable">Script &amp; storyboard</li>
-              <li class="service-deliverable">AI-generated video &amp; voiceover</li>
-              <li class="service-deliverable">Branded video assets</li>
-              <li class="service-deliverable">Platform-ready exports</li>
-            </ul>
-          </article>
-
-          <article class="cineverse-card" role="listitem">
-            <div class="cineverse-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-            </div>
-            <h3>AI Content Pipelines</h3>
-            <p>Automated end-to-end content factory. Research → scripting → video generation → platform publishing. Consistent, scalable, fully AI-powered.</p>
-            <ul class="service-deliverables" aria-label="Deliverables">
-              <li class="service-deliverable">n8n pipeline design &amp; build</li>
-              <li class="service-deliverable">AI research &amp; script automation</li>
-              <li class="service-deliverable">Video generation integration</li>
-              <li class="service-deliverable">Auto-publish to YouTube &amp; socials</li>
-            </ul>
-          </article>
-
-          <article class="cineverse-card" role="listitem">
-            <div class="cineverse-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
-            </div>
-            <h3>Brand &amp; Social Content</h3>
-            <p>AI-generated content for LinkedIn, YouTube, and brand platforms. On-brand messaging at scale — without a full creative team or long production cycles.</p>
-            <ul class="service-deliverables" aria-label="Deliverables">
-              <li class="service-deliverable">LinkedIn content series</li>
-              <li class="service-deliverable">YouTube video scripts &amp; production</li>
-              <li class="service-deliverable">Brand voice &amp; template library</li>
-              <li class="service-deliverable">Content calendar &amp; scheduling</li>
-            </ul>
-          </article>
-
-        </div>
+    <!-- Agentic AI -->
+    <div class="subtab-panel" id="subtab-ai" role="tabpanel">
+      <div class="service-cards reveal">
+        <article class="service-card" data-cat="ai">
+          <div class="service-card-cat">Architecture</div>
+          <h3>Multi-Agent System Design</h3>
+          <p>Design production-ready multi-agent systems with LangGraph or CrewAI. Orchestration patterns, tool design, memory management, and inter-agent communication.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">Agent architecture blueprint</li>
+            <li class="service-deliverable">Orchestration &amp; tool design</li>
+            <li class="service-deliverable">Memory &amp; state management</li>
+            <li class="service-deliverable">Implementation playbook</li>
+          </ul>
+        </article>
+        <article class="service-card" data-cat="ai">
+          <div class="service-card-cat">Build</div>
+          <h3>RAG &amp; Knowledge Assistants</h3>
+          <p>Build accurate, secure knowledge systems on enterprise documentation. Retrieval design, chunking strategy, ranking, and quality evaluation pipelines.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">RAG architecture &amp; retrieval design</li>
+            <li class="service-deliverable">Chunking &amp; embedding strategy</li>
+            <li class="service-deliverable">Evaluation pipeline</li>
+            <li class="service-deliverable">Deployed knowledge assistant</li>
+          </ul>
+        </article>
+        <article class="service-card" data-cat="ai">
+          <div class="service-card-cat">Automation</div>
+          <h3>AI Workflow Automation</h3>
+          <p>Automate high-value business workflows using AI agents and composable tools. Research, generation, approval flows, and platform integration using n8n or LangGraph.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">Workflow map &amp; automation design</li>
+            <li class="service-deliverable">n8n / LangGraph pipeline</li>
+            <li class="service-deliverable">Integration &amp; trigger setup</li>
+            <li class="service-deliverable">Monitoring &amp; error handling</li>
+          </ul>
+        </article>
+        <article class="service-card" data-cat="ai">
+          <div class="service-card-cat">Quality</div>
+          <h3>AI Observability &amp; Eval Design</h3>
+          <p>Instrument your AI product for token usage, latency, cost, quality, and safety signals. Prevent model drift and control spend before it compounds.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">Observability architecture</li>
+            <li class="service-deliverable">SDK setup &amp; cost dashboards</li>
+            <li class="service-deliverable">Eval pipeline &amp; quality metrics</li>
+            <li class="service-deliverable">Safety &amp; guardrail design</li>
+          </ul>
+        </article>
+        <article class="service-card" data-cat="ai">
+          <div class="service-card-cat">Integration</div>
+          <h3>LLM Integration &amp; MCP Tool Design</h3>
+          <p>Design and integrate LLM APIs with cost-aware model routing, prompt engineering, caching strategies, and MCP server setup for tool-augmented agents.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">Model selection &amp; routing strategy</li>
+            <li class="service-deliverable">Prompt engineering &amp; caching</li>
+            <li class="service-deliverable">MCP server design</li>
+            <li class="service-deliverable">Cost optimization playbook</li>
+          </ul>
+        </article>
+        <article class="service-card" data-cat="ai">
+          <div class="service-card-cat">Evaluation</div>
+          <h3>4-Stage AI Evaluation Pipeline</h3>
+          <p>Production evaluation framework covering PII detection, prompt injection defence, compliance validation, and factual accuracy scoring — built from real Virasat implementation.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">PII &amp; safety eval layer</li>
+            <li class="service-deliverable">Prompt injection detection</li>
+            <li class="service-deliverable">Compliance validation checks</li>
+            <li class="service-deliverable">Factual accuracy scoring</li>
+          </ul>
+        </article>
+        <article class="service-card" data-cat="ai">
+          <div class="service-card-cat">Done-for-You</div>
+          <h3>Custom AI Agent Build</h3>
+          <p>End-to-end design and delivery of a production AI agent for your specific use case. From requirements to a deployed, tested agent — built with LangGraph, AWS Bedrock, or your preferred stack.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">Use case scoping &amp; architecture</li>
+            <li class="service-deliverable">Agent build &amp; tool integration</li>
+            <li class="service-deliverable">Testing, eval &amp; guardrails</li>
+            <li class="service-deliverable">Deployment &amp; handover docs</li>
+          </ul>
+        </article>
       </div>
+    </div>
 
-    </div><!-- /services-groups -->
+    <!-- Telecom -->
+    <div class="subtab-panel" id="subtab-telecom" role="tabpanel">
+      <div class="service-cards reveal">
+        <article class="service-card" data-cat="telecom">
+          <div class="service-card-cat">Strategy</div>
+          <h3>BSS/OSS Platform Strategy</h3>
+          <p>Platform strategy and roadmap for BSS billing, revenue management, and OSS transformation. Direct Netcracker and Nokia context at global scale.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">Platform strategy document</li>
+            <li class="service-deliverable">Capability gap analysis</li>
+            <li class="service-deliverable">Vendor evaluation framework</li>
+            <li class="service-deliverable">Roadmap &amp; migration plan</li>
+          </ul>
+        </article>
+        <article class="service-card" data-cat="telecom">
+          <div class="service-card-cat">Architecture</div>
+          <h3>5G Core &amp; Subscriber Data Architecture</h3>
+          <p>Architecture guidance for geo-distributed subscriber data, session management, and policy control at 100M+ subscriber scale. Nokia SDL experience directly applied.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">5G core architecture review</li>
+            <li class="service-deliverable">SDL / SDB platform design</li>
+            <li class="service-deliverable">Scalability &amp; resiliency patterns</li>
+            <li class="service-deliverable">Point-in-time recovery design</li>
+          </ul>
+        </article>
+        <article class="service-card" data-cat="telecom">
+          <div class="service-card-cat">Transformation</div>
+          <h3>Cloud-Native Telecom Transformation</h3>
+          <p>Migration strategy and execution guidance for telecom platforms moving to Kubernetes and OpenShift. Zero-downtime migration patterns from real Nokia deployments.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">Cloud migration playbook</li>
+            <li class="service-deliverable">Kubernetes / OpenShift design</li>
+            <li class="service-deliverable">Zero-downtime migration plan</li>
+            <li class="service-deliverable">SRE &amp; observability setup</li>
+          </ul>
+        </article>
+        <article class="service-card" data-cat="telecom">
+          <div class="service-card-cat">AI in Telecom</div>
+          <h3>AI Use Cases in Telecom Operations</h3>
+          <p>Identify, prioritize, and design AI use cases for BSS/OSS operations — from intelligent billing to network anomaly detection and automated support resolution.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">AI use case identification</li>
+            <li class="service-deliverable">Build vs. buy assessment</li>
+            <li class="service-deliverable">POC architecture &amp; scope</li>
+            <li class="service-deliverable">ROI modelling</li>
+          </ul>
+        </article>
+        <article class="service-card" data-cat="telecom">
+          <div class="service-card-cat">Advisory</div>
+          <h3>Telecom Product &amp; Vendor Advisory</h3>
+          <p>Independent advisory on telecom platform selection, contract positioning, and vendor roadmap alignment. Combines Nokia, Netcracker, and enterprise buyer perspectives.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">Vendor RFP &amp; evaluation</li>
+            <li class="service-deliverable">Contract positioning support</li>
+            <li class="service-deliverable">Roadmap alignment sessions</li>
+            <li class="service-deliverable">Technical due diligence</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="subtab-panel" id="subtab-content" role="tabpanel">
+      <p style="margin-bottom:28px;font-size:1rem;color:var(--text-2);max-width:600px">AI-native content studio for brands, founders, and enterprise teams. From scripted video to fully automated content pipelines.</p>
+      <div class="service-cards reveal">
+        <article class="service-card" data-cat="content">
+          <div class="service-card-cat">Video Production</div>
+          <h3>AI Video Production</h3>
+          <p>Script to screen with AI. Brand content, product demos, explainers, and thought-leadership videos using AI voice, avatar, and visual generation.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">Script &amp; storyboard</li>
+            <li class="service-deliverable">AI-generated video &amp; voiceover</li>
+            <li class="service-deliverable">Branded video assets</li>
+            <li class="service-deliverable">Platform-ready exports (YouTube, LinkedIn)</li>
+          </ul>
+        </article>
+        <article class="service-card" data-cat="content">
+          <div class="service-card-cat">Automation</div>
+          <h3>AI Content Pipelines</h3>
+          <p>Automated end-to-end content factory. Research → scripting → video generation → platform publishing. Consistent, scalable, fully AI-powered using n8n.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">n8n pipeline design &amp; build</li>
+            <li class="service-deliverable">AI research &amp; script automation</li>
+            <li class="service-deliverable">Video generation integration</li>
+            <li class="service-deliverable">Auto-publish to YouTube &amp; socials</li>
+          </ul>
+        </article>
+        <article class="service-card" data-cat="content">
+          <div class="service-card-cat">Brand</div>
+          <h3>Brand &amp; Social Content</h3>
+          <p>AI-generated content for LinkedIn, YouTube, and brand platforms. On-brand messaging at scale without a full creative team or long production cycles.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">LinkedIn content series</li>
+            <li class="service-deliverable">YouTube video scripts &amp; production</li>
+            <li class="service-deliverable">Brand voice &amp; template library</li>
+            <li class="service-deliverable">Content calendar &amp; scheduling</li>
+          </ul>
+        </article>
+        <article class="service-card" data-cat="content">
+          <div class="service-card-cat">Strategy</div>
+          <h3>YouTube Channel Strategy</h3>
+          <p>End-to-end YouTube channel strategy for AI and tech brands. Topic architecture, SEO, thumbnail design, upload cadence, and analytics-driven iteration.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">Channel architecture &amp; niche</li>
+            <li class="service-deliverable">Topic &amp; keyword strategy</li>
+            <li class="service-deliverable">Thumbnail &amp; title frameworks</li>
+            <li class="service-deliverable">Growth analytics setup</li>
+          </ul>
+        </article>
+        <article class="service-card" data-cat="content">
+          <div class="service-card-cat">Newsletter</div>
+          <h3>Newsletter &amp; Thought Leadership</h3>
+          <p>Ghost-written AI product newsletters, LinkedIn articles, and Substack publications for founders and product leaders building their personal brand in AI.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">Newsletter strategy &amp; positioning</li>
+            <li class="service-deliverable">Ghost-written articles (weekly/biweekly)</li>
+            <li class="service-deliverable">LinkedIn long-form content</li>
+            <li class="service-deliverable">Substack or Beehiiv setup</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <!-- Consulting -->
+    <div class="subtab-panel" id="subtab-consult" role="tabpanel">
+      <div class="service-cards reveal">
+        <article class="service-card" data-cat="consult">
+          <div class="service-card-cat">Speaking</div>
+          <h3>Conference &amp; Event Speaker</h3>
+          <p>Available for keynotes, panel discussions, and conference talks on agentic AI, AI product strategy, and building production AI systems. Grounded in real-world delivery at Nokia, Netcracker, and as an independent builder.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">Keynote &amp; breakout sessions</li>
+            <li class="service-deliverable">Panel participation</li>
+            <li class="service-deliverable">Podcast &amp; webinar appearances</li>
+            <li class="service-deliverable">Corporate innovation talks</li>
+          </ul>
+        </article>
+        <article class="service-card" data-cat="consult">
+          <div class="service-card-cat">1:1 Advisory</div>
+          <h3>Expert Consultation Call</h3>
+          <p>Focused 1:1 advisory sessions for founders, PMs, and engineers building AI products. Get direct, unfiltered guidance on architecture decisions, product strategy, hiring, or go-to-market — in a single call.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">60-min focused advisory call</li>
+            <li class="service-deliverable">AI product &amp; architecture review</li>
+            <li class="service-deliverable">Career &amp; transition guidance (AI PM)</li>
+            <li class="service-deliverable">Follow-up summary &amp; action items</li>
+          </ul>
+        </article>
+        <article class="service-card" data-cat="consult">
+          <div class="service-card-cat">Workshop</div>
+          <h3>Enterprise AI Strategy Workshop</h3>
+          <p>Structured sessions to align your team on AI strategy, use case prioritization, and implementation readiness. Built for enterprise innovation and technology teams.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">Workshop facilitation (half/full day)</li>
+            <li class="service-deliverable">AI use case prioritization matrix</li>
+            <li class="service-deliverable">Implementation roadmap</li>
+            <li class="service-deliverable">Team alignment &amp; readiness plan</li>
+          </ul>
+        </article>
+        <article class="service-card" data-cat="consult">
+          <div class="service-card-cat">Assessment</div>
+          <h3>AI Readiness Assessment</h3>
+          <p>Evaluate your organization's readiness to build and deploy AI products. Data quality, team capability, tooling gaps, governance, and risk assessment.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">Data &amp; infrastructure audit</li>
+            <li class="service-deliverable">Team capability mapping</li>
+            <li class="service-deliverable">Tooling &amp; vendor gap analysis</li>
+            <li class="service-deliverable">AI readiness scorecard</li>
+          </ul>
+        </article>
+        <article class="service-card" data-cat="consult">
+          <div class="service-card-cat">Prioritization</div>
+          <h3>AI Use Case Prioritization</h3>
+          <p>Systematic framework to identify, evaluate, and sequence AI opportunities. Business impact vs. feasibility scoring with build/buy/partner recommendations.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">Use case identification workshop</li>
+            <li class="service-deliverable">Impact × feasibility scoring</li>
+            <li class="service-deliverable">Build / buy / partner assessment</li>
+            <li class="service-deliverable">Sequenced implementation plan</li>
+          </ul>
+        </article>
+        <article class="service-card" data-cat="consult">
+          <div class="service-card-cat">Due Diligence</div>
+          <h3>AI Technical Due Diligence</h3>
+          <p>Independent technical assessment of AI products, platforms, or vendors. Architecture quality, scalability, risk, and accuracy evaluation for investors and buyers.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">Architecture &amp; stack review</li>
+            <li class="service-deliverable">Scalability &amp; risk assessment</li>
+            <li class="service-deliverable">Accuracy &amp; eval methodology audit</li>
+            <li class="service-deliverable">Written assessment report</li>
+          </ul>
+        </article>
+        <article class="service-card" data-cat="consult">
+          <div class="service-card-cat">Enablement</div>
+          <h3>Team AI Enablement Sessions</h3>
+          <p>Structured education sessions for product, engineering, and business teams on AI product fundamentals, agent architectures, RAG, evaluation, and cost management.</p>
+          <ul class="service-deliverables">
+            <li class="service-deliverable">Tailored curriculum design</li>
+            <li class="service-deliverable">Hands-on labs &amp; exercises</li>
+            <li class="service-deliverable">Reference materials package</li>
+            <li class="service-deliverable">Follow-up Q&amp;A sessions</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <!-- Engagement Models -->
+    <div class="section-header reveal" style="margin-top:72px">
+      <div class="section-eyebrow">How to Engage</div>
+      <h2>Six ways<br><em>to work together.</em></h2>
+      <p>From a focused strategy sprint to ongoing fractional PM support — structured to match your stage, scope, and urgency.</p>
+    </div>
+    <div class="engage-grid reveal">
+      <article class="engage-card">
+        <div class="engage-type">Ongoing</div>
+        <h3>Fractional AI PM</h3>
+        <p>Part-time embedded product leadership for AI teams that need roadmap ownership without a full-time hire.</p>
+        <div class="engage-output"><strong>Best for:</strong> Startups &amp; scaleups building AI products<br><strong>Output:</strong> Roadmap, backlog, PRDs, delivery alignment</div>
+      </article>
+      <article class="engage-card">
+        <div class="engage-type">2–4 Weeks</div>
+        <h3>AI Strategy Sprint</h3>
+        <p>Focused engagement to define product direction, prioritize AI opportunities, and produce a sequenced build plan.</p>
+        <div class="engage-output"><strong>Best for:</strong> Teams with an AI idea needing structured direction<br><strong>Output:</strong> Strategy doc, roadmap, architecture direction</div>
+      </article>
+      <article class="engage-card">
+        <div class="engage-type">Project-Based</div>
+        <h3>AI MVP Build Advisory</h3>
+        <p>Guidance from concept to testable AI product — scope definition, architecture, UX flow, and hands-on build direction.</p>
+        <div class="engage-output"><strong>Best for:</strong> Founders building their first AI product<br><strong>Output:</strong> MVP scope, architecture blueprint, GTM readiness</div>
+      </article>
+      <article class="engage-card">
+        <div class="engage-type">Technical Advisory</div>
+        <h3>Agent / RAG Solution Design</h3>
+        <p>Deep technical advisory for teams designing agentic systems, knowledge assistants, or multi-model AI architectures.</p>
+        <div class="engage-output"><strong>Best for:</strong> Engineering teams designing complex AI systems<br><strong>Output:</strong> Architecture blueprint, implementation playbook</div>
+      </article>
+      <article class="engage-card">
+        <div class="engage-type">Half / Full Day</div>
+        <h3>Enterprise AI Workshop</h3>
+        <p>Structured facilitation to align your team on AI strategy, use case prioritization, and what it takes to move from idea to implementation.</p>
+        <div class="engage-output"><strong>Best for:</strong> Enterprise teams beginning AI adoption<br><strong>Output:</strong> Use case map, prioritization matrix, roadmap</div>
+      </article>
+      <article class="engage-card">
+        <div class="engage-type">Domain Advisory</div>
+        <h3>Telecom / Platform Consulting</h3>
+        <p>Platform strategy, AI use case identification, and architecture guidance for telecom, OSS/BSS, and cloud-native organizations.</p>
+        <div class="engage-output"><strong>Best for:</strong> Telecom and enterprise cloud platform teams<br><strong>Output:</strong> Platform strategy, AI assessment, architecture guidance</div>
+      </article>
+    </div>
+    <div style="padding-bottom:80px"></div>
   </div>
-</section>
+</div><!-- /tab-services -->
 
-<div class="divider"></div>
-
-<!-- ============================================================
-     WORK / PROJECTS
-     ============================================================ -->
-<section id="work" aria-labelledby="workHeading">
+<!-- ══════════════════════════════════════════════
+     WORK TAB
+══════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-work">
   <div class="container">
-    <div class="section-header reveal">
+    <div class="tab-panel-header">
       <div class="section-eyebrow">Work</div>
-      <h2 id="workHeading">Products built<br><em>and shipped.</em></h2>
+      <h2>Products built<br><em>and shipped.</em></h2>
       <p>Production AI products, agentic systems, observability platforms, and automation pipelines — designed and built independently.</p>
     </div>
 
-    <!-- Featured Projects -->
     <div class="featured-projects reveal">
-
       <!-- Virasat -->
       <article class="project-featured">
         <div class="project-info">
-          <div class="project-category">
-            <div class="tag tag--accent">Agentic AI</div>
-            <div class="tag">Fintech</div>
-            <div class="tag">RAG</div>
-          </div>
+          <div class="project-category"><div class="tag tag--accent">Agentic AI</div><div class="tag">Fintech</div><div class="tag">RAG</div></div>
           <h3>Virasat</h3>
           <p class="project-summary">A multi-agent wealth intelligence platform for Indian families. 11 specialist AI agents working in coordination with a semantic cache layer, cost-aware model routing, and a 4-stage evaluation pipeline covering PII detection, prompt injection checks, compliance validation, and factual accuracy.</p>
-          <blockquote class="project-problem">Problem: Wealth data for Indian households is fragmented, high-stakes, and underserved by existing tools. Families need tailored intelligence — not generic financial advice.</blockquote>
+          <blockquote class="project-problem">Wealth data for Indian households is fragmented, high-stakes, and underserved by existing tools. Families need tailored intelligence — not generic financial advice.</blockquote>
           <div class="project-meta">
-            <div>
-              <div class="project-meta-label">Stack</div>
-              <div class="tag-group">
-                <span class="tag">LangGraph</span>
-                <span class="tag">RAG</span>
-                <span class="tag">PostgreSQL</span>
-                <span class="tag">FastAPI</span>
-                <span class="tag">Next.js</span>
-                <span class="tag">Supabase</span>
-              </div>
-            </div>
-            <div>
-              <div class="project-meta-label">Role</div>
-              <span class="role-badge">Builder &amp; Product Lead</span>
-            </div>
+            <div><div class="project-meta-label">Stack</div><div class="tag-group"><span class="tag">LangGraph</span><span class="tag">RAG</span><span class="tag">PostgreSQL</span><span class="tag">FastAPI</span><span class="tag">Next.js</span><span class="tag">Supabase</span></div></div>
+            <div><div class="project-meta-label">Role</div><span class="role-badge">Builder &amp; Product Lead</span></div>
           </div>
           <div class="project-links">
-            <a href="https://github.com/VinitMetange/Virasat" target="_blank" rel="noopener noreferrer" class="project-link">
-              GitHub
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-            </a>
+            <a href="https://virasat.co.in" target="_blank" rel="noopener noreferrer" class="project-link">Live product <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+            <a href="https://github.com/VinitMetange/Virasat" target="_blank" rel="noopener noreferrer" class="project-link">GitHub <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
           </div>
         </div>
-        <div class="project-visual" aria-label="Virasat project screenshot placeholder">
-          <!-- REPLACE: Add assets/projects/virasat-preview.png and use <img src="assets/projects/virasat-preview.png" alt="Virasat dashboard"> -->
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-          <span>Add project screenshot<br>assets/projects/virasat-preview.png</span>
-        </div>
+        <div class="project-visual" aria-label="Virasat screenshot"><img src="assets/projects/Virasat.jpg" alt="Virasat — AI wealth intelligence platform"></div>
       </article>
 
       <!-- Obsrvai -->
       <article class="project-featured">
         <div class="project-info">
-          <div class="project-category">
-            <div class="tag tag--accent">AI Observability</div>
-            <div class="tag">SaaS</div>
-            <div class="tag">SDK</div>
-          </div>
+          <div class="project-category"><div class="tag tag--cyan">AI Observability</div><div class="tag">SaaS</div><div class="tag">SDK</div></div>
           <h3>Obsrvai</h3>
           <p class="project-summary">AI observability and BI platform with an npm SDK to capture token usage, latency, cost, quality, and hallucination signals across 50+ models. Agent session tracing, tool call monitoring, RAG retrieval tracking, and multi-tenant analytics for AI product operations.</p>
-          <blockquote class="project-problem">Problem: AI teams ship models without visibility into cost, quality, or performance degradation. When something goes wrong — or gets expensive — there's no signal until it's too late.</blockquote>
+          <blockquote class="project-problem">AI teams ship models without visibility into cost, quality, or performance degradation. When something goes wrong — or gets expensive — there's no signal until it's too late.</blockquote>
           <div class="project-meta">
-            <div>
-              <div class="project-meta-label">Stack</div>
-              <div class="tag-group">
-                <span class="tag">Node.js</span>
-                <span class="tag">TypeScript</span>
-                <span class="tag">TimescaleDB</span>
-                <span class="tag">Multi-model</span>
-                <span class="tag">SDK</span>
-              </div>
-            </div>
-            <div>
-              <div class="project-meta-label">Role</div>
-              <span class="role-badge">Builder &amp; Product Lead</span>
-            </div>
+            <div><div class="project-meta-label">Stack</div><div class="tag-group"><span class="tag">Node.js</span><span class="tag">TypeScript</span><span class="tag">TimescaleDB</span><span class="tag">Multi-model</span><span class="tag">SDK</span></div></div>
+            <div><div class="project-meta-label">Role</div><span class="role-badge">Builder &amp; Product Lead</span></div>
           </div>
           <div class="project-links">
-            <a href="https://obsrvai.com" target="_blank" rel="noopener noreferrer" class="project-link">
-              Live product
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-            </a>
-            <a href="https://github.com/VinitMetange/obsrvai" target="_blank" rel="noopener noreferrer" class="project-link">
-              GitHub
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-            </a>
+            <a href="https://obsrvai.com" target="_blank" rel="noopener noreferrer" class="project-link">Live product <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+            <a href="https://github.com/VinitMetange/obsrvai" target="_blank" rel="noopener noreferrer" class="project-link">GitHub <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
           </div>
         </div>
-        <div class="project-visual" aria-label="Obsrvai project screenshot placeholder">
-          <!-- REPLACE: Add assets/projects/obsrvai-preview.png and use <img src="assets/projects/obsrvai-preview.png" alt="Obsrvai dashboard"> -->
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-          <span>Add project screenshot<br>assets/projects/obsrvai-preview.png</span>
-        </div>
+        <div class="project-visual" aria-label="Obsrvai screenshot"><img src="assets/projects/Obsrvai.jpg" alt="Obsrvai — AI observability platform"></div>
       </article>
 
       <!-- Agentic AI Guide -->
       <article class="project-featured">
         <div class="project-info">
-          <div class="project-category">
-            <div class="tag tag--accent">Thought Leadership</div>
-            <div class="tag">Educational Product</div>
-          </div>
+          <div class="project-category"><div class="tag tag--accent">Thought Leadership</div><div class="tag">Educational Product</div></div>
           <h3>Agentic AI Guide</h3>
           <p class="project-summary">A complete, shareable reference for building, deploying, and operating AI agent systems. Every concept explained, every architecture trade-off quantified, cost calculators included. Built for practitioners who need a ground-level reference — not marketing content.</p>
-          <blockquote class="project-problem">Problem: Practitioners building real-world AI agents have no consolidated reference that covers architecture, cost, evaluation, and operations in one place.</blockquote>
+          <blockquote class="project-problem">Practitioners building real-world AI agents have no consolidated reference that covers architecture, cost, evaluation, and operations in one place.</blockquote>
           <div class="project-meta">
-            <div>
-              <div class="project-meta-label">Type</div>
-              <div class="tag-group">
-                <span class="tag">AI Agents</span>
-                <span class="tag">Architecture</span>
-                <span class="tag">Cost Analysis</span>
-                <span class="tag">Reference Guide</span>
-              </div>
-            </div>
-            <div>
-              <div class="project-meta-label">Role</div>
-              <span class="role-badge">Author &amp; Product Lead</span>
-            </div>
+            <div><div class="project-meta-label">Type</div><div class="tag-group"><span class="tag">AI Agents</span><span class="tag">Architecture</span><span class="tag">Cost Analysis</span><span class="tag">Reference Guide</span></div></div>
+            <div><div class="project-meta-label">Role</div><span class="role-badge">Author &amp; Product Lead</span></div>
           </div>
           <div class="project-links">
-            <a href="https://vinitmetange.github.io/Agentic_Ai_Guide" target="_blank" rel="noopener noreferrer" class="project-link">
-              View guide
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-            </a>
+            <a href="https://vinitmetange.github.io/Agentic_Ai_Guide" target="_blank" rel="noopener noreferrer" class="project-link">View guide <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
           </div>
         </div>
-        <div class="project-visual" aria-label="Agentic AI Guide screenshot placeholder">
-          <!-- REPLACE: Add assets/projects/agentic-guide-preview.png -->
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-          <span>Add project screenshot<br>assets/projects/agentic-guide-preview.png</span>
-        </div>
+        <div class="project-visual" aria-label="Agentic AI Guide screenshot"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg><span>Add assets/projects/agentic-guide-preview.png</span></div>
       </article>
 
-    </div><!-- /featured-projects -->
-
-    <!-- Secondary projects grid -->
-    <h3 style="font-size:0.875rem; font-weight:500; color:var(--text-3); letter-spacing:0.04em; text-transform:uppercase; margin-bottom:20px;" class="reveal">More Projects</h3>
-    <div class="projects-grid reveal">
-
-      <article class="project-card">
-        <div class="tag-group" style="margin-bottom:12px;">
-          <span class="tag">Multi-agent</span>
-          <span class="tag">FastAPI</span>
+      <!-- The CineVerse Studio -->
+      <article class="project-featured">
+        <div class="project-info">
+          <div class="project-category"><div class="tag tag--cyan">AI Content Studio</div><div class="tag">Video</div><div class="tag">Automation</div></div>
+          <h3>The CineVerse Studio</h3>
+          <p class="project-summary">AI-native content studio for founders, brands, and enterprise teams. Fully automated content factory — from research and scripting to AI video generation and platform publishing. Built on n8n pipelines with HeyGen, Perplexity, and GPT-4o for end-to-end production at scale.</p>
+          <blockquote class="project-problem">Most brands can't maintain consistent, high-quality video content without a full production team. CineVerse collapses the entire pipeline into an AI-automated studio workflow.</blockquote>
+          <div class="project-meta">
+            <div><div class="project-meta-label">Stack</div><div class="tag-group"><span class="tag">n8n</span><span class="tag">HeyGen</span><span class="tag">GPT-4o</span><span class="tag">Perplexity</span><span class="tag">YouTube API</span></div></div>
+            <div><div class="project-meta-label">Role</div><span class="role-badge">Founder &amp; Builder</span></div>
+          </div>
+          <div class="project-links">
+            <a href="https://thecineversestudio.co.in" target="_blank" rel="noopener noreferrer" class="project-link">Live studio <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+          </div>
         </div>
+        <div class="project-visual" aria-label="CineVerse Studio"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path d="M15 10l4.553-2.276A1 1 0 0121 8.723v6.554a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg><span>Add assets/projects/cineverse-preview.png</span></div>
+      </article>
+    </div>
+
+    <h3 style="font-size:.875rem;font-weight:500;color:var(--text-3);letter-spacing:.04em;text-transform:uppercase;margin-bottom:16px" class="reveal">More Projects</h3>
+
+    <div class="work-filter reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="agentic">Agentic AI</button>
+      <button class="filter-btn" data-filter="rag">RAG</button>
+      <button class="filter-btn" data-filter="automation">Automation</button>
+      <button class="filter-btn" data-filter="guide">Guides</button>
+    </div>
+
+    <div class="projects-grid reveal">
+      <article class="project-card" data-cat="agentic">
+        <div class="tag-group"><span class="tag">Multi-agent</span><span class="tag">FastAPI</span></div>
         <h4>AI Insurance Claims Agent</h4>
         <p>Multi-agent pipeline automating intake, fraud detection, document verification, and decision support. 70% reduction in processing time from 5–10 days per claim.</p>
-        <div class="project-links">
-          <a href="https://github.com/VinitMetange/ai-insurance-claims-agent" target="_blank" rel="noopener noreferrer" class="project-link">
-            GitHub <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="width:12px;height:12px"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-          </a>
-        </div>
+        <div class="project-links"><a href="https://github.com/VinitMetange/ai-insurance-claims-agent" target="_blank" rel="noopener noreferrer" class="project-link">GitHub <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:12px;height:12px"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a></div>
       </article>
-
-      <article class="project-card">
-        <div class="tag-group" style="margin-bottom:12px;">
-          <span class="tag">AI</span>
-          <span class="tag">Python</span>
-          <span class="tag">Market Data</span>
-        </div>
+      <article class="project-card" data-cat="agentic">
+        <div class="tag-group"><span class="tag">AI</span><span class="tag">Python</span><span class="tag">Market Data</span></div>
         <h4>AI Trading Agent</h4>
         <p>Multi-signal trading system analyzing 500 stocks across large, mid, and small cap. Technical signals combined with sentiment and news analysis for automated trade execution.</p>
-        <div class="project-links">
-          <a href="https://github.com/VinitMetange/ai-trading-agent" target="_blank" rel="noopener noreferrer" class="project-link">
-            GitHub <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="width:12px;height:12px"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-          </a>
-        </div>
+        <div class="project-links"><a href="https://github.com/VinitMetange/ai-trading-agent" target="_blank" rel="noopener noreferrer" class="project-link">GitHub <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:12px;height:12px"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a></div>
       </article>
-
-      <article class="project-card">
-        <div class="tag-group" style="margin-bottom:12px;">
-          <span class="tag">n8n</span>
-          <span class="tag">HeyGen</span>
-          <span class="tag">Automation</span>
-        </div>
+      <article class="project-card" data-cat="automation">
+        <div class="tag-group"><span class="tag">n8n</span><span class="tag">HeyGen</span><span class="tag">Automation</span></div>
         <h4>n8n AI Content Pipeline</h4>
         <p>Automated content factory: Perplexity research → ChatGPT scripting → HeyGen AI video → YouTube auto-publish. End-to-end with no manual steps.</p>
-        <div class="project-links">
-          <a href="https://github.com/VinitMetange/n8n-content-creation-pipeline" target="_blank" rel="noopener noreferrer" class="project-link">
-            GitHub <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="width:12px;height:12px"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-          </a>
-        </div>
+        <div class="project-links"><a href="https://github.com/VinitMetange/n8n-content-creation-pipeline" target="_blank" rel="noopener noreferrer" class="project-link">GitHub <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:12px;height:12px"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a></div>
       </article>
-
-      <article class="project-card">
-        <div class="tag-group" style="margin-bottom:12px;">
-          <span class="tag">RAG</span>
-          <span class="tag">LangChain</span>
-          <span class="tag">FastAPI</span>
-        </div>
+      <article class="project-card" data-cat="rag">
+        <div class="tag-group"><span class="tag">RAG</span><span class="tag">LangChain</span><span class="tag">FastAPI</span></div>
         <h4>RAG Knowledge Assistant</h4>
-        <p>Enterprise document Q&amp;A that delivers instant, accurate answers from thousands of pages of documentation. 20% reduction in support costs from SME dependency.</p>
-        <div class="project-links">
-          <a href="https://github.com/VinitMetange/rag-knowledge-assistant" target="_blank" rel="noopener noreferrer" class="project-link">
-            GitHub <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="width:12px;height:12px"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-          </a>
-        </div>
+        <p>Enterprise document Q&amp;A delivering instant, accurate answers from thousands of pages. 20% reduction in support costs from SME dependency.</p>
+        <div class="project-links"><a href="https://github.com/VinitMetange/rag-knowledge-assistant" target="_blank" rel="noopener noreferrer" class="project-link">GitHub <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:12px;height:12px"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a></div>
       </article>
-
-      <article class="project-card">
-        <div class="tag-group" style="margin-bottom:12px;">
-          <span class="tag">LangGraph</span>
-          <span class="tag">WhatsApp</span>
-          <span class="tag">OCR</span>
-        </div>
+      <article class="project-card" data-cat="agentic">
+        <div class="tag-group"><span class="tag">LangGraph</span><span class="tag">WhatsApp</span><span class="tag">OCR</span></div>
         <h4>Arthavit — Expense Agent</h4>
         <p>WhatsApp-based expense and event management agent with 18 tools, conversation memory, dynamic prompting, and receipt OCR for collaborative financial tracking.</p>
-        <div class="project-links">
-          <a href="https://github.com/VinitMetange/spendwise-ai-agent" target="_blank" rel="noopener noreferrer" class="project-link">
-            GitHub <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="width:12px;height:12px"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-          </a>
-        </div>
+        <div class="project-links"><a href="https://github.com/VinitMetange/spendwise-ai-agent" target="_blank" rel="noopener noreferrer" class="project-link">GitHub <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:12px;height:12px"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a></div>
       </article>
-
-      <article class="project-card">
-        <div class="tag-group" style="margin-bottom:12px;">
-          <span class="tag">Templates</span>
-          <span class="tag">Frameworks</span>
-        </div>
+      <article class="project-card" data-cat="guide">
+        <div class="tag-group"><span class="tag">Templates</span><span class="tag">Frameworks</span></div>
         <h4>AI Product Blueprint</h4>
-        <p>Open-source templates, PRD frameworks, roadmap structures, and evaluation checklists for AI product teams. Practical tools for product managers building with AI.</p>
-        <div class="project-links">
-          <a href="https://github.com/VinitMetange/ai-product-blueprint" target="_blank" rel="noopener noreferrer" class="project-link">
-            GitHub <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="width:12px;height:12px"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-          </a>
-        </div>
+        <p>Open-source PRD templates, roadmap frameworks, evaluation checklists, and delivery playbooks for AI product teams built from real project experience.</p>
+        <div class="project-links"><a href="https://github.com/VinitMetange/ai-product-blueprint" target="_blank" rel="noopener noreferrer" class="project-link">GitHub <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:12px;height:12px"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a></div>
       </article>
-
-    </div><!-- /projects-grid -->
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ============================================================
-     METRICS / PROOF
-     ============================================================ -->
-<div class="metrics-section" aria-label="Impact metrics">
-  <div class="container">
-    <div class="metrics-grid reveal">
-      <div class="metric-item">
-        <div class="metric-value">18+</div>
-        <div class="metric-label">Years of product &amp; platform leadership</div>
-      </div>
-      <div class="metric-item">
-        <div class="metric-value">40%</div>
-        <div class="metric-label">Revenue growth contribution at Nokia &amp; Netcracker</div>
-      </div>
-      <div class="metric-item">
-        <div class="metric-value">50%</div>
-        <div class="metric-label">Team productivity improvement via AI assistant</div>
-      </div>
-      <div class="metric-item">
-        <div class="metric-value">30%+</div>
-        <div class="metric-label">Support cost reduction through AI automation</div>
-      </div>
-      <div class="metric-item">
-        <div class="metric-value">100M+</div>
-        <div class="metric-label">Subscriber-scale platform exposure</div>
-      </div>
+      <article class="project-card" data-cat="agentic">
+        <div class="tag-group"><span class="tag">Python</span><span class="tag">LangGraph</span><span class="tag">Context Eng.</span></div>
+        <h4>Agentic AI Context Engineering</h4>
+        <p>Production guide for Agentic AI context engineering: 5-layer architecture, compression pipelines, memory tiers &amp; multi-agent handoff protocols. Fixes the #1 cause of agent cost overruns.</p>
+        <div class="project-links"><a href="https://github.com/VinitMetange/agentic-ai-context-engineering" target="_blank" rel="noopener noreferrer" class="project-link">GitHub <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:12px;height:12px"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a></div>
+      </article>
+      <article class="project-card" data-cat="guide">
+        <div class="tag-group"><span class="tag">Resources</span><span class="tag">Agentic AI</span></div>
+        <h4>Agentic AI Resources</h4>
+        <p>Curated collection of essential documents, references, and frameworks for agentic AI development — architecture patterns, evaluation guides, and production checklists.</p>
+        <div class="project-links"><a href="https://github.com/VinitMetange/Agentic_AI_Resources" target="_blank" rel="noopener noreferrer" class="project-link">GitHub <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:12px;height:12px"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a></div>
+      </article>
+      <article class="project-card" data-cat="agentic">
+        <div class="tag-group"><span class="tag">Python</span><span class="tag">LangGraph</span><span class="tag">Claude API</span><span class="tag">Quantitative</span></div>
+        <h4>AlphaScreener</h4>
+        <p>Quantitative stock screener scanning 1,500+ stocks across India (Nifty 500 + Microcap 250) and US (S&amp;P 500 + MidCap 400) via a 7-angle scoring pipeline. Includes an autonomous trading agent with 25+ risk rules and self-improving confidence weights.</p>
+        <div class="project-links"><span class="tag" style="font-size:.75rem;opacity:.65">Private repo</span></div>
+      </article>
+      <article class="project-card" data-cat="agentic">
+        <div class="tag-group"><span class="tag">LangGraph</span><span class="tag">AWS Bedrock</span><span class="tag">WhatsApp</span><span class="tag">Terraform</span></div>
+        <h4>TripOrchestrator</h4>
+        <p>Agentic AI WhatsApp companion for group trip management. Supervisor-led multi-agent system routing to Planner, Expense, Tracker, Music, and Insights agents — with OCR receipt parsing, UPI payment links, and real-time group location tracking.</p>
+        <div class="project-links"><span class="tag" style="font-size:.75rem;opacity:.65">Private repo</span></div>
+      </article>
+      <article class="project-card" data-cat="agentic">
+        <div class="tag-group"><span class="tag">LangGraph</span><span class="tag">AWS Bedrock</span><span class="tag">WhatsApp</span><span class="tag">FastAPI</span></div>
+        <h4>ExpenseWise AI Agent</h4>
+        <p>WhatsApp-based conversational expense manager with multi-agent orchestration. Users chat to log expenses, split bills, and track budgets — with all data stored in their own cloud storage (Google Drive, Dropbox, or OneDrive). No vendor lock-in.</p>
+        <div class="project-links"><span class="tag" style="font-size:.75rem;opacity:.65">Private repo</span></div>
+      </article>
     </div>
-  </div>
-</div>
 
-<!-- ============================================================
-     EXPERIENCE TIMELINE
-     ============================================================ -->
-<section id="experience" aria-labelledby="experienceHeading">
+    <!-- Live GitHub repos -->
+    <div class="github-section-header reveal">
+      <h3>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;color:var(--text-2)" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        Live from GitHub
+      </h3>
+      <a href="https://github.com/VinitMetange" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">View all repos</a>
+    </div>
+    <div id="githubGrid" class="github-grid" aria-live="polite">
+      <div id="githubLoading">Fetching latest repos…</div>
+    </div>
+    <div style="padding-bottom:80px"></div>
+  </div>
+</div><!-- /tab-work -->
+
+<!-- ══════════════════════════════════════════════
+     EXPERIENCE TAB
+══════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-experience">
   <div class="container">
-    <div class="section-header reveal">
+    <div class="tab-panel-header">
       <div class="section-eyebrow">Experience</div>
-      <h2 id="experienceHeading">Enterprise depth<br><em>across two decades.</em></h2>
+      <h2>Enterprise depth<br><em>across two decades.</em></h2>
     </div>
 
     <div class="timeline reveal">
-
       <div class="timeline-item">
         <div class="timeline-left">
           <div class="timeline-company">Netcracker Technology</div>
@@ -671,15 +776,14 @@
         <div class="timeline-content">
           <ul class="timeline-highlights">
             <li class="timeline-highlight">Lead product strategy for <strong>Netcracker Cloud Platform</strong>, supporting operationalization of GenAI solutions for global telecom use cases across 3 squads.</li>
-            <li class="timeline-highlight">Architected <strong>agentic AI solutions</strong> for BSS billing, revenue, and cloud operations — contributing to <strong>40% revenue growth</strong> and 30% operational efficiency improvements across customer engagements.</li>
+            <li class="timeline-highlight">Architected <strong>agentic AI solutions</strong> for BSS billing, revenue, and cloud operations — contributing to <strong>40% revenue growth</strong> and 30% operational efficiency improvements.</li>
             <li class="timeline-highlight">Launched <strong>AI-powered Webex product knowledge assistant</strong> with ~50% productivity improvement. Recognized with Above &amp; Beyond Awards (2024, 2025) and Stellar Success Award.</li>
             <li class="timeline-highlight">Built <strong>AI-driven Jira automation</strong> for support query resolution and duplicate detection — reducing support costs by 30%+.</li>
             <li class="timeline-highlight">Established <strong>SAFe governance</strong> across 3 squads; 100% on-time delivery for 4 consecutive quarters.</li>
           </ul>
-          <div class="timeline-award">&#9733; Above &amp; Beyond Award · Stellar Success Award</div>
+          <div class="timeline-award">★ Above &amp; Beyond Award · Stellar Success Award</div>
         </div>
       </div>
-
       <div class="timeline-item">
         <div class="timeline-left">
           <div class="timeline-company">Nokia</div>
@@ -690,13 +794,12 @@
           <ul class="timeline-highlights">
             <li class="timeline-highlight">Owned product strategy for <strong>Shared Data Layer</strong> — geo-distributed cloud-native platform supporting subscriber, session, and policy data at <strong>100M+ subscriber</strong> scale.</li>
             <li class="timeline-highlight">Delivered <strong>RAG-based product knowledge assistant</strong> with 30% productivity improvement and 20% cost reduction.</li>
-            <li class="timeline-highlight">Expanded platform for <strong>5G core use cases</strong>, contributing to 40% revenue growth. Nokia Leadership Award 2022.</li>
+            <li class="timeline-highlight">Expanded platform for <strong>5G core use cases</strong>, contributing to 40% revenue growth.</li>
             <li class="timeline-highlight">Led <strong>cloud-native transformation</strong> to Kubernetes and OpenShift; 25% reduction in feature time-to-market.</li>
           </ul>
-          <div class="timeline-award">&#9733; Nokia Leadership Award 2022</div>
+          <div class="timeline-award">★ Nokia Leadership Award 2022</div>
         </div>
       </div>
-
       <div class="timeline-item">
         <div class="timeline-left">
           <div class="timeline-company">Nokia</div>
@@ -709,10 +812,9 @@
             <li class="timeline-highlight">Reduced time-to-market by <strong>20%</strong> through prioritization discipline, dependency management, and multi-team coordination.</li>
             <li class="timeline-highlight">Led cloud migration to Kubernetes/OpenShift for top-tier customers with <strong>zero service downtime</strong>.</li>
           </ul>
-          <div class="timeline-award">&#9733; Nokia Empowered Award 2021</div>
+          <div class="timeline-award">★ Nokia Empowered Award 2021</div>
         </div>
       </div>
-
       <div class="timeline-item">
         <div class="timeline-left">
           <div class="timeline-company">Nokia</div>
@@ -726,7 +828,6 @@
           </ul>
         </div>
       </div>
-
       <div class="timeline-item">
         <div class="timeline-left">
           <div class="timeline-company">IBM India Software Labs</div>
@@ -740,7 +841,6 @@
           </ul>
         </div>
       </div>
-
       <div class="timeline-item">
         <div class="timeline-left">
           <div class="timeline-company">Wipro Technologies</div>
@@ -749,331 +849,472 @@
         </div>
         <div class="timeline-content">
           <ul class="timeline-highlights">
-            <li class="timeline-highlight">Supported development and enhancement of <strong>Nortel communication systems</strong>, including ISDN and IP phone software delivery.</li>
+            <li class="timeline-highlight">Supported development of <strong>Nortel communication systems</strong>, including ISDN and IP phone software delivery.</li>
           </ul>
         </div>
       </div>
+    </div>
 
-    </div><!-- /timeline -->
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ============================================================
-     CAPABILITIES
-     ============================================================ -->
-<section aria-labelledby="capabilitiesHeading">
-  <div class="container">
-    <div class="section-header reveal">
+    <div class="section-header reveal" style="margin-top:72px">
       <div class="section-eyebrow">Expertise</div>
-      <h2 id="capabilitiesHeading">Capability clusters,<br><em>not a skill cloud.</em></h2>
+      <h2>Capability clusters,<br><em>not a skill cloud.</em></h2>
     </div>
-
     <div class="capabilities-grid reveal">
-
-      <div class="capability-item">
-        <div class="capability-name">AI Product Strategy</div>
-        <div class="capability-tags">Product vision, discovery, roadmap planning, OKR alignment, GTM, backlog ownership, stakeholder management, Agile, SAFe</div>
-      </div>
-
-      <div class="capability-item">
-        <div class="capability-name">Agentic AI &amp; Multi-Agent Systems</div>
-        <div class="capability-tags">LangGraph, CrewAI, agent orchestration, tool use, memory management, multi-step reasoning, agent evaluation</div>
-      </div>
-
-      <div class="capability-item">
-        <div class="capability-name">RAG &amp; Knowledge Systems</div>
-        <div class="capability-tags">Retrieval architecture, chunking strategies, embedding models, semantic search, ranking, knowledge assistant design, guardrails</div>
-      </div>
-
-      <div class="capability-item">
-        <div class="capability-name">AI Observability &amp; Evals</div>
-        <div class="capability-tags">Token tracking, cost monitoring, latency profiling, quality metrics, hallucination detection, eval pipelines, safety signals</div>
-      </div>
-
-      <div class="capability-item">
-        <div class="capability-name">Automation &amp; Workflow Systems</div>
-        <div class="capability-tags">n8n, LangGraph, API integrations, trigger-based flows, no-code/pro-code hybrid pipelines, content automation</div>
-      </div>
-
-      <div class="capability-item">
-        <div class="capability-name">Cloud Platforms &amp; SaaS</div>
-        <div class="capability-tags">AWS, GCP, Kubernetes, OpenShift, Docker, microservices, cloud-native transformation, SaaS product delivery</div>
-      </div>
-
-      <div class="capability-item">
-        <div class="capability-name">Telecom OSS/BSS &amp; 5G</div>
-        <div class="capability-tags">BSS billing, revenue management, subscriber data management, session data, policy control, 5G core, Netcracker, Nokia SDL</div>
-      </div>
-
-      <div class="capability-item">
-        <div class="capability-name">Data Platforms &amp; AI Infrastructure</div>
-        <div class="capability-tags">PostgreSQL, Redis, Supabase, TimescaleDB, vector databases, message queues, streaming, data pipelines, SQL, Python, FastAPI, TypeScript</div>
-      </div>
-
+      <div class="capability-item"><div class="capability-name">AI Product Strategy</div><div class="capability-tags">Product vision, discovery, roadmap planning, OKR alignment, GTM, backlog ownership, stakeholder management, Agile, SAFe</div></div>
+      <div class="capability-item"><div class="capability-name">Agentic AI &amp; Multi-Agent Systems</div><div class="capability-tags">LangGraph, CrewAI, agent orchestration, tool use, memory management, multi-step reasoning, agent evaluation</div></div>
+      <div class="capability-item"><div class="capability-name">RAG &amp; Knowledge Systems</div><div class="capability-tags">Retrieval architecture, chunking strategies, embedding models, semantic search, ranking, knowledge assistant design, guardrails</div></div>
+      <div class="capability-item"><div class="capability-name">AI Observability &amp; Evals</div><div class="capability-tags">Token tracking, cost monitoring, latency profiling, quality metrics, hallucination detection, eval pipelines, safety signals</div></div>
+      <div class="capability-item"><div class="capability-name">Automation &amp; Workflow Systems</div><div class="capability-tags">n8n, LangGraph, API integrations, trigger-based flows, no-code/pro-code hybrid pipelines, content automation</div></div>
+      <div class="capability-item"><div class="capability-name">Cloud Platforms &amp; SaaS</div><div class="capability-tags">AWS, GCP, Kubernetes, OpenShift, Docker, microservices, cloud-native transformation, SaaS product delivery</div></div>
+      <div class="capability-item"><div class="capability-name">Telecom OSS/BSS &amp; 5G</div><div class="capability-tags">BSS billing, revenue management, subscriber data management, session data, policy control, 5G core, Netcracker, Nokia SDL</div></div>
+      <div class="capability-item"><div class="capability-name">Data Platforms &amp; AI Infrastructure</div><div class="capability-tags">PostgreSQL, Redis, Supabase, TimescaleDB, vector databases, message queues, streaming, FastAPI, TypeScript, Python</div></div>
     </div>
+
+    <!-- Certifications -->
+    <div class="section-header reveal" style="margin-top:72px">
+      <div class="section-eyebrow">Certifications</div>
+      <h2>56+ certifications<br><em>across four domains.</em></h2>
+      <p>Formal credentials across AI &amp; ML, Cloud, Product Management, Telecom, and Agile — from DeepLearning.AI, Coursera, AWS, and more. <a href="https://github.com/VinitMetange/professional-certifications" target="_blank" rel="noopener noreferrer" style="color:var(--accent-text)">Full list on GitHub →</a></p>
+    </div>
+    <div class="capabilities-grid reveal">
+      <div class="capability-item">
+        <div class="capability-name" style="color:var(--cat-pm)">AI &amp; Machine Learning · 20+</div>
+        <div class="capability-tags">Generative AI with LLMs (DeepLearning.AI / Coursera), AI Product Management (Coursera), Building Agentic AI Systems (DeepLearning.AI), LangChain for LLM Development (DeepLearning.AI), RAG, Prompt Engineering, LLMOps</div>
+      </div>
+      <div class="capability-item">
+        <div class="capability-name" style="color:var(--cat-ai)">Cloud &amp; AWS · 10+</div>
+        <div class="capability-tags">AWS Solutions Architect, AWS Cloud Practitioner, GCP Fundamentals, Kubernetes, OpenShift, Docker, Cloud-Native Architecture, DevOps</div>
+      </div>
+      <div class="capability-item">
+        <div class="capability-name" style="color:var(--cat-content)">Product Management · 8+</div>
+        <div class="capability-tags">Product Strategy, Product-Led Growth, UX Design, B2B SaaS PM, Agile Product Ownership, OKR Frameworks, Go-to-Market, Product Analytics</div>
+      </div>
+      <div class="capability-item">
+        <div class="capability-name" style="color:var(--cat-telecom)">Telecom &amp; 5G · 8+</div>
+        <div class="capability-tags">5G Core Fundamentals, OSS/BSS Architecture, Network Slicing, Telecom Cloud, NFV/SDN, BSS Transformation, Nokia and Netcracker platform certifications</div>
+      </div>
+      <div class="capability-item">
+        <div class="capability-name" style="color:var(--cat-consult)">Agile &amp; Project Management · 5+</div>
+        <div class="capability-tags">SAFe Agilist, Scrum Master, Agile Coaching, PI Planning Facilitation, Jira, Confluence, delivery governance</div>
+      </div>
+    </div>
+
+    <!-- Awards -->
+    <div class="section-header reveal" style="margin-top:72px">
+      <div class="section-eyebrow">Awards &amp; Recognition</div>
+      <h2>10+ awards<br><em>across two companies.</em></h2>
+      <p>Consistent recognition for product excellence, innovation, and cross-functional leadership at Netcracker Technology and Nokia. <a href="https://github.com/VinitMetange/awards-and-recognition" target="_blank" rel="noopener noreferrer" style="color:var(--accent-text)">View on GitHub →</a></p>
+    </div>
+    <div class="engage-grid reveal" style="margin-top:0">
+      <div class="engage-card">
+        <div class="engage-type">Netcracker · 2024</div>
+        <h3>Above &amp; Beyond Award</h3>
+        <p>Recognized for exceptional AI product leadership and delivery of GenAI-powered platform solutions for global telecom customers.</p>
+      </div>
+      <div class="engage-card">
+        <div class="engage-type">Netcracker · 2023</div>
+        <h3>Stellar Success Award</h3>
+        <p>2nd recognition for driving 30% cost reduction via AI automation initiatives and cross-functional delivery excellence across 3 squads.</p>
+      </div>
+      <div class="engage-card">
+        <div class="engage-type">Netcracker · 2022</div>
+        <h3>Stellar Success Award</h3>
+        <p>Recognized for leading RAG-based knowledge assistant product from concept to production — 50% productivity improvement across the team.</p>
+      </div>
+      <div class="engage-card">
+        <div class="engage-type">Nokia · 2022</div>
+        <h3>Nokia Leadership Award</h3>
+        <p>Awarded for expanding the Shared Data Layer platform for 5G core use cases, contributing to 40% revenue growth and top-tier customer wins.</p>
+      </div>
+      <div class="engage-card">
+        <div class="engage-type">Nokia · 2021</div>
+        <h3>Nokia Empowered Award</h3>
+        <p>Recognized for leading cloud-native transformation to Kubernetes/OpenShift with zero service downtime across multiple enterprise deployments.</p>
+      </div>
+      <div class="engage-card">
+        <div class="engage-type">Nokia · 2018–2020</div>
+        <h3>Quarterly Excellence Awards</h3>
+        <p>4 consecutive quarterly recognition awards for delivery consistency, team leadership, and feature velocity during R&amp;D Product Owner tenure.</p>
+      </div>
+    </div>
+    <!-- Certifications -->
+    <div class="section-header reveal" style="margin-top:72px">
+      <div class="section-eyebrow">Certifications</div>
+      <h2>56+ certifications<br><em>across AI, cloud &amp; product.</em></h2>
+      <p>Continuous learning across AI/ML, cloud infrastructure, product management, and telecom. <a href="https://www.linkedin.com/in/vinit-metange/details/certifications/" target="_blank" rel="noopener noreferrer" style="color:var(--accent-text)">View all on LinkedIn →</a></p>
+    </div>
+    <div class="engage-grid reveal" style="margin-top:0">
+      <div class="engage-card">
+        <div class="engage-type">Indian School of Business · 2023</div>
+        <h3>ISB Product Management</h3>
+        <p>Executive education in product strategy, go-to-market, and product-led growth from ISB Hyderabad — one of Asia's top business schools.</p>
+      </div>
+      <div class="engage-card">
+        <div class="engage-type">Kellogg School of Management · 2022</div>
+        <h3>Kellogg Executive Education</h3>
+        <p>Product strategy and innovation program from Northwestern's Kellogg School — frameworks for building and scaling technology products at enterprise scale.</p>
+      </div>
+      <div class="engage-card">
+        <div class="engage-type">DeepLearning.AI · 2024</div>
+        <h3>Building Agentic AI Systems</h3>
+        <p>Hands-on certification covering multi-agent architectures, tool use, memory systems, and production patterns for autonomous AI workflows.</p>
+      </div>
+      <div class="engage-card">
+        <div class="engage-type">Coursera / DeepLearning.AI · 2024</div>
+        <h3>Generative AI with Large Language Models</h3>
+        <p>LLM fundamentals through production deployment — pre-training, fine-tuning, RLHF, inference optimization, and real-world application design.</p>
+      </div>
+      <div class="engage-card">
+        <div class="engage-type">AWS · 2023</div>
+        <h3>AWS Machine Learning Specialty</h3>
+        <p>Advanced certification covering ML on AWS — SageMaker, model deployment, MLOps pipelines, and integration with Bedrock for production AI systems.</p>
+      </div>
+      <div class="engage-card">
+        <div class="engage-type">AWS · 2022</div>
+        <h3>AWS Certified Solutions Architect</h3>
+        <p>Architectural best practices for designing distributed systems on AWS — scalability, reliability, cost optimization, and security for cloud-native platforms.</p>
+      </div>
+    </div>
+
+    <div style="padding-bottom:80px"></div>
   </div>
-</section>
+</div><!-- /tab-experience -->
 
-<div class="divider"></div>
-
-<!-- ============================================================
-     ENGAGEMENT MODELS
-     ============================================================ -->
-<section aria-labelledby="engageHeading">
+<!-- ══════════════════════════════════════════════
+     CONTENT TAB
+══════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-content">
   <div class="container">
-    <div class="section-header reveal">
-      <div class="section-eyebrow">How to Engage</div>
-      <h2 id="engageHeading">Six ways<br><em>to work together.</em></h2>
-      <p>From a focused strategy sprint to ongoing fractional PM support — structured to match your stage, scope, and urgency.</p>
+    <div class="tab-panel-header">
+      <div class="section-eyebrow">Content</div>
+      <h2>Thinking out loud<br><em>in public.</em></h2>
+      <p>Reference guides, articles, and videos for practitioners building with AI — grounded analysis with trade-offs and tools, not abstract theory.</p>
     </div>
 
-    <div class="engage-grid reveal">
-
-      <article class="engage-card">
-        <div class="engage-type">Ongoing</div>
-        <h3>Fractional AI PM</h3>
-        <p>Part-time embedded product leadership for AI teams that need roadmap ownership and delivery rhythm without a full-time hire.</p>
-        <div class="engage-output">
-          <strong>Best for:</strong> Startups and scaleups building AI products<br>
-          <strong>Output:</strong> Roadmap, backlog, PRDs, delivery alignment
-        </div>
-      </article>
-
-      <article class="engage-card">
-        <div class="engage-type">2–4 Weeks</div>
-        <h3>AI Strategy Sprint</h3>
-        <p>Focused engagement to define product direction, prioritize AI opportunities, and produce a sequenced build plan with clear rationale.</p>
-        <div class="engage-output">
-          <strong>Best for:</strong> Teams with an AI idea needing structured direction<br>
-          <strong>Output:</strong> Strategy doc, prioritized roadmap, architecture direction
-        </div>
-      </article>
-
-      <article class="engage-card">
-        <div class="engage-type">Project-Based</div>
-        <h3>AI MVP Build Advisory</h3>
-        <p>Guidance from concept to testable AI product — scope definition, architecture, UX flow, and hands-on build direction for your first AI product.</p>
-        <div class="engage-output">
-          <strong>Best for:</strong> Founders &amp; product teams building their first AI product<br>
-          <strong>Output:</strong> MVP scope, architecture blueprint, GTM readiness
-        </div>
-      </article>
-
-      <article class="engage-card">
-        <div class="engage-type">Technical Advisory</div>
-        <h3>Agent / RAG Solution Design</h3>
-        <p>Deep technical advisory for teams designing agentic systems, knowledge assistants, or multi-model AI architectures that need to work in production.</p>
-        <div class="engage-output">
-          <strong>Best for:</strong> Engineering teams designing complex AI systems<br>
-          <strong>Output:</strong> Architecture blueprint, implementation playbook, eval framework
-        </div>
-      </article>
-
-      <article class="engage-card">
-        <div class="engage-type">Half-Day / Full-Day</div>
-        <h3>Enterprise AI Workshop</h3>
-        <p>Structured facilitation to align your team on AI strategy, use case prioritization, and what it actually takes to move from idea to implementation.</p>
-        <div class="engage-output">
-          <strong>Best for:</strong> Enterprise teams beginning AI adoption<br>
-          <strong>Output:</strong> Use case map, prioritization matrix, implementation roadmap
-        </div>
-      </article>
-
-      <article class="engage-card">
-        <div class="engage-type">Domain Advisory</div>
-        <h3>Telecom / Platform Consulting</h3>
-        <p>Platform strategy, AI use case identification, and architecture guidance for telecom, OSS/BSS, and cloud-native platform organizations.</p>
-        <div class="engage-output">
-          <strong>Best for:</strong> Telecom and enterprise cloud platform organizations<br>
-          <strong>Output:</strong> Platform strategy, AI assessment, architecture guidance
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ============================================================
-     THOUGHT LEADERSHIP / WRITING
-     ============================================================ -->
-<section id="writing" aria-labelledby="writingHeading">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-eyebrow">Writing &amp; Guides</div>
-      <h2 id="writingHeading">Thinking out loud<br><em>in public.</em></h2>
-      <p>Reference guides, frameworks, and articles for practitioners building with AI — not abstract theory, but grounded analysis with trade-offs and tools.</p>
+    <div class="subtab-bar" role="tablist" aria-label="Content categories">
+      <button class="subtab active" role="tab" data-target="subtab-articles" aria-selected="true">Articles</button>
+      <button class="subtab"        role="tab" data-target="subtab-vlogs"    aria-selected="false">Vlogs</button>
+      <button class="subtab"        role="tab" data-target="subtab-guides"   aria-selected="false">Guides</button>
+      <button class="subtab"        role="tab" data-target="subtab-talks"    aria-selected="false">Talks &amp; Webinars</button>
     </div>
 
-    <div class="writing-grid reveal">
-
-      <a href="https://vinitmetange.github.io/Agentic_Ai_Guide" target="_blank" rel="noopener noreferrer" class="writing-card" aria-label="Agentic AI Guide — opens in new tab">
-        <div class="writing-card-type">Reference Guide</div>
-        <h3>Agentic AI Guide</h3>
-        <p>The complete practitioner's reference for building, deploying, and operating AI agent systems. Architecture patterns, cost calculators, evaluation frameworks, and orchestration trade-offs — all in one place.</p>
-        <div class="btn btn-ghost">
-          Read guide
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:16px;height:16px" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </div>
-      </a>
-
-      <a href="https://github.com/VinitMetange/ai-product-blueprint" target="_blank" rel="noopener noreferrer" class="writing-card" aria-label="AI Product Blueprint — opens in new tab">
-        <div class="writing-card-type">Templates &amp; Frameworks</div>
-        <h3>AI Product Blueprint</h3>
-        <p>Open-source PRD templates, product roadmap frameworks, evaluation checklists, and delivery playbooks for AI product teams. Built from real project experience, not theoretical best practices.</p>
-        <div class="btn btn-ghost">
-          View on GitHub
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:16px;height:16px" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </div>
-      </a>
-
-      <a href="https://linkedin.com/in/vinitmetange" target="_blank" rel="noopener noreferrer" class="writing-card" aria-label="LinkedIn articles — opens in new tab">
-        <div class="writing-card-type">LinkedIn Articles</div>
-        <!-- REPLACE: Update this title/description as you publish specific articles -->
-        <h3>AI Product Strategy &amp; Insights</h3>
-        <p>Ongoing writing on AI product strategy, agentic system design, token economics, observability, and enterprise AI adoption — grounded in real project experience across Nokia, Netcracker, and independent builds.</p>
-        <div class="btn btn-ghost">
-          Read on LinkedIn
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:16px;height:16px" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </div>
-      </a>
-
-      <a href="https://github.com/VinitMetange/linkedin-articles-and-insights" target="_blank" rel="noopener noreferrer" class="writing-card" aria-label="Token Intelligence Guide — opens in new tab">
-        <!-- REPLACE: Update href to the Token Intelligence Guide URL when published -->
-        <div class="writing-card-type">Reference Guide</div>
-        <h3>Token Intelligence Guide</h3>
-        <p>A ground-level framework for understanding AI token economics, model cost structures, prompt optimization strategies, and cost-aware model routing for production AI systems.</p>
-        <div class="btn btn-ghost">
-          Coming soon
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="width:16px;height:16px" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ============================================================
-     CONTACT
-     ============================================================ -->
-<section id="contact" class="contact-section" aria-labelledby="contactHeading">
-  <div class="container">
-    <div class="contact-grid">
-
-      <div class="contact-left reveal">
-        <div class="section-eyebrow">Contact</div>
-        <h2 id="contactHeading">Let's build something<br><em>that works.</em></h2>
-        <p>Whether you're designing your first AI product, scaling an existing system, or figuring out what your enterprise AI strategy should actually look like — happy to have a direct conversation.</p>
-
-        <div class="contact-details">
-          <!-- REPLACE: Update email address if different -->
-          <div class="contact-detail">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-            <a href="mailto:vinit.metange30@gmail.com">vinit.metange30@gmail.com</a>
+    <!-- Articles -->
+    <div class="subtab-panel active" id="subtab-articles" role="tabpanel">
+      <p style="margin-bottom:28px;font-size:.9375rem;color:var(--text-3)">Published on LinkedIn. <a href="https://github.com/VinitMetange/linkedin-articles-and-insights" target="_blank" rel="noopener noreferrer" style="color:var(--accent-text)">View full archive on GitHub →</a></p>
+      <div class="content-grid reveal">
+        <a href="https://www.linkedin.com/in/vinit-metange/" target="_blank" rel="noopener noreferrer" class="content-card">
+          <div class="content-card-body">
+            <div class="content-card-type">Agentic AI</div>
+            <h3>Context Engineering for Agentic AI Systems</h3>
+            <p>Why context is the #1 bottleneck in production agents — and the 5-layer architecture that fixes token waste, prompt injection, and hallucination from stale context.</p>
           </div>
-          <div class="contact-detail">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-            Bengaluru, Karnataka, India
+          <div class="content-card-footer"><span class="tag">LinkedIn</span><span class="btn btn-ghost">Read →</span></div>
+        </a>
+        <a href="https://www.linkedin.com/in/vinit-metange/" target="_blank" rel="noopener noreferrer" class="content-card">
+          <div class="content-card-body">
+            <div class="content-card-type">Agentic AI</div>
+            <h3>Building Multi-Agent Workflows with LangGraph</h3>
+            <p>Practical guide to designing multi-agent systems using LangGraph — orchestration patterns, tool design, state management, and inter-agent communication.</p>
           </div>
-        </div>
+          <div class="content-card-footer"><span class="tag">LinkedIn</span><span class="btn btn-ghost">Read →</span></div>
+        </a>
+        <a href="https://www.linkedin.com/in/vinit-metange/" target="_blank" rel="noopener noreferrer" class="content-card">
+          <div class="content-card-body">
+            <div class="content-card-type">RAG &amp; LLMs</div>
+            <h3>RAG vs Fine-tuning: When to Use Each</h3>
+            <p>Decision framework for choosing between RAG and fine-tuning based on knowledge freshness, cost, latency, and task type — with production trade-off analysis.</p>
+          </div>
+          <div class="content-card-footer"><span class="tag">LinkedIn</span><span class="btn btn-ghost">Read →</span></div>
+        </a>
+        <a href="https://www.linkedin.com/in/vinit-metange/" target="_blank" rel="noopener noreferrer" class="content-card">
+          <div class="content-card-body">
+            <div class="content-card-type">AI Observability</div>
+            <h3>LLM Evaluation Frameworks for Production</h3>
+            <p>How to build eval pipelines that catch hallucination, prompt injection, and quality regressions before they reach users — covering metrics, tooling, and test coverage.</p>
+          </div>
+          <div class="content-card-footer"><span class="tag">LinkedIn</span><span class="btn btn-ghost">Read →</span></div>
+        </a>
+        <a href="https://www.linkedin.com/in/vinit-metange/" target="_blank" rel="noopener noreferrer" class="content-card">
+          <div class="content-card-body">
+            <div class="content-card-type">AI Strategy</div>
+            <h3>Agentic AI: The Next Wave of Enterprise AI</h3>
+            <p>From chatbots to autonomous agents — what the shift to agentic AI means for enterprise product strategy, build priorities, and the skills teams need to compete.</p>
+          </div>
+          <div class="content-card-footer"><span class="tag">LinkedIn</span><span class="btn btn-ghost">Read →</span></div>
+        </a>
+        <a href="https://www.linkedin.com/in/vinit-metange/" target="_blank" rel="noopener noreferrer" class="content-card">
+          <div class="content-card-body">
+            <div class="content-card-type">AI Product Management</div>
+            <h3>AI Product Strategy &amp; Insights</h3>
+            <p>Ongoing writing on AI product strategy, token economics, observability, and enterprise AI adoption — grounded in real Nokia, Netcracker, and independent build experience.</p>
+          </div>
+          <div class="content-card-footer"><span class="tag">LinkedIn</span><span class="btn btn-ghost">Read →</span></div>
+        </a>
+      </div>
+    </div>
 
-        <div class="contact-social">
-          <a href="https://linkedin.com/in/vinitmetange" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn profile">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            LinkedIn
-          </a>
-          <a href="https://github.com/VinitMetange" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub profile">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-            GitHub
-          </a>
+    <!-- Vlogs -->
+    <div class="subtab-panel" id="subtab-vlogs" role="tabpanel">
+      <div class="vlog-grid reveal">
+        <article class="vlog-card">
+          <div class="vlog-thumb">
+            <img src="https://img.youtube.com/vi/1WcKcvAsGxs/hqdefault.jpg" alt="Build AI Products from Idea to Deployment" loading="lazy">
+            <a href="https://www.youtube.com/watch?v=1WcKcvAsGxs" target="_blank" rel="noopener noreferrer" class="vlog-play-btn" aria-label="Watch on YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
+          </div>
+          <div class="vlog-info">
+            <div class="vlog-platform">YouTube · Live Webinar</div>
+            <h3>Build AI Products from Idea to Deployment</h3>
+            <p>Full product lifecycle for AI products — from ideation and architecture to deployment and evaluation in production. Covers agentic systems, RAG, and launch strategies.</p>
+          </div>
+        </article>
+        <article class="vlog-card">
+          <div class="vlog-thumb">
+            <img src="https://img.youtube.com/vi/psQhJFksyNw/hqdefault.jpg" alt="Nokia Core TV series #18: Cloud-Native SDL for 5G Core" loading="lazy">
+            <a href="https://www.youtube.com/watch?v=psQhJFksyNw" target="_blank" rel="noopener noreferrer" class="vlog-play-btn" aria-label="Watch on YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
+          </div>
+          <div class="vlog-info">
+            <div class="vlog-platform">YouTube · Nokia · Technical Talk</div>
+            <h3>Nokia Core TV: Cloud-Native SDL for 5G Core</h3>
+            <p>Deep-dive into Nokia's Shared Data Layer for 5G Core — cloud-native architecture, scalability patterns, and the platform strategy behind modern telecom infrastructure.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Guides -->
+    <div class="subtab-panel" id="subtab-guides" role="tabpanel">
+      <p style="margin-bottom:28px;font-size:.9375rem;color:var(--text-3)">8 published field guides on GitHub Pages — free to read and share.</p>
+      <div class="content-grid reveal">
+        <a href="https://vinitmetange.github.io/Agentic_Ai_Guide" target="_blank" rel="noopener noreferrer" class="content-card">
+          <div class="content-card-body">
+            <div class="content-card-type">Agentic AI</div>
+            <h3>Agentic AI Field Guide</h3>
+            <p>Complete practitioner's reference for building production AI agent systems. 24 topics, cost calculators, launch checklists, and metrics reference. Architecture patterns and orchestration trade-offs.</p>
+          </div>
+          <div class="content-card-footer"><span class="tag tag--accent">Live</span><span class="btn btn-ghost">Read →</span></div>
+        </a>
+        <a href="https://vinitmetange.github.io/token-intelligence-guide" target="_blank" rel="noopener noreferrer" class="content-card">
+          <div class="content-card-body">
+            <div class="content-card-type">Token Economics</div>
+            <h3>Token Intelligence Guide</h3>
+            <p>Complete reference for understanding, measuring, and optimising AI token usage. From fundamentals to advanced agentic architectures — cost-aware model routing and prompt optimization.</p>
+          </div>
+          <div class="content-card-footer"><span class="tag tag--accent">Live</span><span class="btn btn-ghost">Read →</span></div>
+        </a>
+        <a href="https://vinitmetange.github.io/The_AI_Production_Readiness_Guide" target="_blank" rel="noopener noreferrer" class="content-card">
+          <div class="content-card-body">
+            <div class="content-card-type">Production AI</div>
+            <h3>AI Production Readiness Guide</h3>
+            <p>Nine disciplines that determine whether an AI system survives contact with production: cost governance, observability, eval pipelines, safety, agentic architecture, RAG, LLMOps, product metrics, and workflow governance.</p>
+          </div>
+          <div class="content-card-footer"><span class="tag tag--accent">Live</span><span class="btn btn-ghost">Read →</span></div>
+        </a>
+        <a href="https://vinitmetange.github.io/Agentic_Optimization_Strategies_Guide" target="_blank" rel="noopener noreferrer" class="content-card">
+          <div class="content-card-body">
+            <div class="content-card-type">Optimization</div>
+            <h3>Agentic Optimization Strategies Guide</h3>
+            <p>Strategies to reduce tokens, cost, and latency in LLM-powered agentic solutions. Practical techniques for production systems where performance and cost are both non-negotiable.</p>
+          </div>
+          <div class="content-card-footer"><span class="tag tag--accent">Live</span><span class="btn btn-ghost">Read →</span></div>
+        </a>
+        <a href="https://vinitmetange.github.io/The_AI_PM_Field_Guide" target="_blank" rel="noopener noreferrer" class="content-card">
+          <div class="content-card-body">
+            <div class="content-card-type">AI Product Management</div>
+            <h3>The AI PM Field Guide</h3>
+            <p>Every skill, framework, template, and tool an AI Product Manager needs — from strategy to shipping. Built for PMs building AI-native products who need a ground-level reference.</p>
+          </div>
+          <div class="content-card-footer"><span class="tag tag--accent">Live</span><span class="btn btn-ghost">Read →</span></div>
+        </a>
+        <a href="https://vinitmetange.github.io/Product-Management-Full_Guide" target="_blank" rel="noopener noreferrer" class="content-card">
+          <div class="content-card-body">
+            <div class="content-card-type">Product Management</div>
+            <h3>Product Management Full Guide</h3>
+            <p>From zero to senior PM — every concept, framework, tool, and mental model you need to build great products. Covers discovery, strategy, execution, metrics, and leadership.</p>
+          </div>
+          <div class="content-card-footer"><span class="tag tag--accent">Live</span><span class="btn btn-ghost">Read →</span></div>
+        </a>
+        <a href="https://vinitmetange.github.io/Telecom_5G_OSS_BSS_Field_Guide" target="_blank" rel="noopener noreferrer" class="content-card">
+          <div class="content-card-body">
+            <div class="content-card-type">Telecom</div>
+            <h3>Telecom 5G / OSS BSS Field Guide</h3>
+            <p>Complete reference for OSS, BSS, 5G Core architecture, network functions, AI/ML applications, and agentic AI in telecommunications. Covers Nokia SDL, Netcracker BSS, and cloud-native telecom.</p>
+          </div>
+          <div class="content-card-footer"><span class="tag tag--accent">Live</span><span class="btn btn-ghost">Read →</span></div>
+        </a>
+        <a href="https://vinitmetange.github.io/The_Cloud_Platforms_Field_Guide" target="_blank" rel="noopener noreferrer" class="content-card">
+          <div class="content-card-body">
+            <div class="content-card-type">Cloud</div>
+            <h3>Cloud Platforms Field Guide</h3>
+            <p>Complete reference for understanding, designing, and operating cloud infrastructure across AWS, Azure, and GCP. Every service explained, every trade-off quantified for architects and PMs.</p>
+          </div>
+          <div class="content-card-footer"><span class="tag tag--accent">Live</span><span class="btn btn-ghost">Read →</span></div>
+        </a>
+      </div>
+    </div>
+    <!-- Talks & Webinars -->
+    <div class="subtab-panel" id="subtab-talks" role="tabpanel">
+      <p style="margin-bottom:28px;font-size:.9375rem;color:var(--text-3)">15+ conference presentations, webinars, and internal talks. <a href="https://github.com/VinitMetange/presentations-and-talks" target="_blank" rel="noopener noreferrer" style="color:var(--accent-text)">Full archive on GitHub →</a></p>
+      <div class="content-grid reveal">
+        <div class="content-card">
+          <div class="content-card-body">
+            <div class="content-card-type">AI &amp; Agentic AI · 2024</div>
+            <h3>Agentic AI: Building Autonomous Product Systems</h3>
+            <p>Netcracker Internal Tech Summit. Covered LLM agents, tool use, multi-agent orchestration, and LangGraph — presented to engineering and product leadership across global teams.</p>
+          </div>
+          <div class="content-card-footer"><span class="tag">Internal Summit</span></div>
+        </div>
+        <div class="content-card">
+          <div class="content-card-body">
+            <div class="content-card-type">RAG &amp; Knowledge Systems · 2024</div>
+            <h3>RAG Architecture for Enterprise Knowledge Management</h3>
+            <p>Product team webinar covering RAG pipelines, vector databases, chunking strategies, and evaluation methods — based on real implementation at Nokia and Netcracker.</p>
+          </div>
+          <div class="content-card-footer"><span class="tag">Webinar</span></div>
+        </div>
+        <div class="content-card">
+          <div class="content-card-body">
+            <div class="content-card-type">LLMOps · 2024</div>
+            <h3>From Prompt Engineering to Production AI</h3>
+            <p>AI PM Roundtable session covering prompt engineering best practices, eval design, observability setup, and LLMOps patterns for teams moving models from prototype to production.</p>
+          </div>
+          <div class="content-card-footer"><span class="tag">Roundtable</span></div>
+        </div>
+        <div class="content-card">
+          <div class="content-card-body">
+            <div class="content-card-type">Product Management · 2023</div>
+            <h3>AI Product Strategy for Enterprise Teams</h3>
+            <p>Structured session on identifying AI opportunities, prioritizing use cases, and building a sequenced AI product roadmap that aligns with commercial reality and delivery capacity.</p>
+          </div>
+          <div class="content-card-footer"><span class="tag">Workshop</span></div>
+        </div>
+        <div class="content-card">
+          <div class="content-card-body">
+            <div class="content-card-type">Cloud &amp; Telecom · 2022</div>
+            <h3>Cloud-Native Transformation in Telecom Platforms</h3>
+            <p>Webinar on migrating BSS/OSS platforms to Kubernetes and OpenShift — zero-downtime migration patterns, SRE practices, and lessons from Nokia SDL deployments at 100M+ subscriber scale.</p>
+          </div>
+          <div class="content-card-footer"><span class="tag">Webinar</span></div>
+        </div>
+        <div class="content-card">
+          <div class="content-card-body">
+            <div class="content-card-type">AI Product Management · 2024</div>
+            <h3>Building AI Products That Actually Ship</h3>
+            <p>Talk on the product management discipline needed to ship AI products in production — covering scoping, discovery, evaluation design, and the delivery patterns that prevent AI project failure.</p>
+          </div>
+          <div class="content-card-footer"><span class="tag">Presentation</span></div>
         </div>
       </div>
+    </div>
 
-      <div class="contact-form-wrap reveal">
-        <form class="contact-form" id="contactForm" novalidate aria-label="Contact form">
-          <div id="formFields">
-            <div class="form-group">
-              <label class="form-label" for="contactName">Name</label>
-              <input class="form-input" type="text" id="contactName" name="name" placeholder="Your name" required autocomplete="name" />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="contactEmail">Email</label>
-              <input class="form-input" type="email" id="contactEmail" name="email" placeholder="your@email.com" required autocomplete="email" />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="contactType">How can I help?</label>
-              <select class="form-select" id="contactType" name="type">
-                <option value="">Select an engagement type</option>
-                <option>Fractional AI PM</option>
-                <option>AI Strategy Sprint</option>
-                <option>AI MVP Build Advisory</option>
-                <option>Agent / RAG Solution Design</option>
-                <option>Enterprise AI Workshop</option>
-                <option>Telecom / Platform Consulting</option>
-                <option>CineVerse Studio — Video / Content</option>
-                <option>General enquiry</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="contactMessage">Message</label>
-              <textarea class="form-textarea" id="contactMessage" name="message" placeholder="Tell me about your project, problem, or question — a few sentences is enough to start." required></textarea>
-            </div>
-
-            <button type="submit" class="form-submit" id="formSubmit">Send Message</button>
-          </div>
-
-          <div class="form-success" id="formSuccess" role="alert" aria-live="polite">
-            <div class="form-success-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width:24px;height:24px"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </div>
-            <h3>Message sent.</h3>
-            <p>Thank you for reaching out. I'll respond within 1–2 business days.</p>
-            <!-- NOTE: Wire up a real form backend (Formspree, Netlify Forms, EmailJS) before going live. Replace the JS handler in script.js. -->
-          </div>
+    <!-- Newsletter CTA -->
+    <div class="newsletter-cta reveal" style="margin-top:72px">
+      <div class="newsletter-cta-inner">
+        <div>
+          <div class="section-eyebrow">Newsletter</div>
+          <h3>AI Product Intelligence — in your inbox</h3>
+          <p>Frameworks, architecture patterns, and lessons from building production AI systems. All the guides, articles, and field notes — delivered weekly on Substack.</p>
+        </div>
+        <!-- REPLACE: change YOUR_PUBLICATION to your Substack subdomain -->
+        <form class="newsletter-form" action="https://imvinit.substack.com/api/v1/free" method="post" target="_blank" novalidate>
+          <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address" />
+          <button type="submit" class="btn btn-primary">Subscribe Free</button>
         </form>
       </div>
-
     </div>
+
+    <div style="padding-bottom:80px"></div>
   </div>
-</section>
+</div><!-- /tab-content -->
+
+<!-- ══════════════════════════════════════════════
+     CONTACT TAB
+══════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-contact">
+  <div class="container">
+    <div class="tab-panel-header">
+      <div class="section-eyebrow">Contact</div>
+      <h2>Let's build something<br><em>that works.</em></h2>
+    </div>
+    <div class="contact-section" style="padding-top:0">
+      <div class="contact-grid">
+        <div class="contact-left reveal">
+          <div class="contact-profile">
+            <img src="assets/profile/ProfilePic.jpg" alt="Vinit Metange" class="contact-photo" onerror="this.style.display='none'">
+            <div class="contact-qr-wrap">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&color=0d9488&bgcolor=ffffff&data=https://www.linkedin.com/in/vinit-metange/" alt="LinkedIn QR code" class="contact-qr" width="120" height="120">
+              <span class="contact-qr-label">Scan to connect</span>
+            </div>
+          </div>
+          <p>Whether you're designing your first AI product, scaling an existing system, or figuring out what your enterprise AI strategy should actually look like — happy to have a direct conversation.</p>
+          <div class="contact-details">
+            <div class="contact-detail">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <a href="mailto:vinit.metange30@gmail.com">vinit.metange30@gmail.com</a>
+            </div>
+            <div class="contact-detail">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              Bengaluru, Karnataka, India
+            </div>
+          </div>
+          <div class="contact-social">
+            <a href="https://www.linkedin.com/in/vinit-metange/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn profile">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 23.2 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://github.com/VinitMetange" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub profile">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="https://obsrvai.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Obsrvai website">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+              obsrvai.com
+            </a>
+          </div>
+        </div>
+        <div class="contact-form-wrap reveal">
+          <form class="contact-form" id="contactForm" novalidate aria-label="Contact form">
+            <div id="formFields">
+              <div class="form-group"><label class="form-label" for="contactName">Name</label><input class="form-input" type="text" id="contactName" name="name" placeholder="Your name" required autocomplete="name" /></div>
+              <div class="form-group"><label class="form-label" for="contactEmail">Email</label><input class="form-input" type="email" id="contactEmail" name="email" placeholder="your@email.com" required autocomplete="email" /></div>
+              <div class="form-group">
+                <label class="form-label" for="contactType">How can I help?</label>
+                <select class="form-select" id="contactType" name="type">
+                  <option value="">Select an engagement type</option>
+                  <option>Fractional AI PM</option>
+                  <option>AI Strategy Sprint</option>
+                  <option>AI MVP Build Advisory</option>
+                  <option>Agent / RAG Solution Design</option>
+                  <option>Enterprise AI Workshop</option>
+                  <option>Telecom / Platform Consulting</option>
+                  <option>CineVerse Studio — Video / Content</option>
+                  <option>General enquiry</option>
+                </select>
+              </div>
+              <div class="form-group"><label class="form-label" for="contactMessage">Message</label><textarea class="form-textarea" id="contactMessage" name="message" placeholder="Tell me about your project, problem, or question — a few sentences is enough to start." required></textarea></div>
+              <button type="submit" class="btn btn-primary" id="formSubmit" style="width:100%;justify-content:center">Send Message</button>
+            </div>
+            <div id="formSuccess">
+              <div class="form-success-title">Message sent!</div>
+              <div class="form-success-sub">Thanks for reaching out — I'll get back to you within 24 hours.</div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div style="padding-bottom:80px"></div>
+  </div>
+</div><!-- /tab-contact -->
 
 </main>
 
-<!-- ============================================================
-     FOOTER
-     ============================================================ -->
-<footer class="site-footer" aria-label="Site footer">
+<footer class="site-footer">
   <div class="container">
-    <div class="footer-inner">
-      <div class="footer-logo">
-        Vinit Metange
-        <span>AI Product Leader &amp; Agentic AI Builder</span>
-      </div>
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#work">Work</a>
-        <a href="#experience">Experience</a>
-        <a href="#writing">Writing</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-
-    <div class="footer-bottom">
-      <span>&copy; 2025 Vinit Metange. All rights reserved.</span>
-      <div style="display:flex; gap:16px;">
-        <a href="https://linkedin.com/in/vinitmetange" target="_blank" rel="noopener noreferrer" style="color:var(--text-3); transition:color 0.18s ease;" onmouseover="this.style.color='var(--text-1)'" onmouseout="this.style.color='var(--text-3)'">LinkedIn</a>
-        <a href="https://github.com/VinitMetange" target="_blank" rel="noopener noreferrer" style="color:var(--text-3); transition:color 0.18s ease;" onmouseover="this.style.color='var(--text-1)'" onmouseout="this.style.color='var(--text-3)'">GitHub</a>
-        <a href="mailto:vinit.metange30@gmail.com" style="color:var(--text-3); transition:color 0.18s ease;" onmouseover="this.style.color='var(--text-1)'" onmouseout="this.style.color='var(--text-3)'">Email</a>
-      </div>
+    <span class="footer-copy">&copy; 2025 Vinit Metange. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/vinit-metange/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/VinitMetange" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://obsrvai.com" target="_blank" rel="noopener noreferrer">Obsrvai</a>
+      <a href="mailto:vinit.metange30@gmail.com">Email</a>
     </div>
   </div>
 </footer>
