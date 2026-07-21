@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI-RAN Just Went Commercial — AI-Telecom Brief #2</title>
+  <title>AI-RAN Just Went Commercial | AI-Telecom Brief #2</title>
   <meta name="description" content="Nokia shipped the industry's first commercial AI-native RAN platform on July 15. This edition breaks down what separates AI-native from AI-assisted, what 3GPP TS 38.843 actually standardizes, and the O-RAN compatibility question nobody is asking. By Vinit Metange.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -475,7 +475,7 @@
 
     <!-- Header -->
     <header class="article-header">
-      <p class="eyebrow">Deep Dive — AI-Native RAN Architecture</p>
+      <p class="eyebrow">Deep Dive: AI-Native RAN Architecture</p>
       <h1>AI-RAN Just Went Commercial. Here's What the Spec Sheet <em>Doesn't Tell You.</em></h1>
       <div class="article-meta">
         <span class="meta-author">Vinit Metange</span>
@@ -500,7 +500,7 @@
 
       <p>On July 15, 2026, Nokia announced what it calls the industry's first commercial AI-native RAN platform, built on its anyRAN software stack and NVIDIA's Aerial AI-RAN compute platform. Taiwan Mobile is in the deployment pipeline. The headline numbers: <span class="stat">more than 20% spectral efficiency gains</span> available today, 50% targeted by 2027, and more than 100% by 2028.</p>
 
-      <p>The same week, Ericsson confirmed that its own AI in RAN software subscription — which shipped in Q2 2026 across more than 15 deployments worldwide — had delivered <span class="stat">up to 20% higher downlink throughput</span> and <span class="stat">up to 10% better spectral efficiency</span> in commercial trials.</p>
+      <p>The same week, Ericsson confirmed that its own AI in RAN software subscription (which shipped in Q2 2026 across more than 15 deployments worldwide) had delivered <span class="stat">up to 20% higher downlink throughput</span> and <span class="stat">up to 10% better spectral efficiency</span> in commercial trials.</p>
 
       <p>Two major vendors reporting similar headline efficiency gains from products described as entirely different things. That tension is worth unpacking, because the architectural difference between them has real consequences for how you operate, manage, and stay in control of your network's intelligence layer.</p>
     </section>
@@ -510,24 +510,24 @@
       <p class="section-label">Deep Dive</p>
       <h2 id="deepdive-h">AI-Native vs. AI-Assisted: The Architectural Difference That Actually Matters</h2>
 
-      <p>Ericsson's AI in RAN is a software subscription that layers inference models onto conventional DSP-based basebands. Its features — AI-native Scheduler for Link Adaptation, AI-managed Beamforming, AI-powered Macro Positioning, AI-powered Multi-layer Coordination — are inference workloads running in the upper signal processing layers. The baseband hardware underneath is unchanged. This is an AI overlay on a conventional architecture.</p>
+      <p>Ericsson's AI in RAN is a software subscription that layers inference models onto conventional DSP-based basebands. Its features (AI-native Scheduler for Link Adaptation, AI-managed Beamforming, AI-powered Macro Positioning, AI-powered Multi-layer Coordination) are inference workloads running in the upper signal processing layers. The baseband hardware underneath is unchanged. This is an AI overlay on a conventional architecture.</p>
 
       <p>Nokia's anyRAN + NVIDIA Aerial platform is different in a specific technical sense: it offloads physical layer signal processing itself to GPU hardware. Channel estimation, interference mitigation, and massive MIMO precoding functions that traditionally ran on fixed-function ASICs now run on programmable GPU silicon. Nokia offers three deployment paths to cover the installed base:</p>
 
       <div class="callout" style="margin: 28px 0;">
         <p class="callout-label">Three Paths to AI-Native RAN</p>
-        <p><strong>Path 1:</strong> GPU capacity plug-in for existing AirScale baseband deployments — operators don't need to swap hardware to start.<br><br>
+        <p><strong>Path 1:</strong> GPU capacity plug-in for existing AirScale baseband deployments; operators don't need to swap hardware to start.<br><br>
         <strong>Path 2:</strong> Standalone AI-RAN node for greenfield or capacity expansion.<br><br>
         <strong>Path 3:</strong> GPU-powered COTS server options for cloud-native operators already running open baseband stacks.</p>
       </div>
 
-      <p>The architectural consequence of running signal processing on GPUs: when models improve, Nokia ships a software update rather than a hardware replacement. The spectral efficiency roadmap is only credible because the compute substrate is updatable. An ASIC cannot be retrained. A GPU can. This is the actual reason the 100%-by-2028 claim is not implausible — it assumes two or three model generations, not two or three hardware cycles.</p>
+      <p>The architectural consequence of running signal processing on GPUs: when models improve, Nokia ships a software update rather than a hardware replacement. The spectral efficiency roadmap is only credible because the compute substrate is updatable. An ASIC cannot be retrained. A GPU can. This is the actual reason the 100%-by-2028 claim is not implausible: it assumes two or three model generations, not two or three hardware cycles.</p>
 
       <h3>What 3GPP Actually Standardizes Here</h3>
 
       <p>The vendor narrative is ahead of the standards timeline in specific ways worth naming precisely.</p>
 
-      <p>3GPP TS 38.843 (Rel-18, "Study on Artificial Intelligence and Machine Learning for NR Air Interface") defines AI/ML use cases for beam management, CSI feedback compression, and positioning at the air interface. These are study items in Rel-18 — the spec establishes that these use cases are viable and defines evaluation criteria. Normative work, meaning actual protocol-level signaling specifications for AI/ML at the air interface, is the Rel-19 task.</p>
+      <p>3GPP TS 38.843 (Rel-18, "Study on Artificial Intelligence and Machine Learning for NR Air Interface") defines AI/ML use cases for beam management, CSI feedback compression, and positioning at the air interface. These are study items in Rel-18; the spec establishes that these use cases are viable and defines evaluation criteria. Normative work, meaning actual protocol-level signaling specifications for AI/ML at the air interface, is the Rel-19 task.</p>
 
       <div class="spec-block">
         <strong>Key spec reference:</strong> 3GPP TS 38.843 (Rel-18) defines three primary AI/ML use case families for the NR air interface: beam management, CSI feedback compression, and positioning enhancement. 3GPP RAN3 Rel-19 Work Item extends this to AI/ML-assisted Network Slicing, Coverage and Capacity Optimization (CCO), and introduces signaling mechanisms for one-sided AI/ML models at standardized split points between UE and network.
@@ -535,24 +535,24 @@
 
       <p style="margin-top: 22px;">Rel-19's "one-sided AI/ML model" concept matters for deployment: it lets either the network or the device hold the AI model, without requiring coordinated updates on both sides. Lower integration burden on device manufacturers means this class of features actually ships in handsets before the standard expires.</p>
 
-      <p>What is not in Rel-18 or Rel-19: a standard interface for querying, monitoring, or updating AI models running inside a GPU-based baseband. That is left to vendor-specific management planes — which is where the next question becomes critical.</p>
+      <p>What is not in Rel-18 or Rel-19: a standard interface for querying, monitoring, or updating AI models running inside a GPU-based baseband. That is left to vendor-specific management planes, which is where the next question becomes critical.</p>
 
       <h3>The O-RAN Compatibility Question Nobody Is Asking</h3>
 
       <p>Nokia's anyRAN platform is not O-RAN open by default. The relevant O-RAN Alliance interfaces here are: the A1 interface (Non-RT RIC to Near-RT RIC for policy guidance), the E2 interface (Near-RT RIC to RAN nodes for near-real-time control loops), and the O1 interface (management and orchestration).</p>
 
-      <p>If Nokia's GPU-accelerated signal processing functions operate in closed inference loops below the E2 interface, then xApps built to O-RAN WG2 (Near-RT RIC architecture) and WG3 (E2 interface specification) specs cannot reach them. An energy-saving xApp managing cell sleep states, a mobility management xApp adjusting handover parameters — these operate through E2 service models that assume certain RAN functions are visible and controllable at that interface layer.</p>
+      <p>If Nokia's GPU-accelerated signal processing functions operate in closed inference loops below the E2 interface, then xApps built to O-RAN WG2 (Near-RT RIC architecture) and WG3 (E2 interface specification) specs cannot reach them. An energy-saving xApp managing cell sleep states, a mobility management xApp adjusting handover parameters; these operate through E2 service models that assume certain RAN functions are visible and controllable at that interface layer.</p>
 
       <div class="pullquote">
         <p>If the AI in the GPU baseband runs in a closed loop below E2, your xApp investments are managing the RAN from one layer up, without access to the intelligence layer below. That is not AI-native network management. That is two parallel AI loops that do not know about each other.</p>
         <p class="pullquote-source">Vinit Metange, AI-Telecom Brief</p>
       </div>
 
-      <p>Operators who have built their RAN AI strategy around Near-RT RIC deployments and xApp ecosystems — SoftBank, Vodafone, and Deutsche Telekom are among the operators with significant O-RAN commitments — face a real integration question with Nokia's commercial AI-RAN. The July 15 press release does not answer it. Any serious evaluation of this platform should make it the first question in the room.</p>
+      <p>Operators who have built their RAN AI strategy around Near-RT RIC deployments and xApp ecosystems (SoftBank, Vodafone, and Deutsche Telekom are among the operators with significant O-RAN commitments) face a real integration question with Nokia's commercial AI-RAN. The July 15 press release does not answer it. Any serious evaluation of this platform should make it the first question in the room.</p>
 
       <h3>The Energy Efficiency Caveat</h3>
 
-      <p>Both Nokia and Ericsson claim AI-RAN improves energy efficiency. The claim is conditionally true. At high load with dense, heterogeneous traffic — the conditions of benchmark deployments in urban cores — AI-driven resource allocation can outperform over-provisioned ASIC hardware by meaningful margins. At low load, which describes the majority of deployed RAN cells by cell count during off-peak hours, GPU silicon consumes more idle power than traditional DSPs unless sophisticated sleep-state management is active.</p>
+      <p>Both Nokia and Ericsson claim AI-RAN improves energy efficiency. The claim is conditionally true. At high load with dense, heterogeneous traffic (the conditions of benchmark deployments in urban cores), AI-driven resource allocation can outperform over-provisioned ASIC hardware by meaningful margins. At low load, which describes the majority of deployed RAN cells by cell count during off-peak hours, GPU silicon consumes more idle power than traditional DSPs unless sophisticated sleep-state management is active.</p>
 
       <p>The spectral efficiency gains reported by both vendors come from dense urban trial conditions. Operators evaluating AI-RAN for energy or capacity benefits should build site-type segmentation into the business case and ask vendors for benchmark results that match their own traffic profile distribution, not just their best-case deployments.</p>
     </section>
@@ -574,7 +574,7 @@
           <tbody>
             <tr>
               <td><span class="chip">3GPP TS 38.843 (Rel-18)</span></td>
-              <td>Study on AI/ML for NR Air Interface — beam management, CSI compression, and positioning use cases formalized</td>
+              <td>Study on AI/ML for NR Air Interface: beam management, CSI compression, and positioning use cases formalized</td>
               <td>Defines the evaluation framework both Nokia and Ericsson are measuring against; normative signaling comes in Rel-19</td>
             </tr>
             <tr>
@@ -603,7 +603,7 @@
       <h2 id="onetk-h">The 20% Figure Needs a Traffic Profile to Be Meaningful</h2>
 
       <div class="pullquote">
-        <p>The <strong>20% spectral efficiency</strong> gains cited by Nokia and Ericsson apply to dense urban deployments with high interference and heterogeneous traffic mix. Under those conditions, AI-driven beamforming and scheduler optimization genuinely outperform conventional approaches. Under light-load, homogeneous traffic — which describes the majority of deployed RAN cells by cell count — the delta shrinks substantially. This is not a reason to dismiss AI-RAN. It is a reason to build site-type segmentation into any business case, and to treat vendor benchmarks without disclosed traffic profiles as marketing, not engineering evidence.</p>
+        <p>The <strong>20% spectral efficiency</strong> gains cited by Nokia and Ericsson apply to dense urban deployments with high interference and heterogeneous traffic mix. Under those conditions, AI-driven beamforming and scheduler optimization genuinely outperform conventional approaches. Under light-load, homogeneous traffic (which describes the majority of deployed RAN cells by cell count), the delta shrinks substantially. This is not a reason to dismiss AI-RAN. It is a reason to build site-type segmentation into any business case, and to treat vendor benchmarks without disclosed traffic profiles as marketing, not engineering evidence.</p>
       </div>
     </section>
 
@@ -630,7 +630,7 @@
           <li><a href="https://www.ericsson.com/en/news/2026/6/the-ran-gets-smarter-ericsson-puts-ai-where-it-matters" target="_blank" rel="noopener">Ericsson: "The RAN gets smarter: Ericsson puts AI where it matters," June 2026</a></li>
           <li><a href="https://www.3gpp.org/technologies/ai-ml-nr" target="_blank" rel="noopener">3GPP: AI/ML for NR Air Interface technology page (TS 38.843 scope and Rel-18/19 workplan)</a></li>
           <li><a href="https://www.3gpp.org/technologies/ai-ml-ngran" target="_blank" rel="noopener">3GPP: AI/ML for NG-RAN technology page (RAN3 Rel-19 Work Item scope)</a></li>
-          <li><a href="https://blogs.nvidia.com/blog/ai-in-telco-survey-2026/" target="_blank" rel="noopener">NVIDIA: 2026 State of AI in Telecommunications survey — operator investment and deployment trends</a></li>
+          <li><a href="https://blogs.nvidia.com/blog/ai-in-telco-survey-2026/" target="_blank" rel="noopener">NVIDIA: 2026 State of AI in Telecommunications survey: operator investment and deployment trends</a></li>
           <li><a href="https://www.lightreading.com/open-ran/open-ran-enables-faster-integration-of-ai-ran-at-the-edge" target="_blank" rel="noopener">Light Reading: "Open RAN enables faster integration of AI RAN at the edge," 2026</a></li>
         </ol>
       </div>
