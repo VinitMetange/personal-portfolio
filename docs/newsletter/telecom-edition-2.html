@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-RAN Just Went Commercial — AI-Telecom Brief #2</title>
+  <meta name="description" content="Nokia shipped the industry's first commercial AI-native RAN platform on July 15. This edition breaks down what separates AI-native from AI-assisted, what 3GPP TS 38.843 actually standardizes, and the O-RAN compatibility question nobody is asking. By Vinit Metange.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #f7f7fc;
+      --surface:    #ffffff;
+      --bg-muted:   #eeeef8;
+      --border:     #d0d0e8;
+      --text-1:     #0a0a1a;
+      --text-2:     #505078;
+      --text-3:     #8888a8;
+      --accent:     #6d28d9;
+      --accent-lo:  #ede9fe;
+      --cyan:       #0891b2;
+      --cyan-lo:    #cffafe;
+      --amber:      #b45309;
+      --amber-lo:   #fff7ed;
+      --font-display: 'Instrument Serif', Georgia, serif;
+      --font-body:    'Inter', -apple-system, sans-serif;
+      --font-mono:    ui-monospace, 'SF Mono', Consolas, monospace;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text-1);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Nav */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(247,247,252,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-back {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-2);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: color .15s;
+    }
+    .nav-back:hover { color: var(--accent); }
+    .nav-crumb { font-size: 13px; color: var(--border); }
+    .nav-series {
+      font-size: 13px;
+      color: var(--text-2);
+      text-decoration: none;
+    }
+    .nav-series:hover { color: var(--accent); }
+    .nav-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-1);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 280px;
+    }
+
+    /* Masthead */
+    .masthead {
+      background: var(--text-1);
+      padding: 0 24px;
+    }
+    .masthead-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 18px 0;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .masthead-series {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      color: var(--cyan);
+    }
+    .masthead-divider { width: 1px; height: 14px; background: #2a2a3a; }
+    .masthead-edition {
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: #505070;
+      letter-spacing: .04em;
+    }
+    .masthead-date {
+      margin-left: auto;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: #404060;
+    }
+
+    /* Article wrapper */
+    .article {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px 96px;
+    }
+
+    /* Article header */
+    .article-header {
+      padding: 52px 0 40px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 44px;
+    }
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      color: var(--amber);
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4.5vw, 44px);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--text-1);
+      text-wrap: balance;
+      margin-bottom: 22px;
+    }
+    h1 em { font-style: italic; color: var(--accent); }
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+    .meta-author { font-size: 14px; font-weight: 600; color: var(--text-1); }
+    .meta-dot { color: var(--text-3); }
+    .meta-readtime { font-size: 13px; color: var(--text-3); }
+    .spec-tag {
+      font-size: 11px;
+      font-weight: 500;
+      font-family: var(--font-mono);
+      background: var(--bg-muted);
+      border: 1px solid var(--border);
+      color: var(--text-2);
+      padding: 3px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+
+    /* TL;DR */
+    .tldr {
+      background: var(--cyan-lo);
+      border-left: 3px solid var(--cyan);
+      padding: 20px 24px;
+      margin-bottom: 48px;
+      border-radius: 0 6px 6px 0;
+    }
+    .callout-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      margin-bottom: 8px;
+    }
+    .tldr .callout-label { color: var(--cyan); }
+    .tldr p { font-size: 15px; color: var(--text-1); margin: 0; }
+
+    /* Sections */
+    .section { margin-bottom: 56px; }
+    .section + .section {
+      padding-top: 44px;
+      border-top: 1px solid var(--border);
+    }
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      color: var(--text-3);
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 400;
+      line-height: 1.25;
+      color: var(--text-1);
+      text-wrap: balance;
+      margin-bottom: 22px;
+    }
+    h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.3;
+      color: var(--text-1);
+      margin-bottom: 14px;
+    }
+    .article p {
+      max-width: 68ch;
+      margin-bottom: 20px;
+      color: var(--text-1);
+      font-size: 16px;
+    }
+    .article p:last-child { margin-bottom: 0; }
+
+    /* Stats */
+    .stat { font-weight: 600; font-variant-numeric: tabular-nums; color: var(--cyan); }
+    .stat-warn { font-weight: 600; font-variant-numeric: tabular-nums; color: var(--amber); }
+
+    /* Callout box */
+    .callout {
+      background: var(--amber-lo);
+      border-left: 3px solid var(--amber);
+      padding: 18px 22px;
+      border-radius: 0 6px 6px 0;
+      margin: 28px 0;
+    }
+    .callout .callout-label { color: var(--amber); }
+    .callout p { font-size: 15px; color: var(--text-1); margin: 0; max-width: none; }
+
+    /* Spec block */
+    .spec-block {
+      background: var(--bg-muted);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 16px 20px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-2);
+      margin: 22px 0;
+      margin: 0;
+      max-width: none;
+    }
+    .spec-block strong { color: var(--text-1); font-weight: 600; }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-top: 8px;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    thead th {
+      background: var(--bg-muted);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      color: var(--text-2);
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    tbody td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-1);
+      vertical-align: top;
+      line-height: 1.55;
+    }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover td { background: var(--bg-muted); }
+    .chip {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      background: var(--accent-lo);
+      color: var(--accent);
+      padding: 2px 7px;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+    .chip-cyan {
+      background: var(--cyan-lo);
+      color: var(--cyan);
+    }
+
+    /* Pull-quote */
+    .pullquote {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 28px 28px 34px;
+      margin-top: 8px;
+    }
+    .pullquote::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, var(--accent), var(--cyan));
+      border-radius: 8px 0 0 8px;
+    }
+    .pullquote p {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-style: italic;
+      line-height: 1.65;
+      color: var(--text-1);
+      margin: 0;
+      max-width: none;
+    }
+    .pullquote strong { font-style: normal; color: var(--accent); }
+    .pullquote-source {
+      margin-top: 14px;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: var(--text-3);
+    }
+
+    /* Vinit's Take */
+    .take-box {
+      background: var(--text-1);
+      border-radius: 10px;
+      padding: 32px 36px;
+      margin-top: 8px;
+    }
+    .take-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      color: var(--cyan);
+      margin-bottom: 14px;
+    }
+    .take-box p {
+      font-size: 16px;
+      line-height: 1.75;
+      color: #c8d8f0;
+      max-width: none;
+      margin-bottom: 0;
+    }
+
+    /* Sources */
+    .sources {
+      background: var(--bg-muted);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 22px 24px;
+      margin-top: 8px;
+    }
+    .sources ol {
+      list-style: decimal;
+      padding-left: 18px;
+      display: grid;
+      gap: 6px;
+    }
+    .sources li {
+      font-size: 12.5px;
+      font-family: var(--font-mono);
+      color: var(--text-2);
+      line-height: 1.55;
+    }
+    .sources a { color: var(--cyan); text-decoration: none; }
+    .sources a:hover { text-decoration: underline; }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 64px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+    }
+    .footer-bio {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+    .footer-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--cyan));
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 18px;
+      color: white;
+      font-style: italic;
+    }
+    .footer-bio-text p {
+      font-size: 14px;
+      color: var(--text-2);
+      margin-bottom: 6px;
+      max-width: none;
+    }
+    .footer-bio-text a { color: var(--accent); text-decoration: none; font-weight: 500; }
+    .footer-bio-text a:hover { text-decoration: underline; }
+    .footer-nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: var(--text-3);
+    }
+    .footer-nav a { color: var(--text-2); text-decoration: none; }
+    .footer-nav a:hover { color: var(--accent); }
+
+    /* Responsive */
+    @media (max-width: 560px) {
+      .masthead-date { display: none; }
+      .article-meta .spec-tag { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky nav -->
+  <nav class="nav" aria-label="Breadcrumb">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-back">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+          <path d="M7.5 2L3.5 6.5 7.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Home
+      </a>
+      <span class="nav-crumb" aria-hidden="true">/</span>
+      <a href="index.html" class="nav-series">Newsletter</a>
+      <span class="nav-crumb" aria-hidden="true">/</span>
+      <span class="nav-title">AI-RAN Just Went Commercial</span>
+    </div>
+  </nav>
+
+  <!-- Series masthead -->
+  <div class="masthead" role="banner">
+    <div class="masthead-inner">
+      <span class="masthead-series">AI-Telecom Brief</span>
+      <span class="masthead-divider" aria-hidden="true"></span>
+      <span class="masthead-edition">Edition #2</span>
+      <span class="masthead-date">July 2026</span>
+    </div>
+  </div>
+
+  <main class="article">
+
+    <!-- Header -->
+    <header class="article-header">
+      <p class="eyebrow">Deep Dive — AI-Native RAN Architecture</p>
+      <h1>AI-RAN Just Went Commercial. Here's What the Spec Sheet <em>Doesn't Tell You.</em></h1>
+      <div class="article-meta">
+        <span class="meta-author">Vinit Metange</span>
+        <span class="meta-dot">·</span>
+        <span class="meta-readtime">~9 min read</span>
+        <span class="spec-tag">3GPP TS 38.843</span>
+        <span class="spec-tag">O-RAN WG1/WG2/WG3</span>
+        <span class="spec-tag">Nokia anyRAN + NVIDIA Aerial</span>
+      </div>
+    </header>
+
+    <!-- TL;DR -->
+    <div class="tldr" role="note">
+      <p class="callout-label">TL;DR</p>
+      <p>Nokia shipped the industry's first commercial AI-native RAN platform on July 15, 2026, built on GPU silicon that can be retrained as models improve without a hardware swap. This edition breaks down what separates AI-native from AI-assisted, what 3GPP TS 38.843 (Rel-18) actually standardizes, and the O-RAN compatibility question that didn't make Nokia's press release but will define how this plays out in production networks.</p>
+    </div>
+
+    <!-- The Lead -->
+    <section class="section" aria-labelledby="lead-h">
+      <p class="section-label">The Lead</p>
+      <h2 id="lead-h">Nokia's AI-RAN Announcement Is a Real Architecture Shift, Not a Marketing Refresh</h2>
+
+      <p>On July 15, 2026, Nokia announced what it calls the industry's first commercial AI-native RAN platform, built on its anyRAN software stack and NVIDIA's Aerial AI-RAN compute platform. Taiwan Mobile is in the deployment pipeline. The headline numbers: <span class="stat">more than 20% spectral efficiency gains</span> available today, 50% targeted by 2027, and more than 100% by 2028.</p>
+
+      <p>The same week, Ericsson confirmed that its own AI in RAN software subscription — which shipped in Q2 2026 across more than 15 deployments worldwide — had delivered <span class="stat">up to 20% higher downlink throughput</span> and <span class="stat">up to 10% better spectral efficiency</span> in commercial trials.</p>
+
+      <p>Two major vendors reporting similar headline efficiency gains from products described as entirely different things. That tension is worth unpacking, because the architectural difference between them has real consequences for how you operate, manage, and stay in control of your network's intelligence layer.</p>
+    </section>
+
+    <!-- Deep Dive -->
+    <section class="section" aria-labelledby="deepdive-h">
+      <p class="section-label">Deep Dive</p>
+      <h2 id="deepdive-h">AI-Native vs. AI-Assisted: The Architectural Difference That Actually Matters</h2>
+
+      <p>Ericsson's AI in RAN is a software subscription that layers inference models onto conventional DSP-based basebands. Its features — AI-native Scheduler for Link Adaptation, AI-managed Beamforming, AI-powered Macro Positioning, AI-powered Multi-layer Coordination — are inference workloads running in the upper signal processing layers. The baseband hardware underneath is unchanged. This is an AI overlay on a conventional architecture.</p>
+
+      <p>Nokia's anyRAN + NVIDIA Aerial platform is different in a specific technical sense: it offloads physical layer signal processing itself to GPU hardware. Channel estimation, interference mitigation, and massive MIMO precoding functions that traditionally ran on fixed-function ASICs now run on programmable GPU silicon. Nokia offers three deployment paths to cover the installed base:</p>
+
+      <div class="callout" style="margin: 28px 0;">
+        <p class="callout-label">Three Paths to AI-Native RAN</p>
+        <p><strong>Path 1:</strong> GPU capacity plug-in for existing AirScale baseband deployments — operators don't need to swap hardware to start.<br><br>
+        <strong>Path 2:</strong> Standalone AI-RAN node for greenfield or capacity expansion.<br><br>
+        <strong>Path 3:</strong> GPU-powered COTS server options for cloud-native operators already running open baseband stacks.</p>
+      </div>
+
+      <p>The architectural consequence of running signal processing on GPUs: when models improve, Nokia ships a software update rather than a hardware replacement. The spectral efficiency roadmap is only credible because the compute substrate is updatable. An ASIC cannot be retrained. A GPU can. This is the actual reason the 100%-by-2028 claim is not implausible — it assumes two or three model generations, not two or three hardware cycles.</p>
+
+      <h3>What 3GPP Actually Standardizes Here</h3>
+
+      <p>The vendor narrative is ahead of the standards timeline in specific ways worth naming precisely.</p>
+
+      <p>3GPP TS 38.843 (Rel-18, "Study on Artificial Intelligence and Machine Learning for NR Air Interface") defines AI/ML use cases for beam management, CSI feedback compression, and positioning at the air interface. These are study items in Rel-18 — the spec establishes that these use cases are viable and defines evaluation criteria. Normative work, meaning actual protocol-level signaling specifications for AI/ML at the air interface, is the Rel-19 task.</p>
+
+      <div class="spec-block">
+        <strong>Key spec reference:</strong> 3GPP TS 38.843 (Rel-18) defines three primary AI/ML use case families for the NR air interface: beam management, CSI feedback compression, and positioning enhancement. 3GPP RAN3 Rel-19 Work Item extends this to AI/ML-assisted Network Slicing, Coverage and Capacity Optimization (CCO), and introduces signaling mechanisms for one-sided AI/ML models at standardized split points between UE and network.
+      </div>
+
+      <p style="margin-top: 22px;">Rel-19's "one-sided AI/ML model" concept matters for deployment: it lets either the network or the device hold the AI model, without requiring coordinated updates on both sides. Lower integration burden on device manufacturers means this class of features actually ships in handsets before the standard expires.</p>
+
+      <p>What is not in Rel-18 or Rel-19: a standard interface for querying, monitoring, or updating AI models running inside a GPU-based baseband. That is left to vendor-specific management planes — which is where the next question becomes critical.</p>
+
+      <h3>The O-RAN Compatibility Question Nobody Is Asking</h3>
+
+      <p>Nokia's anyRAN platform is not O-RAN open by default. The relevant O-RAN Alliance interfaces here are: the A1 interface (Non-RT RIC to Near-RT RIC for policy guidance), the E2 interface (Near-RT RIC to RAN nodes for near-real-time control loops), and the O1 interface (management and orchestration).</p>
+
+      <p>If Nokia's GPU-accelerated signal processing functions operate in closed inference loops below the E2 interface, then xApps built to O-RAN WG2 (Near-RT RIC architecture) and WG3 (E2 interface specification) specs cannot reach them. An energy-saving xApp managing cell sleep states, a mobility management xApp adjusting handover parameters — these operate through E2 service models that assume certain RAN functions are visible and controllable at that interface layer.</p>
+
+      <div class="pullquote">
+        <p>If the AI in the GPU baseband runs in a closed loop below E2, your xApp investments are managing the RAN from one layer up, without access to the intelligence layer below. That is not AI-native network management. That is two parallel AI loops that do not know about each other.</p>
+        <p class="pullquote-source">Vinit Metange, AI-Telecom Brief</p>
+      </div>
+
+      <p>Operators who have built their RAN AI strategy around Near-RT RIC deployments and xApp ecosystems — SoftBank, Vodafone, and Deutsche Telekom are among the operators with significant O-RAN commitments — face a real integration question with Nokia's commercial AI-RAN. The July 15 press release does not answer it. Any serious evaluation of this platform should make it the first question in the room.</p>
+
+      <h3>The Energy Efficiency Caveat</h3>
+
+      <p>Both Nokia and Ericsson claim AI-RAN improves energy efficiency. The claim is conditionally true. At high load with dense, heterogeneous traffic — the conditions of benchmark deployments in urban cores — AI-driven resource allocation can outperform over-provisioned ASIC hardware by meaningful margins. At low load, which describes the majority of deployed RAN cells by cell count during off-peak hours, GPU silicon consumes more idle power than traditional DSPs unless sophisticated sleep-state management is active.</p>
+
+      <p>The spectral efficiency gains reported by both vendors come from dense urban trial conditions. Operators evaluating AI-RAN for energy or capacity benefits should build site-type segmentation into the business case and ask vendors for benchmark results that match their own traffic profile distribution, not just their best-case deployments.</p>
+    </section>
+
+    <!-- Standards Watch -->
+    <section class="section" aria-labelledby="standards-h">
+      <p class="section-label">Standards Watch</p>
+      <h2 id="standards-h">Where the Specs Are Moving</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Standard</th>
+              <th>Update</th>
+              <th>Why It Matters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="chip">3GPP TS 38.843 (Rel-18)</span></td>
+              <td>Study on AI/ML for NR Air Interface — beam management, CSI compression, and positioning use cases formalized</td>
+              <td>Defines the evaluation framework both Nokia and Ericsson are measuring against; normative signaling comes in Rel-19</td>
+            </tr>
+            <tr>
+              <td><span class="chip">3GPP RAN3 Rel-19 WI</span></td>
+              <td>AI/ML-assisted Network Slicing and Coverage and Capacity Optimization added to NG-RAN normative scope; one-sided AI/ML model signaling introduced</td>
+              <td>First time AI-assisted slice management appears as a standards-tracked RAN function; reduces vendor lock-in for CCO use cases</td>
+            </tr>
+            <tr>
+              <td><span class="chip chip-cyan">O-RAN WG1 Use Case Catalogue</span></td>
+              <td>Near-RT RIC xApp use cases for energy saving, mobility management, and QoS optimization remain the primary O-RAN AI deployment framework</td>
+              <td>The interface layer that AI-native basebands must expose to remain interoperable with operator xApp investments; Nokia's answer here is the key unknown</td>
+            </tr>
+            <tr>
+              <td><span class="chip chip-cyan">O-RAN WG3 (E2 Interface)</span></td>
+              <td>E2 service models define what RAN functions are visible and controllable by Near-RT RIC; no AI-native baseband service model currently specified</td>
+              <td>The gap between GPU-based signal processing and E2 control visibility is the interoperability problem the industry has not yet named as a standards task</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- One Thing to Know -->
+    <section class="section" aria-labelledby="onetk-h">
+      <p class="section-label">One Thing to Know</p>
+      <h2 id="onetk-h">The 20% Figure Needs a Traffic Profile to Be Meaningful</h2>
+
+      <div class="pullquote">
+        <p>The <strong>20% spectral efficiency</strong> gains cited by Nokia and Ericsson apply to dense urban deployments with high interference and heterogeneous traffic mix. Under those conditions, AI-driven beamforming and scheduler optimization genuinely outperform conventional approaches. Under light-load, homogeneous traffic — which describes the majority of deployed RAN cells by cell count — the delta shrinks substantially. This is not a reason to dismiss AI-RAN. It is a reason to build site-type segmentation into any business case, and to treat vendor benchmarks without disclosed traffic profiles as marketing, not engineering evidence.</p>
+      </div>
+    </section>
+
+    <!-- Vinit's Take -->
+    <section class="section" aria-labelledby="take-h">
+      <p class="section-label">Vinit's Take</p>
+      <h2 id="take-h">A New Architecture Means a New Dependency Structure</h2>
+
+      <div class="take-box">
+        <p class="take-label">My Take</p>
+        <p>AI-RAN is the first genuinely new baseband architecture in a decade, and Nokia's commercial announcement moves it from whitepaper to purchasable product. But the transition from AI-assisted to AI-native shifts the center of gravity in vendor relationships in a way operators are not fully pricing in. The intelligence in the baseband becomes a software asset the vendor manages, updated on their release schedule, not yours. Operators who haven't asked what their AI model update cadence looks like, what model observability they retain, or what their options are if a model update degrades performance, are about to discover a new category of vendor dependency that procurement teams have no prior framework for. The O-RAN interface question is the tell: if Nokia's answers are vague, the closed loop is real, and you've bought a black box in the most critical part of your network.</p>
+      </div>
+    </section>
+
+    <!-- Sources -->
+    <section class="section" aria-labelledby="sources-h">
+      <p class="section-label">Sources</p>
+      <h2 id="sources-h">Research Basis for This Edition</h2>
+
+      <div class="sources">
+        <ol>
+          <li><a href="https://www.nokia.com/newsroom/nokia-defines-the-next-era-of-radio-with-the-industrys-first-ai-native-ran-platform/" target="_blank" rel="noopener">Nokia newsroom: "Nokia defines the next era of radio with the industry's first AI-native RAN platform," July 15, 2026</a></li>
+          <li><a href="https://www.globenewswire.com/news-release/2026/07/15/3327480/0/en/Nokia-defines-the-next-era-of-radio-with-the-industry-s-first-AI-native-RAN-platform.html" target="_blank" rel="noopener">GlobeNewswire: Nokia AI-native RAN platform announcement with deployment path details, July 15, 2026</a></li>
+          <li><a href="https://www.ericsson.com/en/news/2026/6/the-ran-gets-smarter-ericsson-puts-ai-where-it-matters" target="_blank" rel="noopener">Ericsson: "The RAN gets smarter: Ericsson puts AI where it matters," June 2026</a></li>
+          <li><a href="https://www.3gpp.org/technologies/ai-ml-nr" target="_blank" rel="noopener">3GPP: AI/ML for NR Air Interface technology page (TS 38.843 scope and Rel-18/19 workplan)</a></li>
+          <li><a href="https://www.3gpp.org/technologies/ai-ml-ngran" target="_blank" rel="noopener">3GPP: AI/ML for NG-RAN technology page (RAN3 Rel-19 Work Item scope)</a></li>
+          <li><a href="https://blogs.nvidia.com/blog/ai-in-telco-survey-2026/" target="_blank" rel="noopener">NVIDIA: 2026 State of AI in Telecommunications survey — operator investment and deployment trends</a></li>
+          <li><a href="https://www.lightreading.com/open-ran/open-ran-enables-faster-integration-of-ai-ran-at-the-edge" target="_blank" rel="noopener">Light Reading: "Open RAN enables faster integration of AI RAN at the edge," 2026</a></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Article footer -->
+    <footer class="article-footer">
+      <div class="footer-bio">
+        <div class="footer-avatar" aria-hidden="true">V</div>
+        <div class="footer-bio-text">
+          <p><strong>Vinit Metange</strong> is an AI PM and engineering leader writing at the intersection of telecom standards and production AI systems. He has studied the telecom-AI convergence at the specification level (3GPP, O-RAN Alliance, TM Forum) and at the implementation level across agentic network operations, BSS intelligence, and AI-native RAN.</p>
+          <p>Questions, corrections, or a perspective I missed? <a href="mailto:vinit.metange30@gmail.com">Write to me directly.</a></p>
+        </div>
+      </div>
+      <nav class="footer-nav" aria-label="Edition navigation">
+        <a href="telecom-edition-1.html">Previous: The Autonomy Gap (Edition #1)</a>
+        <span aria-hidden="true">·</span>
+        <a href="index.html">All editions</a>
+        <span aria-hidden="true">·</span>
+        <a href="../index.html">Vinit Metange</a>
+      </nav>
+    </footer>
+
+  </main>
+
+</body>
+</html>
