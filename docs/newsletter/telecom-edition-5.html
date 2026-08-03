@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Inside the Baseband | AI-Telecom Brief #5</title>
+  <meta name="description" content="Ericsson's AI in RAN went commercial at SoftBank, Bell, SK Telecom, and Rogers in Q2 2026. The 20% throughput gain is real. What nobody is explaining is why these AI functions had to be built inside the silicon, and what 3GPP Release 19 actually locked in. By Vinit Metange.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #f7f7fc;
+      --surface:    #ffffff;
+      --bg-muted:   #eeeef8;
+      --border:     #d0d0e8;
+      --text-1:     #0a0a1a;
+      --text-2:     #505078;
+      --text-3:     #8888a8;
+      --accent:     #6d28d9;
+      --accent-lo:  #ede9fe;
+      --cyan:       #0891b2;
+      --cyan-lo:    #cffafe;
+      --amber:      #b45309;
+      --amber-lo:   #fff7ed;
+      --green:      #047857;
+      --green-lo:   #d1fae5;
+      --font-display: 'Instrument Serif', Georgia, serif;
+      --font-body:    'Inter', -apple-system, sans-serif;
+      --font-mono:    ui-monospace, 'SF Mono', Consolas, monospace;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text-1);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Nav */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(247,247,252,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-back {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-2);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: color .15s;
+    }
+    .nav-back:hover { color: var(--accent); }
+    .nav-crumb { font-size: 13px; color: var(--border); }
+    .nav-series {
+      font-size: 13px;
+      color: var(--text-2);
+      text-decoration: none;
+    }
+    .nav-series:hover { color: var(--accent); }
+    .nav-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-1);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 280px;
+    }
+
+    /* Masthead */
+    .masthead {
+      background: var(--text-1);
+      padding: 0 24px;
+    }
+    .masthead-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 18px 0;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .masthead-series {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      color: var(--cyan);
+    }
+    .masthead-divider { width: 1px; height: 14px; background: #2a2a3a; }
+    .masthead-edition {
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: #505070;
+      letter-spacing: .04em;
+    }
+    .masthead-date {
+      margin-left: auto;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: #404060;
+    }
+
+    /* Article wrapper */
+    .article {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px 96px;
+    }
+
+    /* Article header */
+    .article-header {
+      padding: 52px 0 40px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 44px;
+    }
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      color: var(--amber);
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4.5vw, 44px);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--text-1);
+      text-wrap: balance;
+      margin-bottom: 22px;
+    }
+    h1 em { font-style: italic; color: var(--accent); }
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+    .meta-author { font-size: 14px; font-weight: 600; color: var(--text-1); }
+    .meta-dot { color: var(--text-3); }
+    .meta-readtime { font-size: 13px; color: var(--text-3); }
+    .spec-tag {
+      font-size: 11px;
+      font-weight: 500;
+      font-family: var(--font-mono);
+      background: var(--bg-muted);
+      border: 1px solid var(--border);
+      color: var(--text-2);
+      padding: 3px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+
+    /* Summary callout (no TL;DR label) */
+    .tldr {
+      background: var(--cyan-lo);
+      border-left: 3px solid var(--cyan);
+      padding: 20px 24px;
+      margin-bottom: 48px;
+      border-radius: 0 6px 6px 0;
+    }
+    .tldr p { font-size: 15px; color: var(--text-1); margin: 0; }
+
+    /* Sections */
+    .section { margin-bottom: 56px; }
+    .section + .section {
+      padding-top: 44px;
+      border-top: 1px solid var(--border);
+    }
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      color: var(--text-3);
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 400;
+      line-height: 1.25;
+      color: var(--text-1);
+      text-wrap: balance;
+      margin-bottom: 22px;
+    }
+    h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.3;
+      color: var(--text-1);
+      margin-bottom: 14px;
+    }
+    .article p {
+      max-width: 68ch;
+      margin-bottom: 20px;
+      color: var(--text-1);
+      font-size: 16px;
+    }
+    .article p:last-child { margin-bottom: 0; }
+
+    /* Stats */
+    .stat { font-weight: 600; font-variant-numeric: tabular-nums; color: var(--cyan); }
+    .stat-warn { font-weight: 600; font-variant-numeric: tabular-nums; color: var(--amber); }
+
+    /* Callout box */
+    .callout {
+      background: var(--amber-lo);
+      border-left: 3px solid var(--amber);
+      padding: 18px 22px;
+      border-radius: 0 6px 6px 0;
+      margin: 28px 0;
+    }
+    .callout-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      margin-bottom: 8px;
+    }
+    .callout .callout-label { color: var(--amber); }
+    .callout p { font-size: 15px; color: var(--text-1); margin: 0; max-width: none; }
+
+    /* Spec block */
+    .spec-block {
+      background: var(--bg-muted);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 16px 20px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-2);
+      margin: 22px 0;
+      max-width: none;
+    }
+    .spec-block strong { color: var(--text-1); font-weight: 600; }
+
+    /* Architecture timing diagram */
+    .timing-diagram {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 28px 0;
+      background: var(--surface);
+    }
+    .timing-row {
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .timing-row:last-child { border-bottom: none; }
+    .timing-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      white-space: nowrap;
+      min-width: 110px;
+    }
+    .timing-range {
+      font-size: 12px;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      white-space: nowrap;
+      min-width: 96px;
+    }
+    .timing-desc {
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.5;
+    }
+    .row-silicon { background: #f0fbff; }
+    .row-silicon .timing-label { color: var(--cyan); }
+    .row-silicon .timing-range { color: var(--cyan); }
+    .row-nearrt { background: #f7f7fc; }
+    .row-nearrt .timing-label { color: var(--text-2); }
+    .row-nearrt .timing-range { color: var(--text-2); }
+    .row-nonrt { background: #f7f7fc; }
+    .row-nonrt .timing-label { color: var(--text-3); }
+    .row-nonrt .timing-range { color: var(--text-3); }
+    .row-boundary {
+      background: var(--amber-lo);
+      border-top: 1px dashed var(--amber);
+      border-bottom: 1px dashed var(--amber) !important;
+      padding: 8px 20px;
+    }
+    .row-boundary .timing-label { color: var(--amber); font-size: 10px; }
+    .row-boundary .timing-desc { font-size: 12px; color: var(--amber); }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-top: 8px;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    thead th {
+      background: var(--bg-muted);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      color: var(--text-2);
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    tbody td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-1);
+      vertical-align: top;
+      line-height: 1.55;
+    }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover td { background: var(--bg-muted); }
+    .chip {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      background: var(--accent-lo);
+      color: var(--accent);
+      padding: 2px 7px;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+    .chip-cyan {
+      background: var(--cyan-lo);
+      color: var(--cyan);
+    }
+    .chip-amber {
+      background: var(--amber-lo);
+      color: var(--amber);
+    }
+
+    /* Pull-quote */
+    .pullquote {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 28px 28px 34px;
+      margin-top: 8px;
+    }
+    .pullquote::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, var(--accent), var(--cyan));
+      border-radius: 8px 0 0 8px;
+    }
+    .pullquote p {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-style: italic;
+      line-height: 1.65;
+      color: var(--text-1);
+      margin: 0;
+      max-width: none;
+    }
+    .pullquote strong { font-style: normal; color: var(--accent); }
+    .pullquote-source {
+      margin-top: 14px;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: var(--text-3);
+    }
+
+    /* Vinit's Take */
+    .take-box {
+      background: var(--text-1);
+      border-radius: 10px;
+      padding: 32px 36px;
+      margin-top: 8px;
+    }
+    .take-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      color: var(--cyan);
+      margin-bottom: 14px;
+    }
+    .take-box p {
+      font-size: 16px;
+      line-height: 1.75;
+      color: #c8d8f0;
+      max-width: none;
+      margin-bottom: 0;
+    }
+
+    /* Sources */
+    .sources {
+      background: var(--bg-muted);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 22px 24px;
+      margin-top: 8px;
+    }
+    .sources ol {
+      list-style: decimal;
+      padding-left: 18px;
+      display: grid;
+      gap: 6px;
+    }
+    .sources li {
+      font-size: 12.5px;
+      font-family: var(--font-mono);
+      color: var(--text-2);
+      line-height: 1.55;
+    }
+    .sources a { color: var(--cyan); text-decoration: none; }
+    .sources a:hover { text-decoration: underline; }
+
+    /* Next / Prev edition nav */
+    .edition-nav {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .edition-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-2);
+      text-decoration: none;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 9px 14px;
+      transition: border-color .15s, color .15s;
+    }
+    .edition-link:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 64px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+    }
+    .footer-bio {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+    .footer-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--cyan));
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 18px;
+      color: white;
+      font-style: italic;
+    }
+    .footer-bio-text p {
+      font-size: 14px;
+      color: var(--text-2);
+      margin-bottom: 6px;
+      max-width: none;
+    }
+    .footer-bio-text a { color: var(--accent); text-decoration: none; font-weight: 500; }
+    .footer-bio-text a:hover { text-decoration: underline; }
+    .footer-nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: var(--text-3);
+    }
+    .footer-nav a { color: var(--text-2); text-decoration: none; }
+    .footer-nav a:hover { color: var(--accent); }
+
+    /* Responsive */
+    @media (max-width: 560px) {
+      .masthead-date { display: none; }
+      .article-meta .spec-tag { display: none; }
+      .timing-row { flex-direction: column; align-items: flex-start; gap: 4px; }
+      .timing-range { min-width: unset; }
+      .timing-label { min-width: unset; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky nav -->
+  <nav class="nav" aria-label="Breadcrumb">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-back">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+          <path d="M7.5 2L3.5 6.5 7.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Home
+      </a>
+      <span class="nav-crumb" aria-hidden="true">/</span>
+      <a href="index.html" class="nav-series">Newsletter</a>
+      <span class="nav-crumb" aria-hidden="true">/</span>
+      <span class="nav-title">AI Inside the Baseband</span>
+    </div>
+  </nav>
+
+  <!-- Series masthead -->
+  <div class="masthead" role="banner">
+    <div class="masthead-inner">
+      <span class="masthead-series">AI-Telecom Brief</span>
+      <span class="masthead-divider" aria-hidden="true"></span>
+      <span class="masthead-edition">Edition #5</span>
+      <span class="masthead-date">August 2026</span>
+    </div>
+  </div>
+
+  <main class="article">
+
+    <!-- Header -->
+    <header class="article-header">
+      <p class="eyebrow">Deep Dive: AI-in-RAN Architecture and 3GPP Release 19</p>
+      <h1>AI Inside the Baseband. <em>Why Ericsson's In-Silicon Inference Changes the Architecture Debate.</em></h1>
+      <div class="article-meta">
+        <span class="meta-author">Vinit Metange</span>
+        <span class="meta-dot">·</span>
+        <span class="meta-readtime">~8 min read</span>
+        <span class="spec-tag">3GPP TR 38.843</span>
+        <span class="spec-tag">3GPP Rel-19</span>
+        <span class="spec-tag">O-RAN E2 Interface</span>
+      </div>
+    </header>
+
+    <!-- Summary callout (no label) -->
+    <div class="tldr" role="note">
+      <p>Ericsson made its AI in RAN software commercially available in Q2 2026 at SoftBank, Bell, SK Telecom, and Rogers -- proven across more than 15 deployments worldwide. The reported gains are concrete: up to 20% higher downlink throughput, up to 10% better spectral efficiency, support for up to 2x more high-traffic users. What is not being explained is why these AI functions had to be built inside the baseband and radio silicon rather than in an xApp or cloud model. That decision is not a product strategy call. It is a constraint imposed by the 1-millisecond slot boundary of the 5G air interface, and understanding it changes how you evaluate every AI-in-RAN claim you will see from any vendor. This edition also covers what 3GPP Release 19 (finalized March 2026) actually standardized for AI at the air interface -- and what it deliberately left unspecified.</p>
+    </div>
+
+    <!-- The Lead -->
+    <section class="section" aria-labelledby="lead-h">
+      <p class="section-label">The Lead</p>
+      <h2 id="lead-h">The Scheduler Runs in Microseconds. AI Had to Follow It Into the Silicon.</h2>
+
+      <p>In Q2 2026, Ericsson made its AI in RAN software commercially available. The first named deployments: SoftBank in Japan, Bell in Canada, SK Telecom in South Korea, and Rogers. Proven in over 15 commercial trials and deployments worldwide, the software delivers what Ericsson reports as up to <span class="stat">20%</span> higher downlink throughput, up to <span class="stat">10%</span> better spectral efficiency, and support for up to <span class="stat">2x</span> more high-traffic users in dense scenarios.</p>
+
+      <p>The specific features shipped: an AI-native Scheduler for Link Adaptation, AI-managed Beamforming, AI-powered Multi-layer Coordination, and AI-powered Macro Positioning -- the last delivering 90-95% coverage prediction accuracy and up to 5x improvement in user positioning precision.</p>
+
+      <p>What the press release does not explain is where these models run. Not in a separate analytics platform. Not in a Near-RT RIC via the E2 interface. Not on a cloud inference server. They run inside Ericsson's basebands and radios, on dedicated Neural Network Accelerators within Massive MIMO radio units, executing at microsecond latency within the same processing pipeline as the DSP functions they are replacing.</p>
+
+      <p>The reason is not lock-in strategy. It is a timing constraint built into the physics of radio resource scheduling that no external architecture can route around. Understanding that constraint tells you which AI-in-RAN claims are plausible and which ones are architecture theater.</p>
+    </section>
+
+    <!-- Deep Dive -->
+    <section class="section" aria-labelledby="deepdive-h">
+      <p class="section-label">Deep Dive</p>
+      <h2 id="deepdive-h">The Timing Boundary That Forces the Architecture</h2>
+
+      <p>Every 5G NR scheduler operates on a 1-millisecond slot boundary (for the 15 kHz subcarrier spacing numerology used in most sub-6 GHz deployments). Within that millisecond, the scheduler decides which users receive which physical resource blocks at which modulation and coding scheme, with which beamforming weights applied across the antenna array. The entire air interface is synchronized to that slot grid. Miss the slot boundary and the resource is forfeited.</p>
+
+      <p>For an AI model to influence a scheduling decision, it must complete inference before the scheduler commits. For beamforming weight selection across a Massive MIMO array, that means sub-millisecond decisions -- in practice, the microsecond range. There is no slack in the timing budget for any external data round-trip.</p>
+
+      <p>Now consider the O-RAN Alliance's Near-RT RIC: a separate compute platform that connects to the distributed unit via the E2 interface. The Near-RT RIC is designed for control loop decisions in the 10ms to 1,000ms range. The O-RAN Alliance specifies this boundary explicitly -- sub-10ms decisions are out of scope for the Near-RT RIC because no realistic E2 deployment meets that latency budget once you account for interface serialization, transport, inference, and action delivery. The O-RAN architecture is not ambiguous about this. The boundary is by design.</p>
+
+      <p>This creates a structural split in where AI can legitimately run in a 5G network:</p>
+
+      <div class="timing-diagram" role="table" aria-label="RAN AI timing zones by decision latency">
+        <div class="timing-row" role="rowgroup">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-family:var(--font-mono);color:var(--text-3);padding:10px 20px;background:var(--bg-muted);border-bottom:1px solid var(--border);width:100%;">RAN AI Timing Zones</div>
+        </div>
+        <div class="timing-row row-silicon" role="row">
+          <span class="timing-label" role="cell">In-Silicon AI</span>
+          <span class="timing-range" role="cell">&lt; 1 ms</span>
+          <span class="timing-desc" role="cell">Beamforming, link adaptation (MCS selection), scheduler decisions. Must run embedded in baseband/radio DSP pipeline. No external data exchange possible. Ericsson Neural Network Accelerators in Massive MIMO radios.</span>
+        </div>
+        <div class="timing-row row-boundary" role="row">
+          <span class="timing-label" role="cell">O-RAN BOUNDARY</span>
+          <span class="timing-range" role="cell"></span>
+          <span class="timing-desc" role="cell">10ms floor: E2 interface latency floor for Near-RT RIC. Decisions below this line cannot be served by external systems.</span>
+        </div>
+        <div class="timing-row row-nearrt" role="row">
+          <span class="timing-label" role="cell">Near-RT RIC</span>
+          <span class="timing-range" role="cell">10 ms - 1 s</span>
+          <span class="timing-desc" role="cell">Mobility load balancing, interference management, energy saving policies, coverage and capacity optimization. xApps run on separate compute; decisions delivered via E2 interface to gNB.</span>
+        </div>
+        <div class="timing-row row-nonrt" role="row">
+          <span class="timing-label" role="cell">Non-RT RIC</span>
+          <span class="timing-range" role="cell">&gt; 1 s</span>
+          <span class="timing-desc" role="cell">Policy management, model training and lifecycle, network-wide optimization. rApps communicate to Near-RT RIC via A1 interface. Nokia MantaRay SMO operates at this layer.</span>
+        </div>
+      </div>
+
+      <p>Ericsson's Neural Network Accelerators in Massive MIMO radios address the in-silicon tier. The hardware runs AI inference in the same execution pipeline as the DSP chain, with no external data exchange. Ericsson reported a 10x increase in inference capability from their latest silicon generation in February 2026, which is what makes production-quality AI inference feasible at the latency required for real-time beamforming and link adaptation. The software runs on Ericsson 5G Advanced across both purpose-built and Cloud RAN platforms, without requiring operators to add separate compute hardware.</p>
+
+      <h3>Nokia's Different Tradeoff</h3>
+
+      <p>Nokia's anyRAN architecture (covered in Edition #2 of this series) targets a different tradeoff: a more modular AI layer that operates outside the core radio silicon chain, accepting timing constraints above the 10ms boundary in exchange for architectural openness. Nokia's MantaRay SMO with Non-RT RIC functionality and rApps operates in the Non-RT RIC tier. Both approaches address real use cases -- they are not competing for the same timing zone. The debate is not which architecture is better. It is which use cases each architecture can reach.</p>
+
+      <p>An operator running Ericsson basebands gets sub-millisecond AI for beamforming and link adaptation with no new hardware. An operator running an O-RAN architecture with a third-party Near-RT RIC gets AI-driven policy control and mobility optimization at the 10ms-to-1s tier, with the flexibility to swap xApp vendors. The use cases are complementary and the timing boundaries are where each belongs.</p>
+
+      <h3>What 3GPP Release 19 Standardized for the Air Interface</h3>
+
+      <p>3GPP Release 19 was finalized in March 2026 for RAN4 performance requirements, with Stage 3 specifications frozen in September 2025. The AI/ML work at the air interface, anchored by TR 38.843 (the Study Item on AI/ML for NR Air Interface), moved from study phase into specification phase with the following items now in standard:</p>
+
+      <ul style="max-width:68ch;margin-bottom:20px;padding-left:22px;line-height:1.75;font-size:16px;display:grid;gap:10px;">
+        <li><strong>AI/ML Life Cycle Management (LCM):</strong> standardized signaling for model identification, training data collection, model transfer between UE and network nodes, and testability and interoperability procedures</li>
+        <li><strong>AI/ML-based beam management:</strong> standardized procedures for both UE-sided and network-sided models, enabling multi-vendor AI beam selection</li>
+        <li><strong>CSI feedback with AI:</strong> spatial-frequency domain CSI compression at the UE and time-domain CSI prediction -- both UE-sided model scenarios</li>
+        <li><strong>AI/ML-based positioning:</strong> standardized procedures for UE-sided and network-sided positioning models</li>
+      </ul>
+
+      <p>The critical nuance: Release 19 standardizes the <em>interface and lifecycle</em> of AI models, not the models themselves. The specification defines how models are identified, transferred between nodes, monitored for performance, and deactivated when needed. It gives a UE running a CSI compression model from vendor X the protocol framework to interoperate with a network-side model from vendor Y.</p>
+
+      <p>What it does not standardize is the inference architecture inside a vendor's baseband. Whether Ericsson uses a dedicated Neural Network Accelerator or Nokia uses a different execution model is entirely out of scope for the Release 19 standard. The openness Release 19 delivers is at the model lifecycle layer, not the model execution layer.</p>
+
+      <div class="pullquote">
+        <p>Release 19 gives operators the <strong>protocol vocabulary to ask the right multi-vendor questions</strong> about AI interoperability. It does not give them portable AI inference. Those are different things, and confusing them leads to procurement decisions that cannot be honored.</p>
+        <p class="pullquote-source">Vinit Metange, AI-Telecom Brief</p>
+      </div>
+
+      <div class="spec-block">
+        <strong>Key spec references:</strong> 3GPP TR 38.843 -- Study on Artificial Intelligence (AI)/Machine Learning (ML) for NR Air Interface (the foundational study item). 3GPP Release 19 -- AI/ML LCM WI (Work Item), AI/ML-based beam management WI, CSI feedback enhancement with AI/ML WI. O-RAN WG1 -- E2 interface spec, Near-RT RIC timing boundary at 10ms. O-RAN WG2 -- A1 interface spec, Non-RT RIC policy and model management. O-RAN WG4 -- Open Fronthaul specification (defines O-DU / O-RU split, relevant to where in-silicon AI sits relative to the O-RAN split).
+      </div>
+    </section>
+
+    <!-- Standards Watch -->
+    <section class="section" aria-labelledby="standards-h">
+      <p class="section-label">Standards Watch</p>
+      <h2 id="standards-h">What Moved in the Past 90 Days</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Standard</th>
+              <th>Update</th>
+              <th>Why It Matters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="chip-cyan chip">3GPP Rel-19</span></td>
+              <td>RAN4 performance requirements finalized March 2026; Stage 3 frozen September 2025</td>
+              <td>AI/ML beam management, CSI compression, and LCM signaling now in specification. First release to put AI lifecycle management in the NR air interface standard.</td>
+            </tr>
+            <tr>
+              <td><span class="chip">TR 38.843</span></td>
+              <td>Study Item complete; findings now flowing into Rel-19 Work Items</td>
+              <td>Defines the use cases (CSI feedback, beam management, positioning) and performance requirements that all Rel-19 AI/ML air interface specs are built on. Primary reference for any AI-RAN evaluation framework.</td>
+            </tr>
+            <tr>
+              <td><span class="chip-cyan chip">O-RAN E2 interface</span></td>
+              <td>Timing boundary maintained at 10ms floor for Near-RT RIC scope</td>
+              <td>Confirms that sub-10ms RAN decisions (beamforming, scheduling) are structurally excluded from xApp architecture. This boundary defines the in-silicon AI tier.</td>
+            </tr>
+            <tr>
+              <td><span class="chip-amber chip">3GPP Rel-20</span></td>
+              <td>Work initiated in 2026; 6G requirements and system architecture studies active</td>
+              <td>First release targeting AI-native air interface where AI models are first-class spec elements, not LCM-managed plugins. Expected to address the inference architecture questions that Rel-19 deliberately left to vendors.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- One Thing to Know -->
+    <section class="section" aria-labelledby="one-thing-h">
+      <p class="section-label">One Thing to Know</p>
+      <h2 id="one-thing-h">Where the RAN AI ROI Actually Comes From</h2>
+
+      <div class="pullquote">
+        <p>The NVIDIA 2026 telco AI survey asked operators to name their top AI return driver. <strong>50% named autonomous networks and RAN optimization</strong>. Improved customer service AI was second at 41%. Yet the majority of AI marketing from telecom vendors still leads with customer experience at conferences. The operators who are actually booking ROI are doing it at the network layer -- specifically at RAN optimization and autonomous fault resolution. If your operator's AI roadmap still has chatbots and digital assistants as the headline value story, the pipeline is inverted relative to where the money is coming in. 89% of operators plan to increase AI spending in 2026, and the use case driving that conviction is network operations, not NPS improvement.</p>
+      </div>
+    </section>
+
+    <!-- Vinit's Take -->
+    <section class="section" aria-labelledby="take-h">
+      <p class="section-label">Vinit's Take</p>
+      <h2 id="take-h">The Architecture Debate Will Not Be Resolved by Standards Alone</h2>
+      <div class="take-box">
+        <p class="take-label">Vinit Metange</p>
+        <p>The vendor architecture debate between embedded AI in silicon and open AI in the RIC is not going to produce a clean winner. 3GPP Release 19 standardizes the lifecycle interface and gives operators the protocol framework to ask the right multi-vendor interoperability questions. Release 20 will attempt to make AI models first-class spec elements for 6G. By the time that spec is frozen, Ericsson and Nokia will have shipped four or five more generations of their respective embedded approaches under those operators' existing contracts. The operators who believe they can wait for standards to mature before making AI-in-RAN architecture commitments will find themselves running 2024 basebands in a 2029 network. The question is not which architecture wins. It is which tradeoff each operator is prepared to own. Openness at the cost of timing constraints below 10ms. Performance at the cost of portability above the silicon layer. Neither answer is wrong. Not choosing is.</p>
+      </div>
+    </section>
+
+    <!-- Sources -->
+    <section class="section" aria-labelledby="sources-h">
+      <p class="section-label">Sources</p>
+      <h2 id="sources-h">Research and References</h2>
+      <div class="sources">
+        <ol>
+          <li>Ericsson, "The RAN Gets Smarter: Ericsson Puts AI Where It Matters" (June 2026) -- <a href="https://www.ericsson.com/en/news/2026/6/the-ran-gets-smarter-ericsson-puts-ai-where-it-matters" target="_blank" rel="noopener">ericsson.com</a></li>
+          <li>3GPP TR 38.843 -- Study on AI/ML for NR Air Interface -- <a href="https://www.tech-invite.com/3m38/tinv-3gpp-38-843.html" target="_blank" rel="noopener">tech-invite.com</a></li>
+          <li>3GPP Release 19 -- Summary and overview -- <a href="https://www.3gpp.org/specifications-technologies/releases/release-19" target="_blank" rel="noopener">3gpp.org</a></li>
+          <li>RCR Wireless, "3GPP completes Release 19, while progress begins on 6G work" (2026) -- <a href="https://urgentcomm.com/public-safety/3gpp-completes-release-19-while-progress-begins-on-6g-work" target="_blank" rel="noopener">urgentcomm.com</a></li>
+          <li>NVIDIA Blog, "Survey Reveals AI Advances in Telecom: Networks and Automation in Driver's Seat as Return on Investment Climbs" (2026) -- <a href="https://blogs.nvidia.com/blog/ai-in-telco-survey-2026/" target="_blank" rel="noopener">blogs.nvidia.com</a></li>
+          <li>IEEE ComSoc Technology Blog, "AI-RAN and Agentic AI get real: Ericsson, Nokia, Verizon and other network operators enter into a new network automation era" (June 2026) -- <a href="https://techblog.comsoc.org/2026/06/22/ai-ran-and-agentic-ai-get-real-ericsson-nokia-verizon-other-network-operators-enter-into-a-new-automation-era/" target="_blank" rel="noopener">techblog.comsoc.org</a></li>
+          <li>Fierce Network, "AI RAN in 2026: What lies ahead?" -- <a href="https://www.fierce-network.com/wireless/ai-ran-2026-what-lies-ahead" target="_blank" rel="noopener">fierce-network.com</a></li>
+          <li>TelecomLead, "Ericsson Launches AI in RAN Software to Boost 5G Performance, Energy Efficiency, and AI-Native Network Evolution" (2026) -- <a href="https://telecomlead.com/telecom-equipment/ericsson-launches-ai-in-ran-software-to-boost-5g-performance-energy-efficiency-and-ai-native-network-evolution-126236" target="_blank" rel="noopener">telecomlead.com</a></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Edition navigation -->
+    <section class="section" aria-label="Other editions">
+      <p class="section-label">More Editions</p>
+      <div class="edition-nav">
+        <a href="telecom-edition-4.html" class="edition-link">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M7.5 2L3.5 6.5 7.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Edition #4: The Telco LLM Accuracy Gap
+        </a>
+        <a href="index.html" class="edition-link">All editions</a>
+      </div>
+    </section>
+
+    <!-- Footer bio -->
+    <footer class="article-footer">
+      <div class="footer-bio">
+        <div class="footer-avatar" aria-hidden="true">V</div>
+        <div class="footer-bio-text">
+          <p><strong>Vinit Metange</strong> is an AI PM and engineering leader focused on the intersection of agentic AI systems and telecommunications. He writes the AI-Telecom Brief to translate 3GPP specifications and vendor announcements into decisions engineers and PMs can actually use.</p>
+          <p><a href="https://linkedin.com/in/vinitmetange" target="_blank" rel="noopener">LinkedIn</a> · <a href="../index.html">Portfolio</a> · <a href="index.html">All newsletters</a></p>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <span>© 2026 Vinit Metange</span>
+        <a href="../index.html">Portfolio</a>
+        <a href="index.html">Newsletter index</a>
+      </div>
+    </footer>
+
+  </main>
+
+</body>
+</html>
