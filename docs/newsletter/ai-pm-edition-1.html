@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Infrastructure Problem Is Solved: Agentic PM Brief #1</title>
+  <meta name="description" content="Claude Opus 5 and the MCP July 28 spec removed the two biggest infrastructure constraints on agentic AI. The production failure is now different: most teams ship agents without a single eval covering production-representative tasks. By Vinit Metange.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #f7f7fc;
+      --surface:    #ffffff;
+      --bg-muted:   #eeeef8;
+      --border:     #d0d0e8;
+      --text-1:     #0a0a1a;
+      --text-2:     #505078;
+      --text-3:     #8888a8;
+      --accent:     #6d28d9;
+      --accent-lo:  #ede9fe;
+      --cyan:       #0891b2;
+      --cyan-lo:    #cffafe;
+      --amber:      #b45309;
+      --amber-lo:   #fff7ed;
+      --font-display: 'Instrument Serif', Georgia, serif;
+      --font-body:    'Inter', -apple-system, sans-serif;
+      --font-mono:    ui-monospace, 'SF Mono', Consolas, monospace;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text-1);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Nav */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(247,247,252,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-back {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-2);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: color .15s;
+    }
+    .nav-back:hover { color: var(--accent); }
+    .nav-crumb { font-size: 13px; color: var(--border); }
+    .nav-series {
+      font-size: 13px;
+      color: var(--text-2);
+      text-decoration: none;
+    }
+    .nav-series:hover { color: var(--accent); }
+    .nav-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-1);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 280px;
+    }
+
+    /* Masthead */
+    .masthead {
+      background: var(--text-1);
+      padding: 0 24px;
+    }
+    .masthead-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 18px 0;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .masthead-series {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      color: var(--accent);
+    }
+    .masthead-divider { width: 1px; height: 14px; background: #2a2a3a; }
+    .masthead-edition {
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: #505070;
+      letter-spacing: .04em;
+    }
+    .masthead-date {
+      margin-left: auto;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: #404060;
+    }
+
+    /* Article wrapper */
+    .article {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px 96px;
+    }
+
+    /* Article header */
+    .article-header {
+      padding: 52px 0 40px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 44px;
+    }
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4.5vw, 44px);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--text-1);
+      text-wrap: balance;
+      margin-bottom: 22px;
+    }
+    h1 em { font-style: italic; color: var(--accent); }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+    .meta-author { font-size: 14px; font-weight: 600; color: var(--text-1); }
+    .meta-dot { color: var(--text-3); }
+    .meta-readtime { font-size: 13px; color: var(--text-3); }
+    .spec-tag {
+      font-size: 11px;
+      font-weight: 500;
+      font-family: var(--font-mono);
+      background: var(--bg-muted);
+      border: 1px solid var(--border);
+      color: var(--text-2);
+      padding: 3px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+
+    /* Summary callout (no visible label) */
+    .tldr {
+      background: var(--cyan-lo);
+      border-left: 3px solid var(--cyan);
+      padding: 20px 24px;
+      margin-bottom: 48px;
+      border-radius: 0 6px 6px 0;
+    }
+    .tldr p { font-size: 15px; color: var(--text-1); margin: 0; }
+
+    /* Sections */
+    .section { margin-bottom: 56px; }
+    .section + .section {
+      padding-top: 44px;
+      border-top: 1px solid var(--border);
+    }
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      color: var(--text-3);
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 400;
+      line-height: 1.25;
+      color: var(--text-1);
+      text-wrap: balance;
+      margin-bottom: 22px;
+    }
+    h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.3;
+      color: var(--text-1);
+      margin-bottom: 14px;
+    }
+    .article p {
+      max-width: 68ch;
+      margin-bottom: 20px;
+      color: var(--text-1);
+      font-size: 16px;
+    }
+    .article p:last-child { margin-bottom: 0; }
+
+    /* Stat highlights */
+    .stat { font-weight: 600; font-variant-numeric: tabular-nums; color: var(--cyan); }
+    .stat-warn { font-weight: 600; font-variant-numeric: tabular-nums; color: var(--amber); }
+    .stat-accent { font-weight: 600; color: var(--accent); }
+
+    /* Blockers (violet for AI PM series) */
+    .blocker {
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px dashed var(--border);
+    }
+    .blocker:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+    .blocker-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--accent-lo);
+      border: 1px solid #ddd6fe;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+      font-family: var(--font-mono);
+      margin-bottom: 14px;
+    }
+
+    /* Spec block */
+    .spec-block {
+      background: var(--bg-muted);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      padding: 18px 22px;
+      margin: 32px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    .callout-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      margin-bottom: 8px;
+    }
+    .spec-block .callout-label { color: var(--accent); }
+    .spec-block p {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      line-height: 1.8;
+      color: var(--text-2);
+      margin: 0;
+      max-width: none;
+    }
+    .spec-block strong { color: var(--text-1); font-weight: 600; }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-top: 8px;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    thead th {
+      background: var(--bg-muted);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      color: var(--text-2);
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    tbody td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-1);
+      vertical-align: top;
+      line-height: 1.55;
+    }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover td { background: var(--bg-muted); }
+    .chip {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      background: var(--accent-lo);
+      color: var(--accent);
+      padding: 2px 7px;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+    .chip-cyan {
+      background: var(--cyan-lo);
+      color: var(--cyan);
+    }
+
+    /* Pullquote */
+    .pullquote {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 28px 28px 34px;
+      margin-top: 8px;
+    }
+    .pullquote::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, var(--accent), var(--cyan));
+      border-radius: 8px 0 0 8px;
+    }
+    .pullquote p {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-style: italic;
+      line-height: 1.65;
+      color: var(--text-1);
+      margin: 0;
+      max-width: none;
+    }
+    .pullquote strong { font-style: normal; color: var(--accent); }
+    .pullquote-source {
+      margin-top: 14px;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: var(--text-3);
+    }
+
+    /* Vinit's Take */
+    .take-box {
+      background: var(--text-1);
+      border-radius: 10px;
+      padding: 32px 36px;
+      margin-top: 8px;
+    }
+    .take-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      color: var(--cyan);
+      margin-bottom: 14px;
+    }
+    .take-box p {
+      font-size: 16px;
+      line-height: 1.75;
+      color: #c8d8f0;
+      max-width: none;
+      margin-bottom: 0;
+    }
+
+    /* Sources */
+    .sources {
+      background: var(--bg-muted);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 22px 24px;
+      margin-top: 8px;
+    }
+    .sources ol {
+      list-style: decimal;
+      padding-left: 18px;
+      display: grid;
+      gap: 6px;
+    }
+    .sources li {
+      font-size: 12.5px;
+      font-family: var(--font-mono);
+      color: var(--text-2);
+      line-height: 1.55;
+    }
+    .sources a { color: var(--cyan); text-decoration: none; }
+    .sources a:hover { text-decoration: underline; }
+
+    /* Footer */
+    .article-footer {
+      margin-top: 64px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+    }
+    .footer-bio {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+    .footer-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--cyan));
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 18px;
+      color: white;
+      font-style: italic;
+    }
+    .footer-bio-text p {
+      font-size: 14px;
+      color: var(--text-2);
+      margin-bottom: 6px;
+      max-width: none;
+    }
+    .footer-bio-text a { color: var(--accent); text-decoration: none; font-weight: 500; }
+    .footer-bio-text a:hover { text-decoration: underline; }
+    .footer-nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: var(--text-3);
+    }
+    .footer-nav a { color: var(--text-2); text-decoration: none; }
+    .footer-nav a:hover { color: var(--accent); }
+
+    /* Responsive */
+    @media (max-width: 560px) {
+      .masthead-date { display: none; }
+      .article-meta .spec-tag { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky nav -->
+  <nav class="nav" aria-label="Breadcrumb">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-back">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+          <path d="M7.5 2L3.5 6.5 7.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Home
+      </a>
+      <span class="nav-crumb" aria-hidden="true">/</span>
+      <a href="index.html" class="nav-series">Newsletter</a>
+      <span class="nav-crumb" aria-hidden="true">/</span>
+      <span class="nav-title">The Infrastructure Problem Is Solved</span>
+    </div>
+  </nav>
+
+  <!-- Series masthead -->
+  <div class="masthead" role="banner">
+    <div class="masthead-inner">
+      <span class="masthead-series">The Agentic PM Brief</span>
+      <span class="masthead-divider" aria-hidden="true"></span>
+      <span class="masthead-edition">Edition #1</span>
+      <span class="masthead-date">August 2026</span>
+    </div>
+  </div>
+
+  <main class="article">
+
+    <!-- Header -->
+    <header class="article-header">
+      <p class="eyebrow">Eval Design &amp; Production AI</p>
+      <h1>The Infrastructure Problem Is Solved. Your Agent <em>Eval Pipeline</em> Is Not.</h1>
+      <div class="article-meta">
+        <span class="meta-author">Vinit Metange</span>
+        <span class="meta-dot">·</span>
+        <span class="meta-readtime">~9 min read</span>
+        <span class="spec-tag">Anthropic Evals Framework</span>
+        <span class="spec-tag">MCP July 28 RC</span>
+        <span class="spec-tag">Claude Opus 5</span>
+      </div>
+    </header>
+
+    <!-- Summary callout (no TL;DR label) -->
+    <div class="tldr" role="note">
+      <p>Claude Opus 5 and the MCP July 28 release candidate removed the two biggest infrastructure constraints on agentic AI in three weeks. The model cost problem and the enterprise connectivity problem are mostly solved. The production failure is now different: most teams ship agents without a single eval covering production-representative tasks, and they learn the failure mode from users. Gartner predicts over <strong>40% of agentic AI projects will be scrapped by 2027</strong>. The reason is not infrastructure. The bottleneck is eval discipline.</p>
+    </div>
+
+    <!-- The Lead -->
+    <section class="section" aria-labelledby="lead-h">
+      <p class="section-label">The Lead</p>
+      <h2 id="lead-h">The Infrastructure Narrative Has Won. The Eval Problem Hasn't Been Touched.</h2>
+
+      <p>Two significant things happened in the past three weeks that should update your 2026 agent roadmap.</p>
+
+      <p>On July 24, Anthropic shipped Claude Opus 5: frontier-class agentic reasoning and coding at <span class="stat-accent">$5 per million input tokens</span>, the same price as Opus 4.8, within 0.5% of Claude Fable 5 on CursorBench 3.2. On July 28, the Model Context Protocol shipped its most significant revision since launch. The new stateless protocol core means MCP servers can now run behind a plain round-robin load balancer without sticky sessions, shared session stores, or deep packet inspection at the gateway. The authorization layer now aligns with OAuth 2.0 and OpenID Connect. A 12-month deprecation guarantee gives enterprise engineering teams the stability to build on it.</p>
+
+      <p>Both are real progress. The model problem is mostly solved. The enterprise connectivity problem is mostly solved.</p>
+
+      <p>Here is the contrarian position: <strong>building connectivity to your business systems is not what is killing your agents in production.</strong> Gartner predicts over 40% of agentic AI projects will be scrapped by 2027. Not because the models are incapable. Not because MCP is not ready. Because most teams ship agents without being able to answer a basic question: what does "working" look like for this agent, at the task level, before any user sees it?</p>
+
+      <p>The production crisis in 2026 is not infrastructure. It is eval discipline.</p>
+    </section>
+
+    <!-- Deep Dive -->
+    <section class="section" aria-labelledby="deepdive-h">
+      <p class="section-label">Deep Dive</p>
+      <h2 id="deepdive-h">What the Anthropic Eval Framework Reveals About Your Production Gap</h2>
+
+      <p>In January 2026, Anthropic published "Demystifying Evals for AI Agents" on their engineering blog. It is the clearest practitioner framework for agent evaluation published to date. Seven months after publication, most teams building production agents have not applied its central lessons.</p>
+
+      <p><strong>The mechanism.</strong> Anthropic's framework defines the evaluation vocabulary that most teams are missing. A <em>task</em> is a test case with explicit inputs and success criteria. A <em>trial</em> is one stochastic run of that task. A <em>transcript</em> (also called a trace or trajectory) is the complete record of the trial including all tool calls, reasoning steps, and intermediate results. The <em>outcome</em> is the final environmental state after the trial ends. A <em>grader</em> is the logic that scores whether the outcome meets the success criteria. A <em>suite</em> is the collection of tasks that constitutes your eval coverage. Most teams ship with none of these formalized. They have a demo that worked.</p>
+
+      <div class="blocker">
+        <div class="blocker-num" aria-label="Mistake 1">1</div>
+        <h3>Grading the path, not the outcome</h3>
+        <p>The most expensive mistake in agent eval design is checking whether the agent followed the expected tool-call sequence rather than whether it produced the correct result. In a demo, the agent follows the anticipated path and the team records that as success. In production, the agent finds a different valid path to the correct outcome. A path-checking grader flags this as failure. The team investigates the wrong thing for days.</p>
+        <p>Anthropic's guidance is unambiguous on this: <em>grade what the agent produced, not the path it took to produce it.</em> Agents in production find unanticipated valid approaches constantly. A grader that punishes them for it creates false failure signals that erode trust in the eval system itself.</p>
+      </div>
+
+      <div class="blocker">
+        <div class="blocker-num" aria-label="Mistake 2">2</div>
+        <h3>Treating a single demo trial as evidence for a stochastic system</h3>
+        <p>A single successful trial is not evidence of a production-ready agent. For user-facing tasks where consistency matters, the relevant metric is <strong class="stat-accent">pass^k</strong>: the probability that all k trials succeed. An agent with a <span class="stat-warn">70% per-trial success rate</span> has a <span class="stat-warn">34% probability</span> of succeeding on 3 consecutive tasks. That is not a deployable system. Most teams do not have this number for their agents because most teams run exactly one trial per task in their evaluation process.</p>
+        <p>Contrast this with pass@k, which measures the probability that at least one of k trials succeeds. For use cases where any single success is acceptable, pass@k is the right signal. For user-facing flows where the agent needs to be reliably correct across multiple consecutive runs, pass^k is what tells you whether you are actually ready to ship.</p>
+      </div>
+
+      <div class="blocker">
+        <div class="blocker-num" aria-label="Mistake 3">3</div>
+        <h3>Building graders after users report failures</h3>
+        <p>On CORE-Bench, Anthropic's Opus 4.5 jumped from <span class="stat-warn">42%</span> to <span class="stat">95%</span> success without any model change. The research team fixed grading bugs and tightened ambiguous task specifications. The model was right all along. The eval was wrong. Most teams building production agents today will never detect this class of error because they have no graders at all. If you have no graders, you cannot tell whether your agent is wrong or your eval is wrong. You are flying without instruments.</p>
+        <p>Anthropic recommends starting with 20 to 50 realistic tasks drawn from actual failures, not synthetic coverage. Write tasks where domain experts reach consistent verdicts. Include reference solutions that prove the task is solvable. That discipline is not extra work before launch. It is how you define what launch actually means.</p>
+      </div>
+
+      <p><strong>The production reference.</strong> In building ObsrvAI, the first version of the anomaly-surfacing agent showed what felt like a strong demo pass rate on our internal test log streams. When we moved to production traffic with real alert volumes and tool-call chains longer than four steps, the pass^k metric on three consecutive trials dropped below 40%. We had no formal graders. We had no transcript collection. The first signal of failure was a user report. Rebuilding the eval harness after launch cost three weeks of engineering time that would have cost three days if we had started with the eval harness before shipping.</p>
+
+      <p><strong>The PM's take.</strong> Your eval harness is your production acceptance criteria. If you cannot articulate what a passing outcome looks like for your three highest-stakes agent tasks, you are not ready to ship. The question is not "did the demo work?" The question is: what is the pass^k at k=5 for your highest-stakes user-facing flow?</p>
+
+      <div class="spec-block" role="note">
+        <p class="callout-label">Key Reference</p>
+        <p>
+          <strong>Anthropic Engineering Blog</strong> · "Demystifying Evals for AI Agents" · January 2026<br>
+          Introduces the task / trial / transcript / outcome / grader / suite framework for agent evaluation.<br>
+          Documents SWE-bench Verified progression from <strong>40% to over 80%</strong> in one year of model improvement.<br>
+          Documents CORE-Bench improvement from <strong>42% to 95%</strong> from grading bug fixes alone, no model change.<br>
+          Available at: <strong>anthropic.com/engineering/demystifying-evals-for-ai-agents</strong>
+        </p>
+      </div>
+    </section>
+
+    <!-- Framework Watch -->
+    <section class="section" aria-labelledby="fw-h">
+      <p class="section-label">Framework Watch</p>
+      <h2 id="fw-h">What Shipped and What It Means for Product Teams</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Tool / Approach</th>
+              <th>What Shipped</th>
+              <th>PM Implication</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="chip">Claude Opus 5</span><br>
+                <span style="font-size:12px;color:var(--text-3);font-family:var(--font-mono)">Anthropic · July 24, 2026</span>
+              </td>
+              <td>Frontier-class reasoning and coding at $5/$25 per 1M tokens; 1M context window; within 0.5% of Fable 5 on CursorBench 3.2 at max effort</td>
+              <td>Model cost is no longer the gating factor for production agentic systems. The bottleneck has shifted to eval coverage and orchestration reliability.</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="chip chip-cyan">MCP July 28 RC</span><br>
+                <span style="font-size:12px;color:var(--text-3);font-family:var(--font-mono)">Anthropic / community · July 28, 2026</span>
+              </td>
+              <td>Stateless protocol core; round-robin load balancer compatible; OAuth 2.0 and OIDC authorization alignment; 12-month deprecation guarantee; Tasks and MCP Apps extensions</td>
+              <td>Enterprise connectivity is now table stakes. The unsolved gap is the eval layer on top of MCP connections, not the connections themselves.</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="chip">LangGraph 2026</span><br>
+                <span style="font-size:12px;color:var(--text-3);font-family:var(--font-mono)">LangChain · largest production footprint</span>
+              </td>
+              <td>Deployed at LinkedIn, Uber, Replit; stateful, observable orchestration with the largest enterprise production footprint of any agent framework in 2026</td>
+              <td>Best default choice for enterprise production agents. Does not ship with an eval harness. You still need a separate evaluation layer alongside it.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- One Thing to Know -->
+    <section class="section" aria-labelledby="onetk-h">
+      <p class="section-label">One Thing to Know</p>
+      <h2 id="onetk-h">The Eval Was Wrong. The Model Was Right.</h2>
+
+      <div class="pullquote" role="blockquote">
+        <p>On CORE-Bench, Anthropic's Opus 4.5 jumped from 42% to 95% success <strong>without any model change.</strong> The research team fixed grading bugs and tightened ambiguous task specifications. The model was right all along. The eval was wrong. Most teams shipping agents today will never detect this class of error because they have no graders, no transcripts, and no formal task definitions. The capability ceiling is not your production problem. <strong>The measurement floor is.</strong></p>
+        <p class="pullquote-source">Source: Anthropic Engineering Blog · "Demystifying Evals for AI Agents" · January 2026</p>
+      </div>
+    </section>
+
+    <!-- Vinit's Take -->
+    <section class="section" aria-labelledby="take-h">
+      <p class="section-label">Vinit's Take</p>
+      <h2 id="take-h">The Discipline Gap Is the Production Gap</h2>
+      <div class="take-box">
+        <p class="take-label">Editor's perspective</p>
+        <p>The MCP July 28 spec and Claude Opus 5 together mark the end of "infrastructure as excuse." The connectivity problem and the model-cost problem are solved for most teams building in 2026. By 2027, the teams that invested in eval infrastructure this year will have a compounding advantage: not because evals are magic, but because building an eval harness before launch forces you to operationalize what "working" means before users tell you what "broken" looks like. That discipline compounds into faster iteration, lower rework cost, and an eval suite that becomes a competitive asset. If your team is still treating evals as a post-launch instrumentation task, you are running the same roadmap that puts you in Gartner's 40%. The production bottleneck in 2026 is not the model. It is the measurement.</p>
+      </div>
+    </section>
+
+    <!-- Sources -->
+    <section class="section" aria-labelledby="sources-h">
+      <p class="section-label">Sources</p>
+      <h2 id="sources-h">Research &amp; References</h2>
+      <div class="sources">
+        <ol>
+          <li>Anthropic Engineering Blog — "Demystifying Evals for AI Agents," January 2026 · <a href="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents" target="_blank" rel="noopener">anthropic.com</a> · (SWE-bench 40%→80%; CORE-Bench 42%→95% from grading fixes)</li>
+          <li>Model Context Protocol Blog — "2026-07-28 MCP Specification Release Candidate," July 28, 2026 · <a href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/" target="_blank" rel="noopener">blog.modelcontextprotocol.io</a> · (stateless core, OAuth 2.0/OIDC, 12-month deprecation policy)</li>
+          <li>Anthropic / CNBC — Claude Opus 5 Launch, July 24, 2026 · <a href="https://www.cnbc.com/2026/07/24/anthropic-claude-opus-5-ai-fable-5-cost.html" target="_blank" rel="noopener">cnbc.com</a> · ($5/$25 per 1M tokens; 0.5% of Fable 5 on CursorBench 3.2)</li>
+          <li>LangChain — "The Best AI Agent Frameworks in 2026" · <a href="https://www.langchain.com/resources/ai-agent-frameworks" target="_blank" rel="noopener">langchain.com</a> · (LangGraph production footprint: LinkedIn, Uber, Replit)</li>
+          <li>Gartner — Agentic AI project abandonment prediction (40% scrapped by 2027) · cited across industry analyses including <a href="https://squirro.com/squirro-blog/avoiding-agentic-ai-failure" target="_blank" rel="noopener">squirro.com</a></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="article-footer">
+      <div class="footer-bio">
+        <div class="footer-avatar" aria-hidden="true">V</div>
+        <div class="footer-bio-text">
+          <p><strong>Vinit Metange</strong> is an AI PM who has shipped 6 AI products in production. He writes the Agentic PM Brief to translate production AI systems, eval design, and agentic architecture into decisions product teams can actually use.</p>
+          <p><a href="https://linkedin.com/in/vinitmetange" target="_blank" rel="noopener">Follow on LinkedIn</a> · <a href="../index.html">Portfolio</a> · <a href="index.html">All newsletters</a></p>
+        </div>
+      </div>
+      <nav class="footer-nav" aria-label="Edition navigation">
+        <a href="index.html">All editions</a>
+      </nav>
+    </footer>
+
+  </main>
+
+</body>
+</html>
