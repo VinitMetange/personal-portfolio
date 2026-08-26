@@ -11,19 +11,19 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0a0c0f;
-    --panel:#12151a;
-    --panel-2:#171b21;
-    --line:#242a33;
-    --text:#e7ebf0;
-    --muted:#8b93a1;
-    --muted-2:#5b6474;
-    --accent:#5eead4;
-    --accent-dim:#1f3d38;
-    --amber:#f0b429;
-    --amber-dim:#3a2f10;
-    --red:#f26d6d;
-    --red-dim:#3a1616;
+    --bg:#f5f4f0;
+    --panel:#ffffff;
+    --panel-2:#f0eeea;
+    --line:#ddd9d3;
+    --text:#181a1f;
+    --muted:#6b7280;
+    --muted-2:#9ba3b0;
+    --accent:#0d7c70;
+    --accent-dim:#e8f5f3;
+    --amber:#9a6700;
+    --amber-dim:#fef7e6;
+    --red:#c0392b;
+    --red-dim:#fdecea;
     --mono:'IBM Plex Mono',monospace;
     --sans:'IBM Plex Sans',sans-serif;
   }
@@ -32,8 +32,7 @@
   body{
     margin:0;
     background:
-      linear-gradient(180deg, rgba(94,234,212,0.04), transparent 400px),
-      repeating-linear-gradient(0deg, rgba(255,255,255,0.012) 0px, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 3px),
+      linear-gradient(180deg, rgba(13,124,112,0.06), transparent 400px),
       var(--bg);
     color:var(--text);
     font-family:var(--sans);
@@ -48,7 +47,7 @@
   /* ===== Top bar ===== */
   .topbar{
     position:sticky; top:0; z-index:50;
-    background:rgba(10,12,15,0.88);
+    background:rgba(245,244,240,0.92);
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
   }
@@ -130,7 +129,7 @@
     background:var(--panel); border:1px solid var(--line); border-radius:6px;
     padding:18px 20px; overflow-x:auto; margin:18px 0 26px; font-size:13px; line-height:1.6;
   }
-  pre code{font-family:var(--mono); color:#c9d6e3;}
+  pre code{font-family:var(--mono); color:#2d3748;}
   code.inline{
     font-family:var(--mono); background:var(--panel-2); border:1px solid var(--line);
     padding:1px 6px; border-radius:4px; font-size:0.88em; color:var(--accent);
@@ -140,13 +139,13 @@
   .callout .ctitle{font-family:var(--mono); font-size:12px; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px; display:flex; align-items:center; gap:8px;}
   .callout p, .callout li{font-size:14.5px; margin-bottom:8px;}
   .callout p:last-child{margin-bottom:0;}
-  .callout.idea{background:var(--accent-dim); border-color:#2c5850;}
+  .callout.idea{background:var(--accent-dim); border-color:#a5d8d4;}
   .callout.idea .ctitle{color:var(--accent);}
-  .callout.warn{background:var(--red-dim); border-color:#5c2727;}
+  .callout.warn{background:var(--red-dim); border-color:#f0b0ae;}
   .callout.warn .ctitle{color:var(--red);}
   .callout.stat{background:var(--panel-2); border-color:var(--line);}
   .callout.stat .ctitle{color:var(--amber);}
-  .callout.check{background:var(--panel-2); border-color:#2c5850;}
+  .callout.check{background:var(--panel-2); border-color:#a5d8d4;}
   .callout.check .ctitle{color:var(--accent);}
   .callout.check ul{list-style:none; padding-left:0; margin:0;}
   .callout.check li{padding-left:24px; position:relative;}
@@ -196,9 +195,9 @@
     display:inline-block; font-family:var(--mono); font-size:10.5px; text-transform:uppercase;
     letter-spacing:0.05em; padding:2px 8px; border-radius:4px; border:1px solid;
   }
-  .badge.crit{color:var(--red); border-color:#5c2727; background:var(--red-dim);}
-  .badge.high{color:var(--amber); border-color:#5a4415; background:var(--amber-dim);}
-  .badge.med{color:var(--accent); border-color:#2c5850; background:var(--accent-dim);}
+  .badge.crit{color:var(--red); border-color:#f0b0ae; background:var(--red-dim);}
+  .badge.high{color:var(--amber); border-color:#d4aa6a; background:var(--amber-dim);}
+  .badge.med{color:var(--accent); border-color:#a5d8d4; background:var(--accent-dim);}
 
   footer{padding:64px 0 80px; text-align:left;}
   footer .fnote{font-size:14px; color:var(--muted); max-width:620px; margin-bottom:26px;}
@@ -241,7 +240,7 @@
   <section class="hero">
     <div class="kicker">A companion guide · v1.1 · 2026</div>
     <h1 class="title">The Agentic AI Security<br>&amp; <em>Governance</em> Guide</h1>
-    <p class="lede">Ten disciplines for taking an agentic or AI-native product from "it works in the demo" to "it can be trusted with autonomy, data, and money." Threat modeling, zero trust architecture, non-human identity, guardrails, data protection, supply chain integrity, governance operating models, regulatory mapping, adversarial testing, and audit — written for the person who owns the system, not just the person who implements it.</p>
+    <p class="lede">Ten disciplines for taking an agentic or AI-native product from "it works in the demo" to "it can be trusted with autonomy, data, and money." Threat modeling, zero trust architecture, non-human identity, guardrails, data protection, supply chain integrity, governance operating models, regulatory mapping, adversarial testing, and audit, written for the person who owns the system, not just the person who implements it.</p>
 
     <div class="stat-row">
       <div class="stat"><div class="n">10</div><div class="l">Security &amp; governance pillars</div></div>
@@ -283,7 +282,7 @@
     <h2 class="h">Autonomy is a new trust boundary</h2>
     <p class="h-sub">Security for AI is not application security with an LLM bolted on. Governance for AI is not a compliance checklist attached after launch.</p>
 
-    <p>Every prior generation of software had a fixed boundary between "what the system can do" and "what a human decided it should do." Agentic AI collapses that boundary: the system itself decides which tool to call, which data to retrieve, which action to take next, and it does so based on natural-language reasoning that is probabilistic, not deterministic. That single shift is why traditional AppSec, IAM, and compliance programs — built for code that does exactly what it was told — are necessary but not sufficient.</p>
+    <p>Every prior generation of software had a fixed boundary between "what the system can do" and "what a human decided it should do." Agentic AI collapses that boundary: the system itself decides which tool to call, which data to retrieve, which action to take next, and it does so based on natural-language reasoning that is probabilistic, not deterministic. That single shift is why traditional AppSec, IAM, and compliance programs, built for code that does exactly what it was told, are necessary but not sufficient.</p>
 
     <p>This guide treats security, zero trust, guardrails, and governance as one connected system rather than four separate checklists. A guardrail that isn't backed by an identity boundary is theater. A governance policy that isn't enforced by a runtime control is a document. A compliance mapping that doesn't trace to an actual control is an audit finding waiting to happen. The ten pillars below are ordered the way a system actually needs to be built: understand the threat, establish the trust architecture, give every actor an identity, enforce behavior at runtime, protect the data, secure what you depend on, govern the whole thing operationally, prove it to regulators, test it like an attacker, and keep proving it continuously.</p>
 
@@ -297,24 +296,24 @@
   <section class="pillar" id="principles">
     <div class="eyebrow">First principles</div>
     <h2 class="h">Core Design Principles</h2>
-    <p class="h-sub">Eight tenets that every control in this guide is a specific instance of — use them to judge a control you haven't seen yet</p>
+    <p class="h-sub">Eight tenets that every control in this guide is a specific instance of, use them to judge a control you haven't seen yet</p>
 
     <p>Frameworks and control lists change as the technology and the regulatory landscape evolve. The principles underneath them do not. Any team facing a novel agentic AI design decision not explicitly covered by one of the ten pillars can derive the right answer by applying these eight tenets directly.</p>
 
     <div class="principle-grid">
-      <div class="principle-card"><div class="pn">1</div><h4>Zero standing trust</h4><p>No actor — model output, tool response, delegated identity, or another agent — is trusted by default. Every action is authorized at the moment it happens, against the specific action, not a standing grant.</p></div>
-      <div class="principle-card"><div class="pn">2</div><h4>Least privilege by default</h4><p>Every credential, tool grant, and data scope starts at the narrowest permission that unblocks the task and is widened only with an explicit, logged justification — never provisioned broad "to be safe."</p></div>
+      <div class="principle-card"><div class="pn">1</div><h4>Zero standing trust</h4><p>No actor, model output, tool response, delegated identity, or another agent, is trusted by default. Every action is authorized at the moment it happens, against the specific action, not a standing grant.</p></div>
+      <div class="principle-card"><div class="pn">2</div><h4>Least privilege by default</h4><p>Every credential, tool grant, and data scope starts at the narrowest permission that unblocks the task and is widened only with an explicit, logged justification, never provisioned broad "to be safe."</p></div>
       <div class="principle-card"><div class="pn">3</div><h4>Defense in depth</h4><p>No single control is assumed sufficient on its own. Guardrails, identity scoping, and monitoring overlap deliberately, so one control's failure degrades the system rather than breaching it.</p></div>
       <div class="principle-card"><div class="pn">4</div><h4>Reversibility gates autonomy</h4><p>The more irreversible an action, the more oversight it requires before it executes. Reversible, low-consequence actions earn more autonomy; irreversible ones never run unsupervised by default.</p></div>
       <div class="principle-card"><div class="pn">5</div><h4>Deterministic enforcement around probabilistic reasoning</h4><p>Authorization and safety decisions live in code the model cannot argue with, not in prompt instructions the model could be talked out of. The model reasons; a separate, testable layer decides.</p></div>
-      <div class="principle-card"><div class="pn">6</div><h4>Evidence over assertion</h4><p>A control is only as real as the queryable log proving it ran. "We have guardrails" is a claim; a per-session record of every check and its result is evidence — build for the second, always.</p></div>
+      <div class="principle-card"><div class="pn">6</div><h4>Evidence over assertion</h4><p>A control is only as real as the queryable log proving it ran. "We have guardrails" is a claim; a per-session record of every check and its result is evidence, build for the second, always.</p></div>
       <div class="principle-card"><div class="pn">7</div><h4>Assume compromise, design for blast radius</h4><p>Architecture is built around what happens <em>when</em> a component is fooled, not <em>if</em>. The question for every credential and tool grant is: what is the worst outcome if this exact grant is misused right now.</p></div>
-      <div class="principle-card"><div class="pn">8</div><h4>Governance scales with consequence</h4><p>The amount of process a feature carries is proportional to what it can actually do — not applied uniformly. Heavy governance on trivial features trains teams to route around it; that erodes the whole program.</p></div>
+      <div class="principle-card"><div class="pn">8</div><h4>Governance scales with consequence</h4><p>The amount of process a feature carries is proportional to what it can actually do, not applied uniformly. Heavy governance on trivial features trains teams to route around it; that erodes the whole program.</p></div>
     </div>
 
     <div class="callout idea">
       <div class="ctitle">💡 The decision framing</div>
-      <p>When a new tool, provider, or regulatory question doesn't map cleanly onto one of the ten pillars, run it through these eight principles instead of guessing. A design that violates zero standing trust or deterministic enforcement is wrong regardless of what any specific checklist says — the checklist just hasn't caught up yet.</p>
+      <p>When a new tool, provider, or regulatory question doesn't map cleanly onto one of the ten pillars, run it through these eight principles instead of guessing. A design that violates zero standing trust or deterministic enforcement is wrong regardless of what any specific checklist says, the checklist just hasn't caught up yet.</p>
     </div>
   </section>
 
@@ -324,137 +323,137 @@
     <h2 class="h">Reference Architecture</h2>
     <p class="h-sub">How the ten pillars fit together as one system, not ten independent checklists</p>
 
-    <p>The architecture below is deliberately generic — it applies to a single agent or a multi-agent orchestration, a chatbot or an autonomous workflow. What stays constant is the shape: untrusted content enters through a guardrail before it ever reaches the reasoning core, every action the core wants to take is authorized by a policy engine that sits outside the model's influence, identity and tool execution are scoped and sandboxed, and governance and audit wrap the entire pipeline rather than sitting at either end of it.</p>
+    <p>The architecture below is deliberately generic, it applies to a single agent or a multi-agent orchestration, a chatbot or an autonomous workflow. What stays constant is the shape: untrusted content enters through a guardrail before it ever reaches the reasoning core, every action the core wants to take is authorized by a policy engine that sits outside the model's influence, identity and tool execution are scoped and sandboxed, and governance and audit wrap the entire pipeline rather than sitting at either end of it.</p>
 
     <div class="diagram-wrap">
       <svg viewBox="0 0 1000 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Reference architecture diagram for a secure agentic AI system">
         <defs>
           <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
-            <path d="M0,0 L8,4 L0,8 Z" fill="#5eead4"/>
+            <path d="M0,0 L8,4 L0,8 Z" fill="#0d7c70"/>
           </marker>
           <marker id="arrowDim" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
-            <path d="M0,0 L8,4 L0,8 Z" fill="#5b6474"/>
+            <path d="M0,0 L8,4 L0,8 Z" fill="#c0c8d4"/>
           </marker>
         </defs>
 
         <!-- Governance band (top) -->
-        <rect x="20" y="14" width="960" height="34" rx="6" fill="#1f3d38" stroke="#2c5850"/>
-        <text x="500" y="35" text-anchor="middle" font-family="IBM Plex Mono" font-size="12" fill="#5eead4" letter-spacing="0.5">GOVERNANCE — risk tiering · policy lifecycle · model inventory (Pillar 07)</text>
+        <rect x="20" y="14" width="960" height="34" rx="6" fill="#ddf0ed" stroke="#7fccc4"/>
+        <text x="500" y="35" text-anchor="middle" font-family="IBM Plex Mono" font-size="12" fill="#0d7c70" letter-spacing="0.5">GOVERNANCE · risk tiering · policy lifecycle · model inventory (Pillar 07)</text>
 
         <!-- Audit band (bottom) -->
-        <rect x="20" y="512" width="960" height="34" rx="6" fill="#1f3d38" stroke="#2c5850"/>
-        <text x="500" y="533" text-anchor="middle" font-family="IBM Plex Mono" font-size="12" fill="#5eead4" letter-spacing="0.5">AUDIT &amp; OBSERVABILITY TRAIL — every box below logs every decision here (Pillar 10)</text>
+        <rect x="20" y="512" width="960" height="34" rx="6" fill="#ddf0ed" stroke="#7fccc4"/>
+        <text x="500" y="533" text-anchor="middle" font-family="IBM Plex Mono" font-size="12" fill="#0d7c70" letter-spacing="0.5">AUDIT &amp; OBSERVABILITY TRAIL · every box below logs every decision here (Pillar 10)</text>
 
         <!-- Supply chain rail (left) -->
-        <rect x="20" y="64" width="34" height="432" rx="6" fill="#171b21" stroke="#242a33"/>
-        <text x="37" y="280" text-anchor="middle" font-family="IBM Plex Mono" font-size="11.5" fill="#8b93a1" transform="rotate(-90 37 280)" letter-spacing="0.5">SUPPLY CHAIN INTEGRITY (Pillar 06)</text>
+        <rect x="20" y="64" width="34" height="432" rx="6" fill="#f0eeea" stroke="#ddd9d3"/>
+        <text x="37" y="280" text-anchor="middle" font-family="IBM Plex Mono" font-size="11.5" fill="#6b7280" transform="rotate(-90 37 280)" letter-spacing="0.5">SUPPLY CHAIN INTEGRITY (Pillar 06)</text>
 
         <!-- Red team / detection rail (right) -->
-        <rect x="946" y="64" width="34" height="432" rx="6" fill="#171b21" stroke="#242a33"/>
-        <text x="963" y="280" text-anchor="middle" font-family="IBM Plex Mono" font-size="11.5" fill="#8b93a1" transform="rotate(90 963 280)" letter-spacing="0.5">RED TEAM &amp; DETECTION FEEDBACK (Pillar 09)</text>
+        <rect x="946" y="64" width="34" height="432" rx="6" fill="#f0eeea" stroke="#ddd9d3"/>
+        <text x="963" y="280" text-anchor="middle" font-family="IBM Plex Mono" font-size="11.5" fill="#6b7280" transform="rotate(90 963 280)" letter-spacing="0.5">RED TEAM &amp; DETECTION FEEDBACK (Pillar 09)</text>
 
         <!-- Row 1: untrusted inputs -->
-        <rect x="80" y="70" width="150" height="72" rx="6" fill="#12151a" stroke="#242a33"/>
-        <text x="155" y="100" text-anchor="middle" font-family="IBM Plex Sans" font-size="12.5" fill="#e7ebf0" font-weight="700">User prompts</text>
-        <text x="155" y="118" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#8b93a1">direct instruction</text>
-        <text x="155" y="132" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#8b93a1">channel</text>
+        <rect x="80" y="70" width="150" height="72" rx="6" fill="#ffffff" stroke="#ddd9d3"/>
+        <text x="155" y="100" text-anchor="middle" font-family="IBM Plex Sans" font-size="12.5" fill="#181a1f" font-weight="700">User prompts</text>
+        <text x="155" y="118" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#6b7280">direct instruction</text>
+        <text x="155" y="132" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#6b7280">channel</text>
 
-        <rect x="255" y="70" width="150" height="72" rx="6" fill="#12151a" stroke="#242a33"/>
-        <text x="330" y="100" text-anchor="middle" font-family="IBM Plex Sans" font-size="12.5" fill="#e7ebf0" font-weight="700">Retrieved content</text>
-        <text x="330" y="118" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#8b93a1">RAG · web · email</text>
-        <text x="330" y="132" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#8b93a1">indirect channel</text>
+        <rect x="255" y="70" width="150" height="72" rx="6" fill="#ffffff" stroke="#ddd9d3"/>
+        <text x="330" y="100" text-anchor="middle" font-family="IBM Plex Sans" font-size="12.5" fill="#181a1f" font-weight="700">Retrieved content</text>
+        <text x="330" y="118" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#6b7280">RAG · web · email</text>
+        <text x="330" y="132" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#6b7280">indirect channel</text>
 
-        <rect x="430" y="70" width="150" height="72" rx="6" fill="#12151a" stroke="#242a33"/>
-        <text x="505" y="100" text-anchor="middle" font-family="IBM Plex Sans" font-size="12.5" fill="#e7ebf0" font-weight="700">Tool &amp; agent output</text>
-        <text x="505" y="118" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#8b93a1">peer / subagent</text>
-        <text x="505" y="132" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#8b93a1">responses</text>
+        <rect x="430" y="70" width="150" height="72" rx="6" fill="#ffffff" stroke="#ddd9d3"/>
+        <text x="505" y="100" text-anchor="middle" font-family="IBM Plex Sans" font-size="12.5" fill="#181a1f" font-weight="700">Tool &amp; agent output</text>
+        <text x="505" y="118" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#6b7280">peer / subagent</text>
+        <text x="505" y="132" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#6b7280">responses</text>
 
         <!-- arrows down to input guardrails -->
-        <path d="M155,142 L155,168" stroke="#5eead4" stroke-width="1.6" marker-end="url(#arrow)"/>
-        <path d="M330,142 L330,168" stroke="#5eead4" stroke-width="1.6" marker-end="url(#arrow)"/>
-        <path d="M505,142 L505,168" stroke="#5eead4" stroke-width="1.6" marker-end="url(#arrow)"/>
+        <path d="M155,142 L155,168" stroke="#0d7c70" stroke-width="1.6" marker-end="url(#arrow)"/>
+        <path d="M330,142 L330,168" stroke="#0d7c70" stroke-width="1.6" marker-end="url(#arrow)"/>
+        <path d="M505,142 L505,168" stroke="#0d7c70" stroke-width="1.6" marker-end="url(#arrow)"/>
 
         <!-- Input Guardrails -->
-        <rect x="80" y="172" width="500" height="56" rx="6" fill="#12151a" stroke="#5eead4" stroke-width="1.3"/>
-        <text x="330" y="196" text-anchor="middle" font-family="IBM Plex Sans" font-size="13" fill="#5eead4" font-weight="700">INPUT GUARDRAILS</text>
-        <text x="330" y="214" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#8b93a1">injection classification · structural separation of data from instructions (Pillar 04)</text>
+        <rect x="80" y="172" width="500" height="56" rx="6" fill="#f0fdf9" stroke="#0d7c70" stroke-width="1.3"/>
+        <text x="330" y="196" text-anchor="middle" font-family="IBM Plex Sans" font-size="13" fill="#0d7c70" font-weight="700">INPUT GUARDRAILS</text>
+        <text x="330" y="214" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#6b7280">injection classification · structural separation of data from instructions (Pillar 04)</text>
 
         <!-- arrow to reasoning core -->
-        <path d="M330,228 L330,252" stroke="#5eead4" stroke-width="1.6" marker-end="url(#arrow)"/>
+        <path d="M330,228 L330,252" stroke="#0d7c70" stroke-width="1.6" marker-end="url(#arrow)"/>
 
         <!-- Agent reasoning core -->
-        <rect x="200" y="256" width="260" height="70" rx="6" fill="#171b21" stroke="#f0b429" stroke-width="1.3"/>
-        <text x="330" y="284" text-anchor="middle" font-family="IBM Plex Sans" font-size="13.5" fill="#f0b429" font-weight="700">AGENT REASONING CORE</text>
-        <text x="330" y="302" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#8b93a1">the LLM — probabilistic, never the final authority</text>
+        <rect x="200" y="256" width="260" height="70" rx="6" fill="#fffdf5" stroke="#c49000" stroke-width="1.3"/>
+        <text x="330" y="284" text-anchor="middle" font-family="IBM Plex Sans" font-size="13.5" fill="#9a6700" font-weight="700">AGENT REASONING CORE</text>
+        <text x="330" y="302" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#6b7280">the LLM: probabilistic, never the final authority</text>
 
         <!-- supply chain feed into core -->
-        <path d="M54,300 L200,291" stroke="#5b6474" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#arrowDim)"/>
+        <path d="M54,300 L200,291" stroke="#c0c8d4" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#arrowDim)"/>
 
         <!-- arrow down to policy engine -->
-        <path d="M330,326 L330,352" stroke="#f0b429" stroke-width="1.6" marker-end="url(#arrow)"/>
+        <path d="M330,326 L330,352" stroke="#c49000" stroke-width="1.6" marker-end="url(#arrow)"/>
 
         <!-- Zero Trust Policy Engine -->
-        <rect x="150" y="356" width="360" height="62" rx="6" fill="#12151a" stroke="#5eead4" stroke-width="1.3"/>
-        <text x="330" y="381" text-anchor="middle" font-family="IBM Plex Sans" font-size="13" fill="#5eead4" font-weight="700">ZERO TRUST POLICY ENGINE</text>
-        <text x="330" y="399" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#8b93a1">authorizes every tool call · PDP/PEP (Pillar 02)</text>
+        <rect x="150" y="356" width="360" height="62" rx="6" fill="#f0fdf9" stroke="#0d7c70" stroke-width="1.3"/>
+        <text x="330" y="381" text-anchor="middle" font-family="IBM Plex Sans" font-size="13" fill="#0d7c70" font-weight="700">ZERO TRUST POLICY ENGINE</text>
+        <text x="330" y="399" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#6b7280">authorizes every tool call · PDP/PEP (Pillar 02)</text>
 
         <!-- supply chain feed into policy engine area (tools) -->
-        <path d="M54,400 L150,395" stroke="#5b6474" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#arrowDim)"/>
+        <path d="M54,400 L150,395" stroke="#c0c8d4" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#arrowDim)"/>
 
         <!-- branches down to identity, tool execution, data layer -->
-        <path d="M230,418 L120,452" stroke="#5eead4" stroke-width="1.4" marker-end="url(#arrow)"/>
-        <path d="M330,418 L330,452" stroke="#5eead4" stroke-width="1.4" marker-end="url(#arrow)"/>
-        <path d="M430,418 L560,452" stroke="#5eead4" stroke-width="1.4" marker-end="url(#arrow)"/>
+        <path d="M230,418 L120,452" stroke="#0d7c70" stroke-width="1.4" marker-end="url(#arrow)"/>
+        <path d="M330,418 L330,452" stroke="#0d7c70" stroke-width="1.4" marker-end="url(#arrow)"/>
+        <path d="M430,418 L560,452" stroke="#0d7c70" stroke-width="1.4" marker-end="url(#arrow)"/>
 
         <!-- Identity -->
-        <rect x="70" y="456" width="150" height="66" rx="6" fill="#12151a" stroke="#242a33"/>
-        <text x="145" y="480" text-anchor="middle" font-family="IBM Plex Sans" font-size="11.5" fill="#e7ebf0" font-weight="700">Non-Human Identity</text>
-        <text x="145" y="497" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#8b93a1">ephemeral scoped</text>
-        <text x="145" y="510" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#8b93a1">credentials (Pillar 03)</text>
+        <rect x="70" y="456" width="150" height="66" rx="6" fill="#ffffff" stroke="#ddd9d3"/>
+        <text x="145" y="480" text-anchor="middle" font-family="IBM Plex Sans" font-size="11.5" fill="#181a1f" font-weight="700">Non-Human Identity</text>
+        <text x="145" y="497" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#6b7280">ephemeral scoped</text>
+        <text x="145" y="510" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#6b7280">credentials (Pillar 03)</text>
 
         <!-- Tool execution -->
-        <rect x="255" y="456" width="150" height="66" rx="6" fill="#12151a" stroke="#242a33"/>
-        <text x="330" y="480" text-anchor="middle" font-family="IBM Plex Sans" font-size="11.5" fill="#e7ebf0" font-weight="700">Tool Execution</text>
-        <text x="330" y="497" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#8b93a1">sandboxed · network</text>
-        <text x="330" y="510" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#8b93a1">scoped (Pillar 04/06)</text>
+        <rect x="255" y="456" width="150" height="66" rx="6" fill="#ffffff" stroke="#ddd9d3"/>
+        <text x="330" y="480" text-anchor="middle" font-family="IBM Plex Sans" font-size="11.5" fill="#181a1f" font-weight="700">Tool Execution</text>
+        <text x="330" y="497" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#6b7280">sandboxed · network</text>
+        <text x="330" y="510" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#6b7280">scoped (Pillar 04/06)</text>
 
         <!-- Data layer -->
-        <rect x="440" y="456" width="150" height="66" rx="6" fill="#12151a" stroke="#242a33"/>
-        <text x="515" y="480" text-anchor="middle" font-family="IBM Plex Sans" font-size="11.5" fill="#e7ebf0" font-weight="700">Data Layer</text>
-        <text x="515" y="497" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#8b93a1">memory · RAG index</text>
-        <text x="515" y="510" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#8b93a1">classification (Pillar 05)</text>
+        <rect x="440" y="456" width="150" height="66" rx="6" fill="#ffffff" stroke="#ddd9d3"/>
+        <text x="515" y="480" text-anchor="middle" font-family="IBM Plex Sans" font-size="11.5" fill="#181a1f" font-weight="700">Data Layer</text>
+        <text x="515" y="497" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#6b7280">memory · RAG index</text>
+        <text x="515" y="510" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#6b7280">classification (Pillar 05)</text>
 
         <!-- loop back from tool execution to reasoning core -->
-        <path d="M405,470 C 470,440 470,340 460,300" stroke="#5b6474" stroke-width="1.2" stroke-dasharray="3,3" fill="none" marker-end="url(#arrowDim)"/>
-        <text x="472" y="380" font-family="IBM Plex Mono" font-size="9.5" fill="#5b6474">tool result → back into context (treated as untrusted)</text>
+        <path d="M405,470 C 470,440 470,340 460,300" stroke="#c0c8d4" stroke-width="1.2" stroke-dasharray="3,3" fill="none" marker-end="url(#arrowDim)"/>
+        <text x="472" y="380" font-family="IBM Plex Mono" font-size="9.5" fill="#9ba3b0">tool result → back into context (treated as untrusted)</text>
 
         <!-- output path from core to output guardrails to user -->
-        <path d="M460,270 C 650,240 700,196 660,200" stroke="#f0b429" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+        <path d="M460,270 C 650,240 700,196 660,200" stroke="#c49000" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
 
-        <rect x="660" y="172" width="220" height="56" rx="6" fill="#12151a" stroke="#5eead4" stroke-width="1.3"/>
-        <text x="770" y="196" text-anchor="middle" font-family="IBM Plex Sans" font-size="13" fill="#5eead4" font-weight="700">OUTPUT GUARDRAILS</text>
-        <text x="770" y="214" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#8b93a1">PII redaction · groundedness · toxicity (Pillar 04)</text>
+        <rect x="660" y="172" width="220" height="56" rx="6" fill="#f0fdf9" stroke="#0d7c70" stroke-width="1.3"/>
+        <text x="770" y="196" text-anchor="middle" font-family="IBM Plex Sans" font-size="13" fill="#0d7c70" font-weight="700">OUTPUT GUARDRAILS</text>
+        <text x="770" y="214" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#6b7280">PII redaction · groundedness · toxicity (Pillar 04)</text>
 
-        <path d="M770,228 L770,252" stroke="#5eead4" stroke-width="1.6" marker-end="url(#arrow)"/>
+        <path d="M770,228 L770,252" stroke="#0d7c70" stroke-width="1.6" marker-end="url(#arrow)"/>
 
-        <rect x="660" y="256" width="220" height="70" rx="6" fill="#12151a" stroke="#242a33"/>
-        <text x="770" y="284" text-anchor="middle" font-family="IBM Plex Sans" font-size="12.5" fill="#e7ebf0" font-weight="700">User / Downstream System</text>
-        <text x="770" y="302" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#8b93a1">receives only what passed</text>
-        <text x="770" y="315" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#8b93a1">every gate above</text>
+        <rect x="660" y="256" width="220" height="70" rx="6" fill="#ffffff" stroke="#ddd9d3"/>
+        <text x="770" y="284" text-anchor="middle" font-family="IBM Plex Sans" font-size="12.5" fill="#181a1f" font-weight="700">User / Downstream System</text>
+        <text x="770" y="302" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#6b7280">receives only what passed</text>
+        <text x="770" y="315" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#6b7280">every gate above</text>
 
         <!-- feedback dashed loop from downstream to red team rail to input guardrails -->
-        <path d="M880,290 C 940,290 946,200 946,200" stroke="#5b6474" stroke-width="1.2" stroke-dasharray="3,3" fill="none"/>
-        <path d="M946,200 C 946,160 640,150 580,190" stroke="#5b6474" stroke-width="1.2" stroke-dasharray="3,3" fill="none" marker-end="url(#arrowDim)"/>
+        <path d="M880,290 C 940,290 946,200 946,200" stroke="#c0c8d4" stroke-width="1.2" stroke-dasharray="3,3" fill="none"/>
+        <path d="M946,200 C 946,160 640,150 580,190" stroke="#c0c8d4" stroke-width="1.2" stroke-dasharray="3,3" fill="none" marker-end="url(#arrowDim)"/>
       </svg>
       <div class="diagram-legend">
-        <span><i style="background:#5eead4"></i> Deterministic enforcement point</span>
-        <span><i style="background:#f0b429"></i> Probabilistic component</span>
-        <span><i style="background:#5b6474"></i> Feedback / untrusted-content loop</span>
-        <span><i style="background:#1f3d38"></i> Wraps the whole pipeline</span>
+        <span><i style="background:#0d7c70"></i> Deterministic enforcement point</span>
+        <span><i style="background:#c49000"></i> Probabilistic component</span>
+        <span><i style="background:#c0c8d4"></i> Feedback / untrusted-content loop</span>
+        <span><i style="background:#ddf0ed; outline:1px solid #7fccc4;"></i> Wraps the whole pipeline</span>
       </div>
     </div>
 
-    <p>Three things this diagram is deliberately built to make obvious. First, the reasoning core sits in the middle, not at the top — everything reaching it has already passed a guardrail, and everything it wants to do still has to clear a policy engine that lives outside its own reasoning. Second, tool results looping back into the reasoning core are drawn the same way inbound user content is: as untrusted input, not as validated fact. Third, governance and audit are drawn as bands that wrap the entire pipeline rather than a step at the start or the end — they apply to every box, not to the system as a whole after the fact.</p>
+    <p>Three things this diagram is deliberately built to make obvious. First, the reasoning core sits in the middle, not at the top; everything reaching it has already passed a guardrail, and everything it wants to do still has to clear a policy engine that lives outside its own reasoning. Second, tool results looping back into the reasoning core are drawn the same way inbound user content is: as untrusted input, not as validated fact. Third, governance and audit are drawn as bands that wrap the entire pipeline rather than a step at the start or the end; they apply to every box, not to the system as a whole after the fact.</p>
 
     <table>
       <tr><th>Component</th><th>Enforces</th><th>Failure mode if missing</th></tr>
@@ -474,7 +473,7 @@
     <h2 class="h">Threat Landscape &amp; Attack Surface</h2>
     <p class="h-sub">What actually breaks in agentic systems, mapped to the frameworks security teams already use</p>
 
-    <p>An agentic AI system has a larger and stranger attack surface than a traditional application because natural language is both the interface and, when unguarded, the control plane. Anything that can place text into the model's context — a user, a retrieved document, a tool result, another agent, a webpage — is a potential instruction channel. Threat modeling for agentic systems has to account for this before it accounts for anything else.</p>
+    <p>An agentic AI system has a larger and stranger attack surface than a traditional application because natural language is both the interface and, when unguarded, the control plane. Anything that can place text into the model's context, a user, a retrieved document, a tool result, another agent, a webpage, is a potential instruction channel. Threat modeling for agentic systems has to account for this before it accounts for anything else.</p>
 
     <h3>The agentic attack surface, layer by layer</h3>
     <table>
@@ -495,25 +494,25 @@
 
     <h4>OWASP Top 10 for LLM Applications + Agentic AI extensions</h4>
     <ul>
-      <li><strong>LLM01 Prompt Injection</strong> — direct and indirect instruction override, the single most exploited class of vulnerability in production LLM systems</li>
-      <li><strong>LLM02 Sensitive Information Disclosure</strong> — PII, secrets, or proprietary data leaking through model output or logs</li>
-      <li><strong>LLM03 Supply Chain</strong> — compromised base models, poisoned training/fine-tuning data, malicious pretrained weights, vulnerable plugins</li>
-      <li><strong>LLM04 Data and Model Poisoning</strong> — corrupted training, fine-tuning, or embedding data that shifts model behavior in an attacker's favor</li>
-      <li><strong>LLM05 Improper Output Handling</strong> — passing model output directly into a shell, SQL query, or browser without sanitization</li>
-      <li><strong>LLM06 Excessive Agency</strong> — an agent granted more tools, permissions, or autonomy than the task requires</li>
-      <li><strong>LLM07 System Prompt Leakage</strong> — exposure of instructions that were assumed to be confidential, undermining any security-by-obscurity control built on top of them</li>
-      <li><strong>LLM08 Vector and Embedding Weaknesses</strong> — cross-tenant retrieval leakage, embedding inversion, poisoned vector stores in RAG</li>
-      <li><strong>LLM09 Misinformation</strong> — confident, fluent, factually wrong output presented as fact, with downstream reliance risk</li>
-      <li><strong>LLM10 Unbounded Consumption</strong> — denial-of-wallet and denial-of-service via unmetered inference, recursive agent loops, or resource exhaustion</li>
+      <li><strong>LLM01 Prompt Injection</strong>, direct and indirect instruction override, the single most exploited class of vulnerability in production LLM systems</li>
+      <li><strong>LLM02 Sensitive Information Disclosure</strong>, PII, secrets, or proprietary data leaking through model output or logs</li>
+      <li><strong>LLM03 Supply Chain</strong>, compromised base models, poisoned training/fine-tuning data, malicious pretrained weights, vulnerable plugins</li>
+      <li><strong>LLM04 Data and Model Poisoning</strong>, corrupted training, fine-tuning, or embedding data that shifts model behavior in an attacker's favor</li>
+      <li><strong>LLM05 Improper Output Handling</strong>, passing model output directly into a shell, SQL query, or browser without sanitization</li>
+      <li><strong>LLM06 Excessive Agency</strong>, an agent granted more tools, permissions, or autonomy than the task requires</li>
+      <li><strong>LLM07 System Prompt Leakage</strong>, exposure of instructions that were assumed to be confidential, undermining any security-by-obscurity control built on top of them</li>
+      <li><strong>LLM08 Vector and Embedding Weaknesses</strong>, cross-tenant retrieval leakage, embedding inversion, poisoned vector stores in RAG</li>
+      <li><strong>LLM09 Misinformation</strong>, confident, fluent, factually wrong output presented as fact, with downstream reliance risk</li>
+      <li><strong>LLM10 Unbounded Consumption</strong>, denial-of-wallet and denial-of-service via unmetered inference, recursive agent loops, or resource exhaustion</li>
     </ul>
     <p>The agentic-specific extension to this list adds threats unique to systems that act, not just respond: <strong>goal manipulation</strong> (an attacker redirects the agent's objective mid-task), <strong>tool misuse</strong> (a legitimate tool invoked with an attacker's intent), <strong>multi-agent trust exploitation</strong> (a compromised or malicious agent poisons others in an orchestration), <strong>identity spoofing between agents</strong>, and <strong>human-in-the-loop bypass</strong> (an agent structures its request so an approver rubber-stamps something they would not have approved if fully informed).</p>
 
-    <h4>MITRE ATLAS — the adversary's kill chain</h4>
-    <p>Where OWASP catalogs vulnerability classes, MITRE ATLAS (Adversarial Threat Landscape for Artificial-Intelligence Systems) maps the attacker's actual sequence of operations, mirroring MITRE ATT&amp;CK's tactic structure: reconnaissance of the model and its training data, resource development (building adversarial datasets or injection payloads), initial access (via prompt or poisoned input), ML model access, execution, persistence (memory or fine-tune poisoning that survives across sessions), exfiltration, and impact. Using ATLAS alongside OWASP gives a threat model both a taxonomy of weaknesses and a narrative of how those weaknesses get chained into an actual breach — which is what a red team exercise and an incident response runbook both need.</p>
+    <h4>MITRE ATLAS: the adversary's kill chain</h4>
+    <p>Where OWASP catalogs vulnerability classes, MITRE ATLAS (Adversarial Threat Landscape for Artificial-Intelligence Systems) maps the attacker's actual sequence of operations, mirroring MITRE ATT&amp;CK's tactic structure: reconnaissance of the model and its training data, resource development (building adversarial datasets or injection payloads), initial access (via prompt or poisoned input), ML model access, execution, persistence (memory or fine-tune poisoning that survives across sessions), exfiltration, and impact. Using ATLAS alongside OWASP gives a threat model both a taxonomy of weaknesses and a narrative of how those weaknesses get chained into an actual breach, which is what a red team exercise and an incident response runbook both need.</p>
 
     <div class="callout warn">
       <div class="ctitle">⚠ The confused deputy problem</div>
-      <p>The highest-consequence agentic failure mode is not the model saying something wrong — it is the model doing something wrong with permissions a human legitimately granted it. An agent with a user's OAuth token and a "send email" tool does not need to be jailbroken to cause damage; it only needs to be convinced, via an indirect injection buried in a document it was asked to summarize, that sending a specific email is part of the task. The agent acts entirely within its granted authority. This is why identity and authorization design (Pillar 03) matters as much as content filtering (Pillar 04) — a guardrail that only inspects text will never catch an authorized action taken for the wrong reason.</p>
+      <p>The highest-consequence agentic failure mode is not the model saying something wrong, it is the model doing something wrong with permissions a human legitimately granted it. An agent with a user's OAuth token and a "send email" tool does not need to be jailbroken to cause damage; it only needs to be convinced, via an indirect injection buried in a document it was asked to summarize, that sending a specific email is part of the task. The agent acts entirely within its granted authority. This is why identity and authorization design (Pillar 03) matters as much as content filtering (Pillar 04): a guardrail that only inspects text will never catch an authorized action taken for the wrong reason.</p>
     </div>
 
     <h3>Building the threat model</h3>
@@ -522,12 +521,12 @@
       <div class="step"><div class="sn"></div><div class="sc"><b>Classify each tool by reversibility and blast radius.</b><p>A read-only search tool and a "transfer funds" tool are not the same risk category and must not share an approval path.</p></div></div>
       <div class="step"><div class="sn"></div><div class="sc"><b>Map each attack surface layer to OWASP and ATLAS entries.</b><p>Forces explicit answers to "what happens if this specific input is adversarial" rather than a generic "we have guardrails."</p></div></div>
       <div class="step"><div class="sn"></div><div class="sc"><b>Assign a control owner per threat, not per system.</b><p>Prompt injection defense, output sanitization, and identity scoping are usually owned by different teams. An unowned threat is an unmitigated one.</p></div></div>
-      <div class="step"><div class="sn"></div><div class="sc"><b>Re-run the model on every new tool, subagent, or data source.</b><p>Threat models for agentic systems go stale the moment a new tool is added — treat tool onboarding as a security review gate, not a config change.</p></div></div>
+      <div class="step"><div class="sn"></div><div class="sc"><b>Re-run the model on every new tool, subagent, or data source.</b><p>Threat models for agentic systems go stale the moment a new tool is added, treat tool onboarding as a security review gate, not a config change.</p></div></div>
     </div>
 
     <div class="callout idea">
       <div class="ctitle">💡 The decision framing</div>
-      <p>The question that should open every agentic feature design review is not "what can this agent do for the user?" It is "what is the worst thing this agent could be tricked into doing, and who would have to approve it first?" A threat model that cannot answer that question concretely for every tool the agent holds is not a threat model — it is a feature list.</p>
+      <p>The question that should open every agentic feature design review is not "what can this agent do for the user?" It is "what is the worst thing this agent could be tricked into doing, and who would have to approve it first?" A threat model that cannot answer that question concretely for every tool the agent holds is not a threat model: it is a feature list.</p>
     </div>
   </section>
 
@@ -535,29 +534,29 @@
   <section class="pillar" id="zerotrust">
     <div class="eyebrow"><span class="idx">02</span> Trust architecture</div>
     <h2 class="h">Zero Trust Architecture for Agentic Systems</h2>
-    <p class="h-sub">Never trust a model's output, a tool's response, or another agent's claim by default — verify every time</p>
+    <p class="h-sub">Never trust a model's output, a tool's response, or another agent's claim by default; verify every time</p>
 
-    <p>Zero trust in traditional infrastructure means no implicit trust based on network location: every request is authenticated and authorized regardless of where it originates. Agentic AI needs the same posture applied to a new set of actors that classical zero trust never anticipated — the model itself, the tools it calls, the content it retrieves, and the other agents it talks to. None of these should be implicitly trusted just because they are "inside" the AI system's boundary.</p>
+    <p>Zero trust in traditional infrastructure means no implicit trust based on network location: every request is authenticated and authorized regardless of where it originates. Agentic AI needs the same posture applied to a new set of actors that classical zero trust never anticipated: the model itself, the tools it calls, the content it retrieves, and the other agents it talks to. None of these should be implicitly trusted just because they are "inside" the AI system's boundary.</p>
 
     <h3>The zero trust principles, restated for agents</h3>
     <table>
       <tr><th>NIST 800-207 principle</th><th>Agentic system translation</th></tr>
-      <tr><td>Every data source and computing service is a resource</td><td>Every tool, API, and data store the agent can reach is a resource requiring its own access decision — not a blanket grant because "the agent needs it to work"</td></tr>
+      <tr><td>Every data source and computing service is a resource</td><td>Every tool, API, and data store the agent can reach is a resource requiring its own access decision, not a blanket grant because "the agent needs it to work"</td></tr>
       <tr><td>Communication is secured regardless of network location</td><td>Model-to-tool and agent-to-agent calls are authenticated and encrypted even when both run inside the same cluster or process</td></tr>
-      <tr><td>Access is granted per-session, not per-perimeter</td><td>A tool grant is scoped to one task or session, not to the agent's identity permanently — re-authorize on the next session</td></tr>
-      <tr><td>Access decisions are dynamic, using as many signals as possible</td><td>Authorization considers the specific action, the data involved, the user on whose behalf the agent acts, and real-time risk signals — not just "is this a valid agent credential"</td></tr>
-      <tr><td>Integrity and security posture of all assets is continuously monitored</td><td>Every model, prompt version, and tool is monitored for drift, compromise, or anomalous behavior — not verified once at deployment</td></tr>
+      <tr><td>Access is granted per-session, not per-perimeter</td><td>A tool grant is scoped to one task or session, not to the agent's identity permanently; re-authorize on the next session</td></tr>
+      <tr><td>Access decisions are dynamic, using as many signals as possible</td><td>Authorization considers the specific action, the data involved, the user on whose behalf the agent acts, and real-time risk signals, not just "is this a valid agent credential"</td></tr>
+      <tr><td>Integrity and security posture of all assets is continuously monitored</td><td>Every model, prompt version, and tool is monitored for drift, compromise, or anomalous behavior, not verified once at deployment</td></tr>
       <tr><td>Strict enforcement before access is granted</td><td>Authorization is enforced before a tool executes, not validated after the fact by reviewing logs</td></tr>
     </table>
 
     <h3>Trust boundaries unique to agentic AI</h3>
     <p>A zero trust architecture for an agent has to draw boundaries that don't exist in traditional software:</p>
     <ul>
-      <li><strong>The model output boundary.</strong> Model output is never trusted as an instruction, a credential, or a validated fact by any downstream system. It is treated as untrusted user input until independently verified — the same posture applied to form submissions from an anonymous web user.</li>
-      <li><strong>The retrieved content boundary.</strong> Anything pulled into context by RAG, web browsing, or a tool call — documents, emails, search results — is data, never instructions, and must be structurally separated from the system prompt so the model cannot be confused about which is which.</li>
+      <li><strong>The model output boundary.</strong> Model output is never trusted as an instruction, a credential, or a validated fact by any downstream system. It is treated as untrusted user input until independently verified, the same posture applied to form submissions from an anonymous web user.</li>
+      <li><strong>The retrieved content boundary.</strong> Anything pulled into context by RAG, web browsing, or a tool call (documents, emails, search results) is data, never instructions, and must be structurally separated from the system prompt so the model cannot be confused about which is which.</li>
       <li><strong>The tool response boundary.</strong> A tool's return value is treated with the same suspicion as its input. A "search the web" tool can return a page containing an injection payload; a "read this file" tool can return content engineered to manipulate the next reasoning step.</li>
       <li><strong>The inter-agent boundary.</strong> In multi-agent systems, one agent's output is another agent's untrusted input. A compromised or manipulated subagent should not be able to escalate its influence over the orchestrator or its siblings simply by asserting authority in natural language.</li>
-      <li><strong>The human delegation boundary.</strong> An agent acting "on behalf of" a user does not inherit that user's full trust level by default — the delegation is scoped explicitly to the task, the data, and a time window.</li>
+      <li><strong>The human delegation boundary.</strong> An agent acting "on behalf of" a user does not inherit that user's full trust level by default; the delegation is scoped explicitly to the task, the data, and a time window.</li>
     </ul>
 
     <h3>Reference architecture: policy enforcement around the agent, not inside it</h3>
@@ -585,19 +584,19 @@ async function invokeTool(agentContext, toolCall) {
     return await requestHumanApproval(toolCall, identity);
   }
 
-  // 4. Execute with a scoped, short-lived credential — never the agent's standing identity
+  // 4. Execute with a scoped, short-lived credential, never the agent's standing identity
   const scopedCredential = await issueEphemeralCredential(decision.grant);
   return executeTool(toolCall, scopedCredential);
 }</code></pre>
 
     <div class="callout stat">
       <div class="ctitle">📊 Why "the agent has an API key" fails at scale</div>
-      <p>A single standing credential shared across every tool call collapses zero trust into perimeter trust — if the agent's reasoning is manipulated once, every tool it holds is compromised for the rest of the session. Ephemeral, per-call, narrowly scoped credentials mean a successful injection only exposes the blast radius of one action, not the agent's entire permission set.</p>
+      <p>A single standing credential shared across every tool call collapses zero trust into perimeter trust: if the agent's reasoning is manipulated once, every tool it holds is compromised for the rest of the session. Ephemeral, per-call, narrowly scoped credentials mean a successful injection only exposes the blast radius of one action, not the agent's entire permission set.</p>
     </div>
 
     <div class="callout idea">
       <div class="ctitle">💡 The decision framing</div>
-      <p>Zero trust for agentic AI is not a network diagram exercise — it is the decision to never let the model's own claims (about what it should do, who it's acting for, or what a tool told it) be the sole basis for an authorization decision. Every trust boundary in this pillar exists because natural language is trivially spoofable in a way that a signed JWT is not. Build the policy layer assuming the model will eventually be fooled, because it will.</p>
+      <p>Zero trust for agentic AI is not a network diagram exercise; it is the decision to never let the model's own claims (about what it should do, who it's acting for, or what a tool told it) be the sole basis for an authorization decision. Every trust boundary in this pillar exists because natural language is trivially spoofable in a way that a signed JWT is not. Build the policy layer assuming the model will eventually be fooled, because it will.</p>
     </div>
   </section>
 
@@ -605,23 +604,23 @@ async function invokeTool(agentContext, toolCall) {
   <section class="pillar" id="identity">
     <div class="eyebrow"><span class="idx">03</span> Access control</div>
     <h2 class="h">Non-Human Identity &amp; Access Management</h2>
-    <p class="h-sub">Agents are a new class of identity — service accounts that reason, delegate, and act on their own inferred intent</p>
+    <p class="h-sub">Agents are a new class of identity: service accounts that reason, delegate, and act on their own inferred intent</p>
 
-    <p>Traditional IAM has two identity classes: human users and service accounts. Agentic AI introduces a third that behaves like neither — an identity that acts autonomously like a service account but makes context-dependent, non-deterministic decisions like a human. Treating an agent's identity as "just another service account" under-scopes it; treating it as "just another user" over-trusts it. It needs its own model.
+    <p>Traditional IAM has two identity classes: human users and service accounts. Agentic AI introduces a third that behaves like neither, an identity that acts autonomously like a service account but makes context-dependent, non-deterministic decisions like a human. Treating an agent's identity as "just another service account" under-scopes it; treating it as "just another user" over-trusts it. It needs its own model.
 
     <h3>The agent identity lifecycle</h3>
     <table>
       <tr><th>Stage</th><th>Control</th></tr>
-      <tr><td class="mono">Provisioning</td><td>Every agent gets a distinct, registered identity — never a shared credential across agent instances or environments</td></tr>
+      <tr><td class="mono">Provisioning</td><td>Every agent gets a distinct, registered identity, never a shared credential across agent instances or environments</td></tr>
       <tr><td class="mono">Scoping</td><td>Permissions are defined per capability the agent needs for its specific task, not per system it happens to touch</td></tr>
-      <tr><td class="mono">Delegation</td><td>When acting on behalf of a user, the agent receives a delegated, downscoped token — never the user's full session credential</td></tr>
-      <tr><td class="mono">Session binding</td><td>Permissions are issued per session or per task, with explicit expiry — not standing access that persists across unrelated sessions</td></tr>
+      <tr><td class="mono">Delegation</td><td>When acting on behalf of a user, the agent receives a delegated, downscoped token, never the user's full session credential</td></tr>
+      <tr><td class="mono">Session binding</td><td>Permissions are issued per session or per task, with explicit expiry, not standing access that persists across unrelated sessions</td></tr>
       <tr><td class="mono">Rotation</td><td>Credentials are short-lived and automatically rotated; a leaked agent credential should be worthless within minutes</td></tr>
-      <tr><td class="mono">Deprovisioning</td><td>Retired agents, deprecated tool integrations, and abandoned prototypes have their credentials revoked on a tracked schedule — not left active indefinitely</td></tr>
+      <tr><td class="mono">Deprovisioning</td><td>Retired agents, deprecated tool integrations, and abandoned prototypes have their credentials revoked on a tracked schedule, not left active indefinitely</td></tr>
     </table>
 
     <h3>Delegated authorization: OAuth scopes done narrowly</h3>
-    <p>When an agent acts for a user — reading their calendar, drafting on their behalf, querying their account — the correct pattern is delegated, scoped OAuth, not credential sharing. The scope granted should describe the narrowest action set the task requires, not the broadest set the integration supports.</p>
+    <p>When an agent acts for a user, reading their calendar, drafting on their behalf, querying their account, the correct pattern is delegated, scoped OAuth, not credential sharing. The scope granted should describe the narrowest action set the task requires, not the broadest set the integration supports.</p>
 
     <table>
       <tr><th>Anti-pattern</th><th>Zero trust pattern</th></tr>
@@ -637,30 +636,30 @@ async function invokeTool(agentContext, toolCall) {
     <div class="callout check">
       <div class="ctitle">✓ A well-scoped tool grant answers all five</div>
       <ul>
-        <li>Which specific operation — not "database access," but <code class="inline">SELECT</code> on named tables, never <code class="inline">DROP</code> or <code class="inline">DELETE</code></li>
-        <li>Which specific records — row-level or tenant-level scoping, not table-wide access</li>
-        <li>Under what conditions — during business hours, below a value threshold, within a task's declared scope</li>
-        <li>For how long — the grant expires with the session or the task, not the deployment</li>
-        <li>With what fallback — a denied or ambiguous request degrades to "ask a human," never to a broader silent retry</li>
+        <li>Which specific operation, not "database access," but <code class="inline">SELECT</code> on named tables, never <code class="inline">DROP</code> or <code class="inline">DELETE</code></li>
+        <li>Which specific records, row-level or tenant-level scoping, not table-wide access</li>
+        <li>Under what conditions, during business hours, below a value threshold, within a task's declared scope</li>
+        <li>For how long, the grant expires with the session or the task, not the deployment</li>
+        <li>With what fallback, a denied or ambiguous request degrades to "ask a human," never to a broader silent retry</li>
       </ul>
     </div>
 
     <h3>Multi-agent identity: who is actually speaking</h3>
-    <p>In orchestrator-subagent and multi-agent systems, every message needs a verifiable sender identity, not an assumed one. Without this, a compromised subagent — or a malicious message crafted to look like it came from a trusted peer — can influence the orchestrator's decisions with no way to trace or contain the influence.</p>
+    <p>In orchestrator-subagent and multi-agent systems, every message needs a verifiable sender identity, not an assumed one. Without this, a compromised subagent, or a malicious message crafted to look like it came from a trusted peer, can influence the orchestrator's decisions with no way to trace or contain the influence.</p>
     <ul>
       <li><strong>Signed inter-agent messages:</strong> each agent signs its outputs with its own identity so downstream agents can verify provenance before acting on the content.</li>
-      <li><strong>Trust levels per agent role:</strong> an orchestrator should treat a specialist subagent's output as data to evaluate, not instructions to obey — the same untrusted-content posture applied to RAG documents.</li>
+      <li><strong>Trust levels per agent role:</strong> an orchestrator should treat a specialist subagent's output as data to evaluate, not instructions to obey, the same untrusted-content posture applied to RAG documents.</li>
       <li><strong>Bounded delegation depth:</strong> cap how many hops a task can be delegated across before requiring re-authorization, to prevent authority laundering through a long agent chain.</li>
     </ul>
 
     <div class="callout warn">
       <div class="ctitle">⚠ The over-provisioned agent</div>
-      <p>The single most common finding in agentic AI security reviews is a general-purpose service credential — often reused from an existing backend integration — granted to an agent because it was the fastest way to get a prototype working. That credential typically has far more scope than any individual task needs, was never designed to be driven by non-deterministic reasoning, and has no session-level expiry. It is the agentic equivalent of running a web application as root. Treat any agent credential provisioned "to unblock the demo" as technical debt with a tracked remediation date, not a permanent fixture.</p>
+      <p>The single most common finding in agentic AI security reviews is a general-purpose service credential, often reused from an existing backend integration, granted to an agent because it was the fastest way to get a prototype working. That credential typically has far more scope than any individual task needs, was never designed to be driven by non-deterministic reasoning, and has no session-level expiry. It is the agentic equivalent of running a web application as root. Treat any agent credential provisioned "to unblock the demo" as technical debt with a tracked remediation date, not a permanent fixture.</p>
     </div>
 
     <div class="callout idea">
       <div class="ctitle">💡 The decision framing</div>
-      <p>Every tool grant is a standing bet that the agent's reasoning will never be manipulated into misusing it. Size the bet to what you can afford to lose, not to what makes the integration easiest to build. The product question is not "does this agent need access to the payments API" — it is "what is the maximum single action this agent should ever be able to take unsupervised, and does the credential enforce that ceiling even if the reasoning is wrong."</p>
+      <p>Every tool grant is a standing bet that the agent's reasoning will never be manipulated into misusing it. Size the bet to what you can afford to lose, not to what makes the integration easiest to build. The product question is not "does this agent need access to the payments API", it is "what is the maximum single action this agent should ever be able to take unsupervised, and does the credential enforce that ceiling even if the reasoning is wrong."</p>
     </div>
   </section>
 
@@ -668,9 +667,9 @@ async function invokeTool(agentContext, toolCall) {
   <section class="pillar" id="guardrails">
     <div class="eyebrow"><span class="idx">04</span> Runtime defense</div>
     <h2 class="h">Guardrails &amp; Runtime Defense</h2>
-    <p class="h-sub">Layered, deterministic controls around a probabilistic core — guardrails are gates, not suggestions</p>
+    <p class="h-sub">Layered, deterministic controls around a probabilistic core; guardrails are gates, not suggestions</p>
 
-    <p>A guardrail is any control that constrains what an agentic system can say or do, enforced independently of the model's own judgment. Guardrails exist because the model is the one component in the system that cannot be exhaustively tested — its behavior is probabilistic and shifts with prompt changes, model updates, and adversarial input. The guardrail layer is where deterministic engineering discipline is reintroduced around a non-deterministic core.</p>
+    <p>A guardrail is any control that constrains what an agentic system can say or do, enforced independently of the model's own judgment. Guardrails exist because the model is the one component in the system that cannot be exhaustively tested, its behavior is probabilistic and shifts with prompt changes, model updates, and adversarial input. The guardrail layer is where deterministic engineering discipline is reintroduced around a non-deterministic core.</p>
 
     <h3>The guardrail stack</h3>
     <table>
@@ -684,19 +683,19 @@ async function invokeTool(agentContext, toolCall) {
     </table>
 
     <h3>Prompt injection defense in depth</h3>
-    <p>No single control reliably stops prompt injection — treat it as a defense-in-depth problem, the same posture applied to SQL injection two decades ago, where input validation, parameterization, and least privilege are all deployed together because none alone is sufficient.</p>
+    <p>No single control reliably stops prompt injection, treat it as a defense-in-depth problem, the same posture applied to SQL injection two decades ago, where input validation, parameterization, and least privilege are all deployed together because none alone is sufficient.</p>
     <ul>
       <li><strong>Classification before ingestion:</strong> run a dedicated injection/jailbreak classifier on all user input and all retrieved content before it enters the prompt, not as an afterthought on the final output.</li>
-      <li><strong>Structural separation:</strong> wrap untrusted content in explicit delimiters (<code class="inline">&lt;untrusted_data&gt;...&lt;/untrusted_data&gt;</code>) and instruct the model, in the system prompt, to never treat content inside those tags as instructions — regardless of what it claims to be.</li>
+      <li><strong>Structural separation:</strong> wrap untrusted content in explicit delimiters (<code class="inline">&lt;untrusted_data&gt;...&lt;/untrusted_data&gt;</code>) and instruct the model, in the system prompt, to never treat content inside those tags as instructions, regardless of what it claims to be.</li>
       <li><strong>Instruction hierarchy enforcement:</strong> where the model provider supports it, use system-level instruction privileges that user and tool content structurally cannot override, rather than relying on prompt wording alone.</li>
-      <li><strong>Canary tokens:</strong> embed unique, non-obvious tokens in the system prompt and monitor output for their appearance — a leaked canary is a hard signal of successful system-prompt extraction.</li>
+      <li><strong>Canary tokens:</strong> embed unique, non-obvious tokens in the system prompt and monitor output for their appearance; a leaked canary is a hard signal of successful system-prompt extraction.</li>
       <li><strong>Least-privilege blast radius:</strong> because no injection defense is 100% reliable, the identity and authorization layer (Pillar 02–03) must ensure that even a successful injection cannot reach an unauthorized action. This is the control that actually bounds the damage.</li>
     </ul>
 
     <h3>Output-side guardrails</h3>
     <table>
       <tr><th>Risk</th><th>Detection method</th><th>Enforcement</th></tr>
-      <tr><td>PII / secrets in output</td><td>Regex + NER scan of generated text before delivery</td><td>Hard block or redact — never a soft warning on a critical-severity match</td></tr>
+      <tr><td>PII / secrets in output</td><td>Regex + NER scan of generated text before delivery</td><td>Hard block or redact, never a soft warning on a critical-severity match</td></tr>
       <tr><td>System prompt leakage</td><td>Canary token match, similarity scoring against known system prompt</td><td>Block response, alert security, rotate the exposed system prompt</td></tr>
       <tr><td>Unsafe generated code</td><td>Static analysis (SAST) on any code the agent produces or executes</td><td>Sandbox execution only; block direct execution of ungated code</td></tr>
       <tr><td>Hallucinated / ungrounded claims</td><td>Groundedness check against retrieved context (see Production Readiness Guide, Pillar 03)</td><td>Route to human review or add explicit uncertainty framing rather than deliver as fact</td></tr>
@@ -704,7 +703,7 @@ async function invokeTool(agentContext, toolCall) {
     </table>
 
     <h3>Tool execution sandboxing</h3>
-    <p>Any tool that executes code, runs shell commands, or manipulates the file system on the agent's behalf must run in an isolated, resource-limited environment — never in a process that shares memory, file system, or network access with the orchestrating application.</p>
+    <p>Any tool that executes code, runs shell commands, or manipulates the file system on the agent's behalf must run in an isolated, resource-limited environment, never in a process that shares memory, file system, or network access with the orchestrating application.</p>
     <ul>
       <li><strong>Process isolation:</strong> containerized or microVM execution per task, destroyed after use, with no persistent state carried between sessions unless explicitly designed for it.</li>
       <li><strong>Network egress control:</strong> code execution sandboxes default to no outbound network access; specific destinations are allowlisted per tool, never opened broadly "in case it's needed."</li>
@@ -714,12 +713,12 @@ async function invokeTool(agentContext, toolCall) {
 
     <div class="callout warn">
       <div class="ctitle">⚠ Guardrails that only check the final answer</div>
-      <p>A common architectural mistake is running safety checks only on the model's final text output while leaving intermediate tool calls unguarded. An agent can exfiltrate data, modify a record, or send a message through a tool call mid-session — actions that never appear in the "final answer" a content filter inspects. Every tool invocation is a guardrail checkpoint in its own right, not just the last message shown to the user.</p>
+      <p>A common architectural mistake is running safety checks only on the model's final text output while leaving intermediate tool calls unguarded. An agent can exfiltrate data, modify a record, or send a message through a tool call mid-session ; actions that never appear in the "final answer" a content filter inspects. Every tool invocation is a guardrail checkpoint in its own right, not just the last message shown to the user.</p>
     </div>
 
     <div class="callout idea">
       <div class="ctitle">💡 The decision framing</div>
-      <p>Guardrails are gates the system cannot bypass, not prompt instructions the model is asked to follow. If a control can be disabled by convincing the model to ignore it, it is a suggestion, not a guardrail. The product decision is which checks live in the deterministic policy layer — outside the model's influence entirely — versus which are acceptable as prompt-level guidance because the consequence of a miss is low. High-consequence actions get deterministic gates. Everything else can use judgment-based controls, but only after that line has been drawn explicitly.</p>
+      <p>Guardrails are gates the system cannot bypass, not prompt instructions the model is asked to follow. If a control can be disabled by convincing the model to ignore it, it is a suggestion, not a guardrail. The product decision is which checks live in the deterministic policy layer (outside the model's influence entirely) versus which are acceptable as prompt-level guidance because the consequence of a miss is low. High-consequence actions get deterministic gates. Everything else can use judgment-based controls, but only after that line has been drawn explicitly.</p>
     </div>
   </section>
 
@@ -734,7 +733,7 @@ async function invokeTool(agentContext, toolCall) {
     <h3>Data classification for AI pipelines</h3>
     <table>
       <tr><th>Classification</th><th>Handling in prompts</th><th>Handling in memory / logs</th></tr>
-      <tr><td><span class="badge crit">Critical</span> Financial account numbers, national IDs, health records, credentials</td><td>Never sent to a model provider in raw form — tokenize, redact, or process through a compliant isolated pipeline</td><td>Never persisted in vector stores, session memory, or plaintext logs</td></tr>
+      <tr><td><span class="badge crit">Critical</span> Financial account numbers, national IDs, health records, credentials</td><td>Never sent to a model provider in raw form, tokenize, redact, or process through a compliant isolated pipeline</td><td>Never persisted in vector stores, session memory, or plaintext logs</td></tr>
       <tr><td><span class="badge high">High</span> Names, contact details, precise location, transaction history</td><td>Redact or mask before sending unless explicitly required for the task and covered by a data processing agreement</td><td>Encrypted at rest, retention-limited, access-logged</td></tr>
       <tr><td><span class="badge med">Medium</span> Behavioral data, preferences, non-identifying usage patterns</td><td>Permitted with standard encryption in transit</td><td>Standard retention policy applies</td></tr>
       <tr><td>Public / synthetic</td><td>No special handling required</td><td>Standard retention policy applies</td></tr>
@@ -742,10 +741,10 @@ async function invokeTool(agentContext, toolCall) {
 
     <h3>Protecting the prompt as a data transmission</h3>
     <ul>
-      <li><strong>PII detection before the provider call.</strong> Run detection (regex, NER, or a dedicated classifier) on every prompt before it leaves your infrastructure, exactly as described in the Production Readiness Guide's safety pipeline — this pillar assumes that control exists and extends it to memory and multi-agent contexts.</li>
-      <li><strong>Data processing agreements per provider.</strong> Verify each model provider's data retention window, training-use opt-out status, and sub-processor list explicitly. Defaults vary by provider and by API tier — a consumer-tier endpoint and an enterprise API from the same vendor can have materially different data handling terms.</li>
+      <li><strong>PII detection before the provider call.</strong> Run detection (regex, NER, or a dedicated classifier) on every prompt before it leaves your infrastructure, exactly as described in the Production Readiness Guide's safety pipeline, this pillar assumes that control exists and extends it to memory and multi-agent contexts.</li>
+      <li><strong>Data processing agreements per provider.</strong> Verify each model provider's data retention window, training-use opt-out status, and sub-processor list explicitly. Defaults vary by provider and by API tier, a consumer-tier endpoint and an enterprise API from the same vendor can have materially different data handling terms.</li>
       <li><strong>Data residency enforcement.</strong> Route requests to region-pinned model endpoints where data residency law requires it, and verify that no failover path silently routes to an out-of-region endpoint during an outage.</li>
-      <li><strong>Zero data retention modes.</strong> Where available, use provider configurations that disable prompt logging and training use entirely for regulated workloads — and verify this contractually, not just via a dashboard toggle.</li>
+      <li><strong>Zero data retention modes.</strong> Where available, use provider configurations that disable prompt logging and training use entirely for regulated workloads, and verify this contractually, not just via a dashboard toggle.</li>
     </ul>
 
     <h3>Memory and RAG-specific risks</h3>
@@ -758,17 +757,17 @@ async function invokeTool(agentContext, toolCall) {
     </table>
 
     <h3>The right to erasure in a system with memory</h3>
-    <p>If a user's data has flowed into conversation history, a vector store, a fine-tuning dataset, or an agent's long-term memory, a deletion request has to trace through every one of those stores — not just the primary database. This is materially harder for AI systems than for traditional applications because embeddings and fine-tuned weights do not delete cleanly the way a database row does.</p>
+    <p>If a user's data has flowed into conversation history, a vector store, a fine-tuning dataset, or an agent's long-term memory, a deletion request has to trace through every one of those stores, not just the primary database. This is materially harder for AI systems than for traditional applications because embeddings and fine-tuned weights do not delete cleanly the way a database row does.</p>
     <div class="stepper">
-      <div class="step"><div class="sn"></div><div class="sc"><b>Maintain a data lineage map.</b><p>Know every store — session cache, vector index, long-term memory, analytics warehouse, fine-tuning dataset — that a given user's data can reach.</p></div></div>
+      <div class="step"><div class="sn"></div><div class="sc"><b>Maintain a data lineage map.</b><p>Know every store, session cache, vector index, long-term memory, analytics warehouse, fine-tuning dataset, that a given user's data can reach.</p></div></div>
       <div class="step"><div class="sn"></div><div class="sc"><b>Avoid fine-tuning on raw user data where possible.</b><p>Prefer RAG or in-context approaches for personalization; a fine-tuned model cannot have a single user's contribution cleanly removed after the fact.</p></div></div>
       <div class="step"><div class="sn"></div><div class="sc"><b>Automate cross-store deletion.</b><p>A single deletion request triggers a workflow that purges the user's data from every mapped store, not a manual, easily-missed checklist.</p></div></div>
-      <div class="step"><div class="sn"></div><div class="sc"><b>Verify and log completion.</b><p>Record deletion completion per store with a timestamp — this is the audit evidence a regulator or a user's legal counsel will ask for.</p></div></div>
+      <div class="step"><div class="sn"></div><div class="sc"><b>Verify and log completion.</b><p>Record deletion completion per store with a timestamp, this is the audit evidence a regulator or a user's legal counsel will ask for.</p></div></div>
     </div>
 
     <div class="callout idea">
       <div class="ctitle">💡 The decision framing</div>
-      <p>Every new memory or retrieval feature is also a new data protection surface, and it should be designed with that framing from the start rather than retrofitted after a privacy review flags it. The product question when adding persistent memory is not just "does this improve personalization" — it is "what is our deletion story for this store, and can we actually honor it within the regulatory timeline."</p>
+      <p>Every new memory or retrieval feature is also a new data protection surface, and it should be designed with that framing from the start rather than retrofitted after a privacy review flags it. The product question when adding persistent memory is not just "does this improve personalization", it is "what is our deletion story for this store, and can we actually honor it within the regulatory timeline."</p>
     </div>
   </section>
 
@@ -776,9 +775,9 @@ async function invokeTool(agentContext, toolCall) {
   <section class="pillar" id="supplychain">
     <div class="eyebrow"><span class="idx">06</span> Dependency trust</div>
     <h2 class="h">Supply Chain &amp; Model Integrity</h2>
-    <p class="h-sub">The model, its tools, and every plugin they call are dependencies — treat them like dependencies</p>
+    <p class="h-sub">The model, its tools, and every plugin they call are dependencies; treat them like dependencies</p>
 
-    <p>An agentic system's supply chain now includes a category traditional AppSec supply chain security never accounted for: the model itself, the fine-tuning or RAG data that shapes its behavior, and the growing ecosystem of tool integrations — including MCP servers — that extend what the agent can do. Each is a trust decision made once at integration time and rarely revisited.</p>
+    <p>An agentic system's supply chain now includes a category traditional AppSec supply chain security never accounted for: the model itself, the fine-tuning or RAG data that shapes its behavior, and the growing ecosystem of tool integrations (including MCP servers) that extend what the agent can do. Each is a trust decision made once at integration time and rarely revisited.</p>
 
     <h3>The extended AI supply chain</h3>
     <table>
@@ -787,21 +786,21 @@ async function invokeTool(agentContext, toolCall) {
       <tr><td>Fine-tuned / adapted models</td><td>Poisoned fine-tuning data shifting behavior in a narrow, hard-to-detect way</td><td>Provenance-track every fine-tuning dataset; evaluate fine-tuned models against the same safety suite as the base model, not a reduced one</td></tr>
       <tr><td>RAG knowledge base</td><td>Poisoned or manipulated source documents that get retrieved and treated as ground truth</td><td>Source documents from vetted, access-controlled repositories; content integrity checks on ingestion; provenance metadata retained through retrieval</td></tr>
       <tr><td>Third-party tools / plugins</td><td>Malicious or vulnerable code executed with the agent's granted permissions</td><td>Security review before integration; sandboxed execution; least-privilege scoping regardless of the tool's own claims</td></tr>
-      <tr><td>MCP servers</td><td>A rapidly growing, unevenly vetted ecosystem — a malicious or compromised server can inject instructions through tool descriptions or tool results</td><td>Treat tool <em>descriptions</em>, not just tool <em>outputs</em>, as untrusted content; allowlist servers explicitly; pin versions; monitor for description or schema changes post-approval</td></tr>
-      <tr><td>Open-source agent frameworks</td><td>Standard software dependency risk — vulnerable transitive dependencies, unmaintained packages</td><td>SCA (software composition analysis) scanning in CI; dependency pinning; license and maintenance-status review before adoption</td></tr>
+      <tr><td>MCP servers</td><td>A rapidly growing, unevenly vetted ecosystem, a malicious or compromised server can inject instructions through tool descriptions or tool results</td><td>Treat tool <em>descriptions</em>, not just tool <em>outputs</em>, as untrusted content; allowlist servers explicitly; pin versions; monitor for description or schema changes post-approval</td></tr>
+      <tr><td>Open-source agent frameworks</td><td>Standard software dependency risk, vulnerable transitive dependencies, unmaintained packages</td><td>SCA (software composition analysis) scanning in CI; dependency pinning; license and maintenance-status review before adoption</td></tr>
     </table>
 
     <div class="callout warn">
       <div class="ctitle">⚠ The MCP tool-description injection vector</div>
-      <p>A distinctive supply chain risk in the MCP ecosystem is that a tool's own description — the text the model reads to decide when and how to use it — is itself an untrusted input channel. A malicious or compromised MCP server can update its tool descriptions post-approval to include hidden instructions ("always also send a copy to this address") that the model reads as legitimate guidance about how the tool works. Vetting a tool once at integration time is not sufficient; tool schemas and descriptions need integrity monitoring for the life of the integration, the same way a dependency's source needs monitoring for unexpected updates.</p>
+      <p>A distinctive supply chain risk in the MCP ecosystem is that a tool's own description, the text the model reads to decide when and how to use it, is itself an untrusted input channel. A malicious or compromised MCP server can update its tool descriptions post-approval to include hidden instructions ("always also send a copy to this address") that the model reads as legitimate guidance about how the tool works. Vetting a tool once at integration time is not sufficient; tool schemas and descriptions need integrity monitoring for the life of the integration, the same way a dependency's source needs monitoring for unexpected updates.</p>
     </div>
 
     <h3>Model provenance and evaluation before adoption</h3>
     <ul>
       <li><strong>Model cards and system cards.</strong> Review published documentation on training data sources, known limitations, and safety evaluation results before adopting any model for a regulated or high-stakes use case.</li>
-      <li><strong>Independent safety evaluation.</strong> Run your own domain-specific safety and quality eval suite against any new model before production adoption — vendor-published benchmarks are necessary but not sufficient for your specific use case.</li>
+      <li><strong>Independent safety evaluation.</strong> Run your own domain-specific safety and quality eval suite against any new model before production adoption, vendor-published benchmarks are necessary but not sufficient for your specific use case.</li>
       <li><strong>Version pinning and change control.</strong> As covered in LLMOps practice, pin to dated model versions and treat every provider-side update as a change requiring regression testing before it reaches production traffic.</li>
-      <li><strong>Vendor security posture.</strong> Evaluate model and tool providers on the same vendor security criteria as any other critical infrastructure supplier — SOC 2 reports, incident history, breach notification commitments, sub-processor transparency.</li>
+      <li><strong>Vendor security posture.</strong> Evaluate model and tool providers on the same vendor security criteria as any other critical infrastructure supplier, SOC 2 reports, incident history, breach notification commitments, sub-processor transparency.</li>
     </ul>
 
     <h3>Tool and plugin vetting workflow</h3>
@@ -809,13 +808,13 @@ async function invokeTool(agentContext, toolCall) {
       <div class="step"><div class="sn"></div><div class="sc"><b>Static review before approval.</b><p>Read the tool's source (where available), its declared permissions, and its network egress requirements before granting it any access to production data.</p></div></div>
       <div class="step"><div class="sn"></div><div class="sc"><b>Scope the grant to the minimum viable permission set.</b><p>Never accept a tool's requested default scope without narrowing it to what the specific integration actually needs.</p></div></div>
       <div class="step"><div class="sn"></div><div class="sc"><b>Sandbox on first use.</b><p>Run new tool integrations in an isolated environment against synthetic data before connecting them to production systems.</p></div></div>
-      <div class="step"><div class="sn"></div><div class="sc"><b>Monitor post-deployment for drift.</b><p>Alert on any change to a tool's schema, description, or declared permissions after approval — treat an unexpected change as a security event, not a routine update.</p></div></div>
-      <div class="step"><div class="sn"></div><div class="sc"><b>Maintain a registry with an owner and a review date.</b><p>Every tool integration has a named owner and a scheduled re-review — an unreviewed integration accumulates risk silently over time.</p></div></div>
+      <div class="step"><div class="sn"></div><div class="sc"><b>Monitor post-deployment for drift.</b><p>Alert on any change to a tool's schema, description, or declared permissions after approval, treat an unexpected change as a security event, not a routine update.</p></div></div>
+      <div class="step"><div class="sn"></div><div class="sc"><b>Maintain a registry with an owner and a review date.</b><p>Every tool integration has a named owner and a scheduled re-review, an unreviewed integration accumulates risk silently over time.</p></div></div>
     </div>
 
     <div class="callout idea">
       <div class="ctitle">💡 The decision framing</div>
-      <p>Every tool you connect to an agent expands what a successful prompt injection can accomplish — the tool's own trustworthiness is only half the equation; the other half is what the agent is authorized to do with it. Vet the tool and scope the grant as two separate decisions, because a perfectly trustworthy tool with an overbroad grant is exactly as dangerous as an untrustworthy one with a narrow grant would have been safe.</p>
+      <p>Every tool you connect to an agent expands what a successful prompt injection can accomplish; the tool's own trustworthiness is only half the equation; the other half is what the agent is authorized to do with it. Vet the tool and scope the grant as two separate decisions, because a perfectly trustworthy tool with an overbroad grant is exactly as dangerous as an untrustworthy one with a narrow grant would have been safe.</p>
     </div>
   </section>
 
@@ -825,7 +824,7 @@ async function invokeTool(agentContext, toolCall) {
     <h2 class="h">AI Governance Operating Model</h2>
     <p class="h-sub">Governance is the organizational system that makes security and compliance controls durable, not a document that describes them once</p>
 
-    <p>A security control that depends on one engineer remembering to run a check is not governed — it is lucky. Governance is the operating model that makes controls survive team changes, product pivots, and the pressure to ship fast: clear ownership, a policy lifecycle, risk classification tied to actual controls, and decision rights that don't require escalating every judgment call to the top.</p>
+    <p>A security control that depends on one engineer remembering to run a check is not governed; it is lucky. Governance is the operating model that makes controls survive team changes, product pivots, and the pressure to ship fast: clear ownership, a policy lifecycle, risk classification tied to actual controls, and decision rights that don't require escalating every judgment call to the top.</p>
 
     <h3>The governance structure</h3>
     <table>
@@ -833,35 +832,35 @@ async function invokeTool(agentContext, toolCall) {
       <tr><td>AI governance board / council</td><td>Risk tiering policy, approval of high-risk use cases, escalation path for novel scenarios</td><td>Cross-functional: product, security, legal, data science leadership</td></tr>
       <tr><td>Model risk management</td><td>Model inventory, risk classification per use case, pre-deployment sign-off</td><td>Risk / compliance function, with technical input from ML engineering</td></tr>
       <tr><td>AI security engineering</td><td>Threat modeling, guardrail implementation, red teaming, incident response for AI-specific incidents</td><td>Security engineering, often a dedicated AI security function at scale</td></tr>
-      <tr><td>Product / feature owner</td><td>Acceptance criteria including safety thresholds, launch decision within governed risk tier</td><td>Product management — safety criteria are product requirements, not a separate gate</td></tr>
+      <tr><td>Product / feature owner</td><td>Acceptance criteria including safety thresholds, launch decision within governed risk tier</td><td>Product management, safety criteria are product requirements, not a separate gate</td></tr>
       <tr><td>Data protection / privacy</td><td>Data classification enforcement, DPA review, erasure and residency compliance</td><td>Privacy / legal function</td></tr>
     </table>
 
     <h3>Model and use-case risk tiering</h3>
-    <p>Not every AI feature needs the same governance overhead. A risk tiering model — directly informed by frameworks like the EU AI Act's risk categories and NIST AI RMF — lets governance effort scale with actual consequence rather than applying uniform bureaucracy everywhere.</p>
+    <p>Not every AI feature needs the same governance overhead. A risk tiering model, directly informed by frameworks like the EU AI Act's risk categories and NIST AI RMF, lets governance effort scale with actual consequence rather than applying uniform bureaucracy everywhere.</p>
     <table>
       <tr><th>Tier</th><th>Characteristics</th><th>Governance requirement</th></tr>
-      <tr><td><span class="badge crit">Tier 1 — High stakes</span></td><td>Irreversible actions, financial transactions, health/legal/safety decisions, regulated-sector use</td><td>Governance board approval before launch, mandatory human-in-the-loop for irreversible actions, full audit trail, quarterly re-review</td></tr>
-      <tr><td><span class="badge high">Tier 2 — Elevated</span></td><td>Customer-facing autonomous decisions with reversible consequences, access to sensitive data</td><td>Risk owner sign-off, documented safety eval thresholds, standard audit logging, semi-annual re-review</td></tr>
-      <tr><td><span class="badge med">Tier 3 — Standard</span></td><td>Internal tooling, read-only assistance, low-consequence automation</td><td>Team-level review against baseline security checklist, standard monitoring</td></tr>
-      <tr><td>Tier 4 — Minimal</td><td>Purely generative assistance with no external action capability, no sensitive data access</td><td>Baseline security checklist only</td></tr>
+      <tr><td><span class="badge crit">Tier 1: High Stakes</span></td><td>Irreversible actions, financial transactions, health/legal/safety decisions, regulated-sector use</td><td>Governance board approval before launch, mandatory human-in-the-loop for irreversible actions, full audit trail, quarterly re-review</td></tr>
+      <tr><td><span class="badge high">Tier 2: Elevated</span></td><td>Customer-facing autonomous decisions with reversible consequences, access to sensitive data</td><td>Risk owner sign-off, documented safety eval thresholds, standard audit logging, semi-annual re-review</td></tr>
+      <tr><td><span class="badge med">Tier 3: Standard</span></td><td>Internal tooling, read-only assistance, low-consequence automation</td><td>Team-level review against baseline security checklist, standard monitoring</td></tr>
+      <tr><td>Tier 4: Minimal</td><td>Purely generative assistance with no external action capability, no sensitive data access</td><td>Baseline security checklist only</td></tr>
     </table>
 
     <h3>The policy lifecycle</h3>
     <div class="stepper">
-      <div class="step"><div class="sn"></div><div class="sc"><b>Draft against a real threat, not a hypothetical.</b><p>Every governance policy traces back to a specific risk in the threat model — a policy no one can explain the origin of is the first one that gets ignored under deadline pressure.</p></div></div>
-      <div class="step"><div class="sn"></div><div class="sc"><b>Encode as an enforceable control, not just a document.</b><p>A policy that says "irreversible actions require approval" is only real once it is a gate in the authorization engine from Pillar 02 — the policy and the technical control are the same artifact, reviewed together.</p></div></div>
-      <div class="step"><div class="sn"></div><div class="sc"><b>Assign an owner and a review cadence.</b><p>Every policy has a named accountable owner and a scheduled review date — an unowned policy is the one that silently becomes wrong as the system evolves.</p></div></div>
+      <div class="step"><div class="sn"></div><div class="sc"><b>Draft against a real threat, not a hypothetical.</b><p>Every governance policy traces back to a specific risk in the threat model, a policy no one can explain the origin of is the first one that gets ignored under deadline pressure.</p></div></div>
+      <div class="step"><div class="sn"></div><div class="sc"><b>Encode as an enforceable control, not just a document.</b><p>A policy that says "irreversible actions require approval" is only real once it is a gate in the authorization engine from Pillar 02, the policy and the technical control are the same artifact, reviewed together.</p></div></div>
+      <div class="step"><div class="sn"></div><div class="sc"><b>Assign an owner and a review cadence.</b><p>Every policy has a named accountable owner and a scheduled review date, an unowned policy is the one that silently becomes wrong as the system evolves.</p></div></div>
       <div class="step"><div class="sn"></div><div class="sc"><b>Version and log every change.</b><p>Policy changes are auditable events with a rationale and an approver, the same discipline applied to prompt versioning in production operations.</p></div></div>
-      <div class="step"><div class="sn"></div><div class="sc"><b>Re-tier on material change.</b><p>A new tool, a new data source, or a new autonomous capability can move a feature into a higher risk tier — re-run the tiering decision, don't assume the original classification still holds.</p></div></div>
+      <div class="step"><div class="sn"></div><div class="sc"><b>Re-tier on material change.</b><p>A new tool, a new data source, or a new autonomous capability can move a feature into a higher risk tier, re-run the tiering decision, don't assume the original classification still holds.</p></div></div>
     </div>
 
     <h3>Model inventory: the artifact regulators and auditors will ask for first</h3>
-    <p>A living inventory of every model, agent, and autonomous workflow in production is the single most load-bearing governance artifact — it is the input to risk tiering, the scope for red teaming, and the first thing an auditor or regulator requests. At minimum it tracks: the model and version in use, the business owner, the risk tier, the data classifications it touches, the tools/permissions it holds, the date of its last safety evaluation, and its current operational status.</p>
+    <p>A living inventory of every model, agent, and autonomous workflow in production is the single most load-bearing governance artifact, it is the input to risk tiering, the scope for red teaming, and the first thing an auditor or regulator requests. At minimum it tracks: the model and version in use, the business owner, the risk tier, the data classifications it touches, the tools/permissions it holds, the date of its last safety evaluation, and its current operational status.</p>
 
     <div class="callout warn">
       <div class="ctitle">⚠ Shadow AI</div>
-      <p>The fastest-growing governance gap in most organizations is not a failure of the formal AI program — it is the AI usage that never entered it. Teams standing up an agent with a third-party API key, a browser extension with autonomous action capability, or an internal tool wired to an LLM without security or governance review are common, and each is an ungoverned attack surface and an ungoverned compliance liability. A governance program needs a discovery mechanism — network egress monitoring to known model provider endpoints, procurement review of any tool with "AI" or "agent" in its description — not just a policy that assumes all AI usage flows through the sanctioned path.</p>
+      <p>The fastest-growing governance gap in most organizations is not a failure of the formal AI program; it is the AI usage that never entered it. Teams standing up an agent with a third-party API key, a browser extension with autonomous action capability, or an internal tool wired to an LLM without security or governance review are common, and each is an ungoverned attack surface and an ungoverned compliance liability. A governance program needs a discovery mechanism: network egress monitoring to known model provider endpoints, procurement review of any tool with "AI" or "agent" in its description, not just a policy that assumes all AI usage flows through the sanctioned path.</p>
     </div>
 
     <div class="callout idea">
@@ -874,19 +873,19 @@ async function invokeTool(agentContext, toolCall) {
   <section class="pillar" id="compliance">
     <div class="eyebrow"><span class="idx">08</span> Regulatory mapping</div>
     <h2 class="h">Regulatory &amp; Compliance Mapping</h2>
-    <p class="h-sub">The frameworks that will actually be asked about — mapped to the controls already described in this guide</p>
+    <p class="h-sub">The frameworks that will actually be asked about, mapped to the controls already described in this guide</p>
 
-    <p>Compliance is not a separate workstream from the security and governance controls already covered — it is the exercise of mapping those controls to the specific evidence a regulation, standard, or auditor requires. Building the controls first and mapping second (rather than treating compliance as a bolt-on checklist) is what makes an audit a formality instead of a fire drill.</p>
+    <p>Compliance is not a separate workstream from the security and governance controls already covered, it is the exercise of mapping those controls to the specific evidence a regulation, standard, or auditor requires. Building the controls first and mapping second (rather than treating compliance as a bolt-on checklist) is what makes an audit a formality instead of a fire drill.</p>
 
     <h3>Core framework map</h3>
     <table>
       <tr><th>Framework</th><th>Scope</th><th>What it actually requires, in practice</th></tr>
-      <tr><td class="mono">NIST AI RMF</td><td>Voluntary US framework, increasingly a de facto baseline</td><td>Govern (policy and accountability), Map (context and risk identification), Measure (testing and metrics), Manage (ongoing risk response) — directly mirrors this guide's governance and audit pillars</td></tr>
-      <tr><td class="mono">ISO/IEC 42001</td><td>Certifiable AI management system standard</td><td>Documented AI management system, risk assessment process, defined roles, continuous improvement cycle — the certifiable equivalent of Pillar 07's operating model</td></tr>
-      <tr><td class="mono">ISO/IEC 23894</td><td>AI risk management guidance</td><td>Structured risk identification and treatment specific to AI system characteristics — informs the threat modeling in Pillar 01</td></tr>
-      <tr><td class="mono">EU AI Act</td><td>Binding regulation, risk-tiered (unacceptable / high / limited / minimal risk)</td><td>High-risk systems require conformity assessment, technical documentation, risk management system, human oversight design, and post-market monitoring — directly maps to Pillar 07's risk tiering and Pillar 10's audit trail</td></tr>
+      <tr><td class="mono">NIST AI RMF</td><td>Voluntary US framework, increasingly a de facto baseline</td><td>Govern (policy and accountability), Map (context and risk identification), Measure (testing and metrics), Manage (ongoing risk response), which directly mirrors this guide's governance and audit pillars</td></tr>
+      <tr><td class="mono">ISO/IEC 42001</td><td>Certifiable AI management system standard</td><td>Documented AI management system, risk assessment process, defined roles, continuous improvement cycle, the certifiable equivalent of Pillar 07's operating model</td></tr>
+      <tr><td class="mono">ISO/IEC 23894</td><td>AI risk management guidance</td><td>Structured risk identification and treatment specific to AI system characteristics, informs the threat modeling in Pillar 01</td></tr>
+      <tr><td class="mono">EU AI Act</td><td>Binding regulation, risk-tiered (unacceptable / high / limited / minimal risk)</td><td>High-risk systems require conformity assessment, technical documentation, risk management system, human oversight design, and post-market monitoring; directly maps to Pillar 07's risk tiering and Pillar 10's audit trail</td></tr>
       <tr><td class="mono">GDPR</td><td>EU data protection, extraterritorial reach for EU resident data</td><td>Lawful basis for processing, DPAs with model providers, right to erasure across all data stores (Pillar 05), data residency, Article 22 rights around automated decision-making</td></tr>
-      <tr><td class="mono">SOC 2</td><td>Trust services criteria audit, common enterprise procurement requirement</td><td>Security, availability, confidentiality controls with evidence — the identity (Pillar 03), guardrail (Pillar 04), and audit (Pillar 10) controls in this guide are the evidence base</td></tr>
+      <tr><td class="mono">SOC 2</td><td>Trust services criteria audit, common enterprise procurement requirement</td><td>Security, availability, confidentiality controls with evidence, the identity (Pillar 03), guardrail (Pillar 04), and audit (Pillar 10) controls in this guide are the evidence base</td></tr>
       <tr><td class="mono">Sector-specific</td><td>HIPAA (health), PCI DSS (payments), SEBI/RBI (Indian financial services), FINRA/SEC (US financial services)</td><td>Domain-specific data handling, explainability, and human oversight requirements layered on top of the general frameworks above</td></tr>
     </table>
 
@@ -895,17 +894,17 @@ async function invokeTool(agentContext, toolCall) {
       <tr><th>EU AI Act tier</th><th>Example</th><th>Requirement</th><th>Maps to</th></tr>
       <tr><td>Unacceptable risk</td><td>Social scoring, manipulative subliminal techniques</td><td>Prohibited outright</td><td>Governance board must reject at the use-case approval stage (Pillar 07)</td></tr>
       <tr><td>High risk</td><td>Credit scoring, employment decisions, critical infrastructure control, law enforcement tools</td><td>Conformity assessment, technical documentation, risk management system, human oversight, post-market monitoring, registration in an EU database</td><td>Pillar 01 (threat model as risk assessment input), Pillar 07 (Tier 1 governance), Pillar 10 (audit trail as technical documentation)</td></tr>
-      <tr><td>Limited risk</td><td>Chatbots, emotion recognition, deepfakes</td><td>Transparency obligations — users must know they're interacting with AI</td><td>Guardrail layer output labeling (Pillar 04)</td></tr>
+      <tr><td>Limited risk</td><td>Chatbots, emotion recognition, deepfakes</td><td>Transparency obligations, users must know they're interacting with AI</td><td>Guardrail layer output labeling (Pillar 04)</td></tr>
       <tr><td>Minimal risk</td><td>Spam filters, AI-enabled recommendation features</td><td>No specific legal obligation beyond general product law</td><td>Baseline controls, Tier 3–4 governance (Pillar 07)</td></tr>
     </table>
 
     <h3>Sector deep dive: financial services</h3>
-    <p>Financial services AI deployments — wealth management, credit decisioning, algorithmic trading assistance — face the densest overlapping compliance surface, and the controls in this guide map directly onto its specific demands:</p>
+    <p>Financial services AI deployments, wealth management, credit decisioning, algorithmic trading assistance, face the densest overlapping compliance surface, and the controls in this guide map directly onto its specific demands:</p>
     <ul>
       <li><strong>Explainability requirements.</strong> Regulators expect a traceable rationale for any AI-influenced financial decision. This requires the reasoning trace and tool-call log from Pillar 10's audit trail to be retrievable per decision, not just aggregated at the system level.</li>
-      <li><strong>Suitability and advice boundaries.</strong> An advisory agent must have hard-gated boundaries on what it can recommend without human review — a direct application of Pillar 04's reversibility-based approval gates to a regulatory rather than purely technical requirement.</li>
-      <li><strong>Recordkeeping.</strong> Financial regulators typically mandate multi-year retention of records related to advice and transactions — this must be reconciled explicitly with the data minimization and erasure principles in Pillar 05, since the two obligations can conflict and need a documented resolution, not a default in either direction.</li>
-      <li><strong>Cross-border data controls.</strong> Data residency requirements for financial data are typically stricter than general GDPR baselines — verify per-jurisdiction, not against a single global default.</li>
+      <li><strong>Suitability and advice boundaries.</strong> An advisory agent must have hard-gated boundaries on what it can recommend without human review, a direct application of Pillar 04's reversibility-based approval gates to a regulatory rather than purely technical requirement.</li>
+      <li><strong>Recordkeeping.</strong> Financial regulators typically mandate multi-year retention of records related to advice and transactions, this must be reconciled explicitly with the data minimization and erasure principles in Pillar 05, since the two obligations can conflict and need a documented resolution, not a default in either direction.</li>
+      <li><strong>Cross-border data controls.</strong> Data residency requirements for financial data are typically stricter than general GDPR baselines, verify per-jurisdiction, not against a single global default.</li>
     </ul>
 
     <div class="callout stat">
@@ -915,7 +914,7 @@ async function invokeTool(agentContext, toolCall) {
 
     <div class="callout idea">
       <div class="ctitle">💡 The decision framing</div>
-      <p>Treat compliance mapping as a byproduct of good architecture, not a parallel workstream competing for engineering time. A team that builds the identity, guardrail, and audit controls in this guide because they are good engineering practice will find that 80% of any given compliance framework's requirements are already satisfied — the remaining 20% is documentation and formal sign-off, which is a fraction of the effort compared to retrofitting controls after an audit finding.</p>
+      <p>Treat compliance mapping as a byproduct of good architecture, not a parallel workstream competing for engineering time. A team that builds the identity, guardrail, and audit controls in this guide because they are good engineering practice will find that 80% of any given compliance framework's requirements are already satisfied, the remaining 20% is documentation and formal sign-off, which is a fraction of the effort compared to retrofitting controls after an audit finding.</p>
     </div>
   </section>
 
@@ -923,9 +922,9 @@ async function invokeTool(agentContext, toolCall) {
   <section class="pillar" id="redteam">
     <div class="eyebrow"><span class="idx">09</span> Verification</div>
     <h2 class="h">Adversarial Testing, Detection &amp; Incident Response</h2>
-    <p class="h-sub">Assume every guardrail will eventually be bypassed — the program that finds it first wins</p>
+    <p class="h-sub">Assume every guardrail will eventually be bypassed; the program that finds it first wins</p>
 
-    <p>Every control described so far is a hypothesis about how the system will behave under attack. Red teaming and continuous adversarial testing are how that hypothesis gets tested before an actual adversary tests it for you, and detection plus incident response are what happens when a control fails anyway — because at scale, over time, one eventually will.</p>
+    <p>Every control described so far is a hypothesis about how the system will behave under attack. Red teaming and continuous adversarial testing are how that hypothesis gets tested before an actual adversary tests it for you, and detection plus incident response are what happens when a control fails anyway, because at scale, over time, one eventually will.</p>
 
     <h3>AI red teaming: what it covers beyond traditional pentesting</h3>
     <table>
@@ -941,11 +940,11 @@ async function invokeTool(agentContext, toolCall) {
 
     <h3>Building the adversarial testing program</h3>
     <div class="stepper">
-      <div class="step"><div class="sn"></div><div class="sc"><b>Maintain a living adversarial test suite.</b><p>Treat it the same as the regression eval suite from production operations — every discovered bypass becomes a permanent regression test, so it can never silently reappear.</p></div></div>
-      <div class="step"><div class="sn"></div><div class="sc"><b>Run automated adversarial testing on every guardrail or prompt change.</b><p>Manual red teaming alone cannot keep pace with a shipping cadence — automated adversarial suites run in CI, with periodic deeper manual engagements.</p></div></div>
+      <div class="step"><div class="sn"></div><div class="sc"><b>Maintain a living adversarial test suite.</b><p>Treat it the same as the regression eval suite from production operations, every discovered bypass becomes a permanent regression test, so it can never silently reappear.</p></div></div>
+      <div class="step"><div class="sn"></div><div class="sc"><b>Run automated adversarial testing on every guardrail or prompt change.</b><p>Manual red teaming alone cannot keep pace with a shipping cadence, automated adversarial suites run in CI, with periodic deeper manual engagements.</p></div></div>
       <div class="step"><div class="sn"></div><div class="sc"><b>Commission independent red teams for Tier 1 systems.</b><p>Internal teams develop blind spots about their own system; an external or cross-team red team with no stake in the system's launch timeline finds different failure modes.</p></div></div>
-      <div class="step"><div class="sn"></div><div class="sc"><b>Test the full chain, not just the model.</b><p>The strongest attacks in practice chain a prompt injection with an over-scoped credential — test the guardrail, identity, and tool layers together, not each in isolation.</p></div></div>
-      <div class="step"><div class="sn"></div><div class="sc"><b>Feed findings back into the threat model.</b><p>Every successful bypass is new information about the actual attack surface — update Pillar 01's threat model, not just the specific control that failed.</p></div></div>
+      <div class="step"><div class="sn"></div><div class="sc"><b>Test the full chain, not just the model.</b><p>The strongest attacks in practice chain a prompt injection with an over-scoped credential, test the guardrail, identity, and tool layers together, not each in isolation.</p></div></div>
+      <div class="step"><div class="sn"></div><div class="sc"><b>Feed findings back into the threat model.</b><p>Every successful bypass is new information about the actual attack surface, update Pillar 01's threat model, not just the specific control that failed.</p></div></div>
     </div>
 
     <h3>Detection: signals that something is wrong right now</h3>
@@ -960,14 +959,14 @@ async function invokeTool(agentContext, toolCall) {
     </table>
 
     <h3>AI-specific incident response</h3>
-    <p>Incident response for agentic AI extends the standard playbook — detect, contain, eradicate, recover, learn — with steps unique to systems that act autonomously and reason non-deterministically.</p>
+    <p>Incident response for agentic AI extends the standard playbook, detect, contain, eradicate, recover, learn, with steps unique to systems that act autonomously and reason non-deterministically.</p>
     <div class="callout check">
       <div class="ctitle">✓ The agentic incident response checklist</div>
       <ul>
         <li>Kill switch exists and is tested: any agent or workflow can be disabled instantly without a code deployment</li>
         <li>Session and credential revocation is immediate: a compromised agent's active tokens can be invalidated mid-session, not just at next issuance</li>
         <li>Blast radius is queryable: given a compromised session, every action it took and every system it touched can be enumerated from the audit trail within minutes</li>
-        <li>Rollback covers prompt, model version, and tool configuration independently — not just application code</li>
+        <li>Rollback covers prompt, model version, and tool configuration independently, not just application code</li>
         <li>Affected users can be identified and notified per the data protection obligations mapped in Pillar 08</li>
         <li>The specific bypass is converted into a permanent adversarial regression test before the incident is closed</li>
       </ul>
@@ -975,12 +974,12 @@ async function invokeTool(agentContext, toolCall) {
 
     <div class="callout warn">
       <div class="ctitle">⚠ Silent failure is the default failure mode</div>
-      <p>An AI system compromised through prompt injection rarely crashes or errors — it keeps responding fluently while doing the wrong thing, which is why detection instrumentation matters as much as the guardrails themselves. A team that has guardrails but no detection layer discovers a bypass through user complaints or a downstream data breach, not through their own monitoring. Build the detection signals in this pillar before assuming the guardrails in Pillar 04 are sufficient on their own.</p>
+      <p>An AI system compromised through prompt injection rarely crashes or errors ; it keeps responding fluently while doing the wrong thing, which is why detection instrumentation matters as much as the guardrails themselves. A team that has guardrails but no detection layer discovers a bypass through user complaints or a downstream data breach, not through their own monitoring. Build the detection signals in this pillar before assuming the guardrails in Pillar 04 are sufficient on their own.</p>
     </div>
 
     <div class="callout idea">
       <div class="ctitle">💡 The decision framing</div>
-      <p>The maturity signal to look for is not "we have not had an incident" — for a system this new, that is as likely to mean under-detection as it is to mean genuine safety. The signal is "we have a red team that regularly finds new bypasses, and every one of them becomes a permanent regression test within days." A program that never finds anything is not more secure than one that finds and fixes issues constantly — it is usually just not looking hard enough.</p>
+      <p>The maturity signal to look for is not "we have not had an incident", for a system this new, that is as likely to mean under-detection as it is to mean genuine safety. The signal is "we have a red team that regularly finds new bypasses, and every one of them becomes a permanent regression test within days." A program that never finds anything is not more secure than one that finds and fixes issues constantly, it is usually just not looking hard enough.</p>
     </div>
   </section>
 
@@ -990,16 +989,16 @@ async function invokeTool(agentContext, toolCall) {
     <h2 class="h">Audit, Assurance &amp; Human Oversight</h2>
     <p class="h-sub">The evidence layer that turns every prior pillar from a claim into a provable fact</p>
 
-    <p>Every control in this guide is only as credible as the evidence that it actually ran, on every relevant request, correctly. This final pillar is the audit and human oversight layer that makes the other nine verifiable — to internal leadership, to auditors, to regulators, and to the organization's own future self trying to reconstruct what happened during an incident.</p>
+    <p>Every control in this guide is only as credible as the evidence that it actually ran, on every relevant request, correctly. This final pillar is the audit and human oversight layer that makes the other nine verifiable, to internal leadership, to auditors, to regulators, and to the organization's own future self trying to reconstruct what happened during an incident.</p>
 
     <h3>What the audit trail must capture, per session</h3>
     <table>
       <tr><th>Record</th><th>Why it matters</th></tr>
       <tr><td>Full input, including retrieved context and tool results injected into the prompt</td><td>Reconstructs exactly what the model saw, essential for investigating any disputed or anomalous output</td></tr>
-      <tr><td>Model and prompt version used</td><td>Correlates behavior to a specific, reproducible configuration — required for both debugging and regulatory evidence</td></tr>
-      <tr><td>Every tool call: name, arguments, authorization decision, execution result</td><td>The action-level record that a text-only transcript cannot provide — this is what proves what the system actually did, not just what it said</td></tr>
-      <tr><td>Identity context: which agent, acting on whose delegated authority, under which scope</td><td>Answers "who was responsible" — required for both incident response and delegated-authority compliance</td></tr>
-      <tr><td>Guardrail outcomes: every check run and its result, including passes</td><td>Proves the control operated, not just that it exists — the difference between an assertion and evidence in Pillar 08</td></tr>
+      <tr><td>Model and prompt version used</td><td>Correlates behavior to a specific, reproducible configuration, required for both debugging and regulatory evidence</td></tr>
+      <tr><td>Every tool call: name, arguments, authorization decision, execution result</td><td>The action-level record that a text-only transcript cannot provide, this is what proves what the system actually did, not just what it said</td></tr>
+      <tr><td>Identity context: which agent, acting on whose delegated authority, under which scope</td><td>Answers "who was responsible", required for both incident response and delegated-authority compliance</td></tr>
+      <tr><td>Guardrail outcomes: every check run and its result, including passes</td><td>Proves the control operated, not just that it exists, the difference between an assertion and evidence in Pillar 08</td></tr>
       <tr><td>Human review and approval events</td><td>Evidence of human oversight for regulatory frameworks requiring it, and the record of who approved what</td></tr>
       <tr><td>Final output and its delivery destination</td><td>Completes the record from input to consequence</td></tr>
     </table>
@@ -1008,21 +1007,21 @@ async function invokeTool(agentContext, toolCall) {
     <p>"Human in the loop" is frequently stated as a safety property without specifying what the human actually reviews, how much time they have, or whether they have enough context to make a real decision. Effective oversight design is explicit about all three.</p>
     <table>
       <tr><th>Oversight model</th><th>When it fits</th><th>Design requirement</th></tr>
-      <tr><td>Human-in-the-loop (pre-action approval)</td><td>Irreversible or high-consequence actions — Tier 1 use cases</td><td>Approver sees the full reasoning trace and the specific action, not just a one-line summary; approval fatigue is monitored — a rubber-stamp rate above a defined threshold is itself an incident signal</td></tr>
-      <tr><td>Human-on-the-loop (real-time monitoring, can intervene)</td><td>Reversible actions at moderate scale where pre-approval would be operationally infeasible</td><td>Monitoring dashboard surfaces anomalies actively, not passively — a human watching a stream of green checkmarks is not effective oversight</td></tr>
-      <tr><td>Human-after-the-loop (post-hoc audit and sampling)</td><td>Low-risk, high-volume, reversible actions</td><td>Sampling rate and review criteria are defined and their results feed back into guardrail tuning — audit without a feedback loop is theater</td></tr>
+      <tr><td>Human-in-the-loop (pre-action approval)</td><td>Irreversible or high-consequence actions, Tier 1 use cases</td><td>Approver sees the full reasoning trace and the specific action, not just a one-line summary; approval fatigue is monitored, a rubber-stamp rate above a defined threshold is itself an incident signal</td></tr>
+      <tr><td>Human-on-the-loop (real-time monitoring, can intervene)</td><td>Reversible actions at moderate scale where pre-approval would be operationally infeasible</td><td>Monitoring dashboard surfaces anomalies actively, not passively, a human watching a stream of green checkmarks is not effective oversight</td></tr>
+      <tr><td>Human-after-the-loop (post-hoc audit and sampling)</td><td>Low-risk, high-volume, reversible actions</td><td>Sampling rate and review criteria are defined and their results feed back into guardrail tuning, audit without a feedback loop is theater</td></tr>
     </table>
 
     <div class="callout warn">
       <div class="ctitle">⚠ Approval fatigue defeats human-in-the-loop</div>
-      <p>A human asked to approve fifty routine, low-consequence agent actions per day will approve the fifty-first without reading it carefully, regardless of how well-intentioned the review process is. This is a predictable human factors failure, not a discipline problem, and it means human-in-the-loop only works as a safety control when the volume of requests reaching a human is kept low enough for genuine review — which is itself an argument for scoping autonomous action tightly (Pillar 03) so escalations are rare and meaningful rather than frequent and rubber-stamped.</p>
+      <p>A human asked to approve fifty routine, low-consequence agent actions per day will approve the fifty-first without reading it carefully, regardless of how well-intentioned the review process is. This is a predictable human factors failure, not a discipline problem, and it means human-in-the-loop only works as a safety control when the volume of requests reaching a human is kept low enough for genuine review, which is itself an argument for scoping autonomous action tightly (Pillar 03) so escalations are rare and meaningful rather than frequent and rubber-stamped.</p>
     </div>
 
     <h3>Continuous assurance, not point-in-time certification</h3>
     <p>A control that was verified correct at launch and never re-verified is a control whose current state is unknown. Continuous assurance treats every pillar in this guide as something to be re-tested on a cadence, not certified once.</p>
     <div class="metricgrid">
-      <div class="metric"><div class="mv">100%</div><div class="ml">Tool call authorization coverage</div><div class="md">Every tool invocation passes through the policy engine — no exceptions, no bypass paths for "internal" tools</div></div>
-      <div class="metric"><div class="mv">0</div><div class="ml">Unowned high-risk credentials</div><div class="md">Every Tier 1/2 credential has a named owner and a scheduled review — this is a binary counter, not a trend line</div></div>
+      <div class="metric"><div class="mv">100%</div><div class="ml">Tool call authorization coverage</div><div class="md">Every tool invocation passes through the policy engine, no exceptions, no bypass paths for "internal" tools</div></div>
+      <div class="metric"><div class="mv">0</div><div class="ml">Unowned high-risk credentials</div><div class="md">Every Tier 1/2 credential has a named owner and a scheduled review, this is a binary counter, not a trend line</div></div>
       <div class="metric"><div class="mv">&lt;24h</div><div class="ml">Time to revoke a compromised credential</div><div class="md">From detection to full revocation across every system the credential touched</div></div>
       <div class="metric"><div class="mv">Quarterly</div><div class="ml">Red team cadence for Tier 1 systems</div><div class="md">Independent adversarial testing, not just automated regression suites</div></div>
       <div class="metric"><div class="mv">100%</div><div class="ml">Audit trail completeness</div><div class="md">Sampled sessions reconstructable end to end from logs alone, with no gaps in the tool-call or authorization record</div></div>
@@ -1031,7 +1030,7 @@ async function invokeTool(agentContext, toolCall) {
 
     <div class="callout idea">
       <div class="ctitle">💡 The decision framing</div>
-      <p>The organizations that pass audits without a scramble are the ones where the audit trail was designed as a product requirement from the first line of code, not assembled retroactively when the auditor's request landed. Every pillar in this guide produces evidence as a byproduct of operating correctly — a policy engine that logs every decision, a guardrail that logs every check, an identity system that logs every grant. Audit readiness is not a separate project; it is what falls out of building the first nine pillars with logging treated as a first-class output, not an operational nicety bolted on later.</p>
+      <p>The organizations that pass audits without a scramble are the ones where the audit trail was designed as a product requirement from the first line of code, not assembled retroactively when the auditor's request landed. Every pillar in this guide produces evidence as a byproduct of operating correctly, a policy engine that logs every decision, a guardrail that logs every check, an identity system that logs every grant. Audit readiness is not a separate project; it is what falls out of building the first nine pillars with logging treated as a first-class output, not an operational nicety bolted on later.</p>
     </div>
   </section>
 
@@ -1039,26 +1038,26 @@ async function invokeTool(agentContext, toolCall) {
   <section class="pillar" id="frameworks">
     <div class="eyebrow">Appendix</div>
     <h2 class="h">Frameworks Quick Reference</h2>
-    <p class="h-sub">Every framework referenced across the ten pillars, in one table — what it is, what kind of obligation it carries, and where in this guide it does the most work</p>
+    <p class="h-sub">Every framework referenced across the ten pillars, in one table, what it is, what kind of obligation it carries, and where in this guide it does the most work</p>
 
     <table>
       <tr><th>Framework</th><th>Type</th><th>Primary use</th><th>Does the most work in</th></tr>
-      <tr><td class="mono">OWASP Top 10 for LLM Applications</td><td>Vulnerability taxonomy</td><td>Naming and classifying weaknesses — injection, disclosure, excessive agency, supply chain</td><td>Pillar 01</td></tr>
-      <tr><td class="mono">OWASP Agentic AI threat extensions</td><td>Vulnerability taxonomy</td><td>Threats unique to systems that act — goal manipulation, tool misuse, multi-agent exploitation</td><td>Pillar 01, 09</td></tr>
+      <tr><td class="mono">OWASP Top 10 for LLM Applications</td><td>Vulnerability taxonomy</td><td>Naming and classifying weaknesses, injection, disclosure, excessive agency, supply chain</td><td>Pillar 01</td></tr>
+      <tr><td class="mono">OWASP Agentic AI threat extensions</td><td>Vulnerability taxonomy</td><td>Threats unique to systems that act, goal manipulation, tool misuse, multi-agent exploitation</td><td>Pillar 01, 09</td></tr>
       <tr><td class="mono">MITRE ATLAS</td><td>Adversary kill-chain framework</td><td>Sequencing how an attacker actually chains techniques into a breach</td><td>Pillar 01, 09</td></tr>
-      <tr><td class="mono">NIST SP 800-207</td><td>Architecture standard</td><td>Zero trust principles — no implicit trust based on location or standing credential</td><td>Pillar 02</td></tr>
+      <tr><td class="mono">NIST SP 800-207</td><td>Architecture standard</td><td>Zero trust principles, no implicit trust based on location or standing credential</td><td>Pillar 02</td></tr>
       <tr><td class="mono">NIST AI RMF</td><td>Voluntary risk management framework</td><td>Govern / Map / Measure / Manage lifecycle for AI risk</td><td>Pillar 07, 10</td></tr>
       <tr><td class="mono">ISO/IEC 42001</td><td>Certifiable management system standard</td><td>Documented AI management system with defined roles and continuous improvement</td><td>Pillar 07</td></tr>
       <tr><td class="mono">ISO/IEC 23894</td><td>Risk management guidance</td><td>Structured risk identification specific to AI system characteristics</td><td>Pillar 01, 07</td></tr>
-      <tr><td class="mono">EU AI Act</td><td>Binding regulation</td><td>Risk-tiered obligations — conformity assessment, technical documentation, human oversight for high-risk systems</td><td>Pillar 07, 08</td></tr>
+      <tr><td class="mono">EU AI Act</td><td>Binding regulation</td><td>Risk-tiered obligations, conformity assessment, technical documentation, human oversight for high-risk systems</td><td>Pillar 07, 08</td></tr>
       <tr><td class="mono">GDPR</td><td>Binding regulation</td><td>Lawful basis, data residency, right to erasure, automated-decision rights</td><td>Pillar 05, 08</td></tr>
-      <tr><td class="mono">SOC 2</td><td>Audit standard</td><td>Trust services criteria — security, availability, confidentiality, with evidence</td><td>Pillar 08, 10</td></tr>
+      <tr><td class="mono">SOC 2</td><td>Audit standard</td><td>Trust services criteria, security, availability, confidentiality, with evidence</td><td>Pillar 08, 10</td></tr>
       <tr><td class="mono">Sector rules (HIPAA, PCI DSS, SEBI/RBI, FINRA/SEC)</td><td>Binding, sector-specific</td><td>Domain data-handling, explainability, and oversight requirements layered on the above</td><td>Pillar 08</td></tr>
     </table>
 
     <div class="callout idea">
       <div class="ctitle">💡 How to use this table</div>
-      <p>Start from the control, not the framework. Build the identity, guardrail, policy engine, and audit trail described in Pillars 02–05 and 10 because they are sound architecture — then use this table to see which frameworks each control already satisfies most of. Working backward from a framework's checklist to a bolted-on control is how compliance programs end up disconnected from the system they're supposed to govern.</p>
+      <p>Start from the control, not the framework. Build the identity, guardrail, policy engine, and audit trail described in Pillars 02–05 and 10 because they are sound architecture, then use this table to see which frameworks each control already satisfies most of. Working backward from a framework's checklist to a bolted-on control is how compliance programs end up disconnected from the system they're supposed to govern.</p>
     </div>
   </section>
 
