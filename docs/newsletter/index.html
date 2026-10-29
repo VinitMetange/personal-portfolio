@@ -118,6 +118,8 @@
       padding: 4px 10px;
       border-radius: 4px;
     }
+    .badge-signal  { background: #fff7ed; color: #c2410c; border: 1px solid #fed7aa; }
+    #ai-signal .article-card:hover { border-color: #c2410c; box-shadow: 0 4px 16px rgba(194,65,12,.10); }
     .badge-telecom { background: #fff7ed; color: var(--amber); border: 1px solid #fed7aa; }
     .badge-ai      { background: var(--accent-lo); color: var(--accent); border: 1px solid #ddd6fe; }
     .series-name {
@@ -164,6 +166,7 @@
       border-radius: 3px;
       font-family: ui-monospace, monospace;
     }
+    .tag-signal  { background: #fff7ed; color: #c2410c; }
     .tag-telecom { background: #fff7ed; color: var(--amber); }
     .tag-ai      { background: var(--accent-lo); color: var(--accent); }
     .card-title {
@@ -227,10 +230,31 @@
   <header class="page-header">
     <p class="header-eyebrow">Written by Vinit Metange</p>
     <h1>Newsletters &amp; <em>Articles</em></h1>
-    <p>Practitioner writing on AI, agentic systems, and telecom. Spec-level depth, no hype, built from what I've shipped.</p>
+    <p>Daily AI intelligence briefs, practitioner writing on agentic systems, AI product management, and telecom. Spec-level depth, no hype, built from what I've shipped.</p>
   </header>
 
   <div class="series-grid">
+
+    <!-- The AI Signal — Daily Brief -->
+    <div class="series-block" id="ai-signal">
+      <div class="series-label">
+        <span class="series-badge badge-signal">The AI Signal</span>
+        <span class="series-name">Daily AI Intelligence Brief</span>
+      </div>
+      <div class="article-list" id="ai-signal-list">
+        <a href="ai-signal-2026-10-29.html" class="article-card" style="border-color:var(--border);">
+          <div class="card-meta">
+            <span class="card-edition">Edition #1</span>
+            <span class="card-dot">·</span>
+            <span class="card-date">October 29, 2026</span>
+            <span class="card-tag tag-signal">Gemini 4 Carbon · Anthropic IPO · LFM3</span>
+          </div>
+          <p class="card-title">Gemini 4 Carbon Ships First to Defenders: The Gated AI Era Begins</p>
+          <p class="card-summary">Google released Gemini 4 Carbon exclusively to vetted cyber defenders via the Fairwind Program, scoring 88.2% on SEC-bench Pro with no general developer access. Alphabet Q3 missed estimates, dropping shares 7%. Anthropic filed its S-1 for the first frontier AI lab IPO, disclosing 900% net revenue retention and Q2 operating profit. GitHub Octoverse shows 40% of September PRs began with an agent draft.</p>
+          <p class="card-read">Read brief →</p>
+        </a>
+      </div>
+    </div>
 
     <!-- AI-Telecom Brief -->
     <div class="series-block">
