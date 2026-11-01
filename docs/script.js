@@ -256,37 +256,22 @@
   const formSuccess = document.getElementById('formSuccess');
   const formSubmit  = document.getElementById('formSubmit');
 
-  // REPLACE YOUR_FORM_ID with ID from formspree.io/forms
-  const FORMSPREE_ID = 'YOUR_FORM_ID';
-
   if (contactForm) {
-    contactForm.addEventListener('submit', async e => {
+    contactForm.addEventListener('submit', e => {
       e.preventDefault();
       const name    = document.getElementById('contactName').value.trim();
       const email   = document.getElementById('contactEmail').value.trim();
       const message = document.getElementById('contactMessage').value.trim();
+      const type    = document.getElementById('contactType').value;
 
       if (!name || !email || !message) { showFormError('Please fill in your name, email, and message.'); return; }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showFormError('Please enter a valid email address.'); return; }
 
-      formSubmit.disabled = true;
-      formSubmit.textContent = 'Sending…';
-
-      try {
-        const type = document.getElementById('contactType').value;
-        const res  = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify({ name, email, type, message }),
-        });
-        if (!res.ok) throw new Error('Network error');
-        formFields.style.display = 'none';
-        formSuccess.classList.add('show');
-      } catch {
-        formSubmit.disabled = false;
-        formSubmit.textContent = 'Send Message';
-        showFormError('Something went wrong. Please email me directly at vinit.metange30@gmail.com');
-      }
+      const subject = encodeURIComponent('Portfolio Enquiry' + (type ? ': ' + type : ''));
+      const body    = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nEnquiry type: ' + (type || 'General') + '\n\n' + message);
+      window.open('mailto:vinit.metange30@gmail.com?subject=' + subject + '&body=' + body);
+      formFields.style.display = 'none';
+      formSuccess.classList.add('show');
     });
 
     function showFormError(msg) {
